@@ -1,0 +1,11 @@
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\bin\Debug\shiftos_next.exe.config
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\obj\Debug\shiftos_next.HijackScreen.resources
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\obj\Debug\shiftos_next.Terminal.resources
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\obj\Debug\shiftos_next.vbproj.GenerateResource.Cache
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\bin\Debug\shiftos_next.exe
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\bin\Debug\shiftos_next.pdb
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\bin\Debug\shiftos_next.xml
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\obj\Debug\shiftos_next.Resources.resources
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\obj\Debug\shiftos_next.exe
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\obj\Debug\shiftos_next.xml
+c:\users\the ultimate hacker\documents\github\ORION\project-orion\shiftos_next\shiftos_next\obj\Debug\shiftos_next.pdb
