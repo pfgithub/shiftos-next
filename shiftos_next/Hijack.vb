@@ -123,12 +123,12 @@ Public Class HijackScreen
             Case 7
                 TextType("In order to install these updates, your hard drive will be involuntarily formatted." & Environment.NewLine & Environment.NewLine)
             Case 8
-                TextType("Beginning Hard Drive Format! [#")
+                TextType("Beginning Hard Drive Format...")
                 conversationtimer.Interval = 500
             Case 9, 10, 11, 12, 13, 14, 15, 16, 17
-                TextType("#")
+                TextType(".")
             Case 18
-                TextType("] Done.")
+                TextType(".")
             Case 19
                 rtext = ""
             Case 20
@@ -169,75 +169,74 @@ Public Class HijackScreen
                 End If
                 Select Case percentcount
                     Case 1 To 2
-                        textgeninput.Text = textgeninput.Text & "C:/Home"
-                        If (Not System.IO.Directory.Exists("C:/ShiftOS/Home")) Then System.IO.Directory.CreateDirectory("C:/ShiftOS/Home")
+                        textgeninput.Text = textgeninput.Text & "~/Home"
+                        If (Not System.IO.Directory.Exists(home)) Then System.IO.Directory.CreateDirectory(home)
                     Case 3 To 4
-                        textgeninput.Text = textgeninput.Text & "C:/Home/Documents"
-                        If (Not System.IO.Directory.Exists("C:/ShiftOS/Home/Documents")) Then System.IO.Directory.CreateDirectory("C:/ShiftOS/Home/Documents")
+                        textgeninput.Text = textgeninput.Text & "~/Home/Documents"
+                        If (Not System.IO.Directory.Exists(documents)) Then System.IO.Directory.CreateDirectory(documents)
                     Case 5 To 9
-                        textgeninput.Text = textgeninput.Text & "C:/Home/Documents/ShiftOSInfo.txt"
-                        fs = File.Create("C:/ShiftOS/Home/Documents/ShiftOSInfo.txt")
+                        textgeninput.Text = textgeninput.Text & "~/Home/Documents/ShiftOSInfo.txt"
+                        fs = File.Create(home + "ShiftOSInfo.txt")
                         fs.Close()
                     Case 10 To 12
-                        textgeninput.Text = textgeninput.Text & "C:/Home/Music"
-                        If (Not System.IO.Directory.Exists("C:/ShiftOS/Home/Music")) Then System.IO.Directory.CreateDirectory("C:/ShiftOS/Home/Music")
+                        textgeninput.Text = textgeninput.Text & "~/Home/Music"
+                        If (Not System.IO.Directory.Exists(music)) Then System.IO.Directory.CreateDirectory(music)
                     Case 13 To 15
-                        textgeninput.Text = textgeninput.Text & "C:/Home/Pictures"
-                        If (Not System.IO.Directory.Exists("C:/ShiftOS/Home/Pictures")) Then System.IO.Directory.CreateDirectory("C:/ShiftOS/Home/Pictures")
+                        textgeninput.Text = textgeninput.Text & "~/Home/Pictures"
+                        If (Not System.IO.Directory.Exists(pictures)) Then System.IO.Directory.CreateDirectory(pictures)
                     Case 16 To 18
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42"
-                        If (Not System.IO.Directory.Exists("C:/ShiftOS/Shiftum42")) Then System.IO.Directory.CreateDirectory("C:/ShiftOS/Shiftum42")
+                        textgeninput.Text = textgeninput.Text & "~/Shiftum42"
+                        If (Not System.IO.Directory.Exists(systemdir)) Then System.IO.Directory.CreateDirectory(systemdir)
                     Case 19 To 20
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/Drivers"
-                        If (Not System.IO.Directory.Exists("C:/ShiftOS/Shiftum42/Drivers")) Then System.IO.Directory.CreateDirectory("C:/ShiftOS/Shiftum42/Drivers")
+                        textgeninput.Text = textgeninput.Text & "~/Shiftum42/Drivers"
+                        If (Not System.IO.Directory.Exists(drivers)) Then System.IO.Directory.CreateDirectory(drivers)
                     Case 21 To 27
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/Drivers/HDD.dri"
-                        fs = File.Create("C:/ShiftOS/Shiftum42/Drivers/HDD.dri")
-                        fs.Close()
+                        textgeninput.Text = textgeninput.Text & "Writing config files..."
+                        savegame()
                     Case 28 To 35
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/Drivers/Keyboard.dri"
-                        fs = File.Create("C:/ShiftOS/Shiftum42/Drivers/Keyboard.dri")
+                        textgeninput.Text = textgeninput.Text & "Copying Drivers..."
+                        fs = File.Create(drivers + "Keyboard.dri")
                         fs.Close()
                     Case 36 To 44
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/Drivers/Monitor.dri"
-                        fs = File.Create("C:/ShiftOS/Shiftum42/Drivers/Monitor.dri")
+                        textgeninput.Text = textgeninput.Text & "Copying Drivers..."
+                        fs = File.Create(drivers + "Monitor.dri")
                         fs.Close()
                     Case 45 To 52
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/Drivers/Mouse.dri"
-                        fs = File.Create("C:/ShiftOS/Shiftum42/Drivers/Mouse.dri")
+                        textgeninput.Text = textgeninput.Text & "Copying Drivers..."
+                        fs = File.Create(drivers + "Mouse.dri")
                         fs.Close()
                     Case 53 To 60
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/Drivers/Printer.dri"
-                        fs = File.Create("C:/ShiftOS/Shiftum42/Drivers/Printer.dri")
+                        textgeninput.Text = textgeninput.Text & "Copying Drivers..."
+                        fs = File.Create(drivers + "Printer.dri")
                         fs.Close()
                     Case 61 To 68
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/Languages/"
-                        If (Not System.IO.Directory.Exists("C:/ShiftOS/Shiftum42/Languages/")) Then System.IO.Directory.CreateDirectory("C:/ShiftOS/Shiftum42/Languages/")
+                        textgeninput.Text = textgeninput.Text & "Generating Languages..."
+                        If (Not System.IO.Directory.Exists(systemdir + "Languages/")) Then System.IO.Directory.CreateDirectory(systemdir + "Languages/")
                     Case 69 To 76
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/Languages/English.lang"
-                        fs = File.Create("C:/ShiftOS/Shiftum42/Languages/English.lang")
+                        textgeninput.Text = textgeninput.Text & "Generating Languages..."
+                        fs = File.Create(systemdir + "Languages/English.lang")
                         fs.Close()
                     Case 77 To 84
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/HDAccess.sft"
-                        fs = File.Create("C:/ShiftOS/Shiftum42/HDAccess.sft")
+                        textgeninput.Text = textgeninput.Text & "Completing update..."
+                        fs = File.Create(systemdir + "HDAccess.sft")
                         fs.Close()
-                        Dim objWriter As New System.IO.StreamWriter("C:/ShiftOS/Shiftum42/HDAccess.sft", False)
+                        Dim objWriter As New System.IO.StreamWriter(systemdir + "HDAccess.sft", False)
                         objWriter.Write(actualshiftversion)
                         objWriter.Close()
                     Case 85 To 89
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/ShiftGUI.sft"
+                        textgeninput.Text = textgeninput.Text & "Completing update..."
                         fs = File.Create("C:/ShiftOS/Shiftum42/ShiftGUI.sft")
                         fs.Close()
                     Case 90 To 93
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/SKernal.sft"
+                        textgeninput.Text = textgeninput.Text & "Completing update..."
                         fs = File.Create("C:/ShiftOS/Shiftum42/SKernal.sft")
                         fs.Close()
                     Case 94 To 97
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/SRead.sft"
+                        textgeninput.Text = textgeninput.Text & "Completing update..."
                         fs = File.Create("C:/ShiftOS/Shiftum42/SRead.sft")
                         fs.Close()
                     Case 98 To 101
-                        textgeninput.Text = textgeninput.Text & "C:/Shiftum42/SWrite.sft"
+                        textgeninput.Text = textgeninput.Text & "Completing update..."
                         fs = File.Create("C:/ShiftOS/Shiftum42/SWrite.sft")
                         fs.Close()
                 End Select

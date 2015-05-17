@@ -92,6 +92,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="saveengine.vb" />
+    <Compile Include="shiftorium_api.vb" />
+    <Compile Include="shiftorium_cmd.Designer.vb">
+      <DependentUpon>shiftorium_cmd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="shiftorium_cmd.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Terminal.Designer.vb">
       <DependentUpon>Terminal.vb</DependentUpon>
     </Compile>
@@ -108,6 +116,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shiftorium_cmd.resx">
+      <DependentUpon>shiftorium_cmd.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Terminal.resx">
       <DependentUpon>Terminal.vb</DependentUpon>

@@ -9,7 +9,7 @@
     Public pictures As String = home + "Pictures\"
     Public music As String = home + "Music\"
 
-    Public systemdir As String = root + "Shiftum42\"
+    Public systemdir As String = root + "\Shiftum42\"
 
     Public drivers As String = systemdir + "Drivers\"
 
