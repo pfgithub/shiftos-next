@@ -70,6 +70,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="filesystem.vb" />
     <Compile Include="Hijack.Designer.vb">
       <DependentUpon>Hijack.vb</DependentUpon>
     </Compile>
