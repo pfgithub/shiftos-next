@@ -25,12 +25,19 @@ Partial Class shiftorium_cmd
         Me.pnltop = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlbottom = New System.Windows.Forms.Panel()
-        Me.lbcontrols = New System.Windows.Forms.Label()
         Me.lbcodepoints = New System.Windows.Forms.Label()
+        Me.lbcontrols = New System.Windows.Forms.Label()
         Me.pnldetails = New System.Windows.Forms.Panel()
         Me.lbitems = New System.Windows.Forms.ListBox()
+        Me.lbitemname = New System.Windows.Forms.Label()
+        Me.lbdescription = New System.Windows.Forms.Label()
+        Me.pnlbuy = New System.Windows.Forms.Panel()
+        Me.lbprice = New System.Windows.Forms.Label()
+        Me.btnbuy = New System.Windows.Forms.Button()
         Me.pnltop.SuspendLayout()
         Me.pnlbottom.SuspendLayout()
+        Me.pnldetails.SuspendLayout()
+        Me.pnlbuy.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnltop
@@ -62,16 +69,6 @@ Partial Class shiftorium_cmd
         Me.pnlbottom.Size = New System.Drawing.Size(1007, 22)
         Me.pnlbottom.TabIndex = 1
         '
-        'lbcontrols
-        '
-        Me.lbcontrols.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lbcontrols.Location = New System.Drawing.Point(0, 0)
-        Me.lbcontrols.Name = "lbcontrols"
-        Me.lbcontrols.Size = New System.Drawing.Size(815, 22)
-        Me.lbcontrols.TabIndex = 0
-        Me.lbcontrols.Text = "Controls: UP/DOWN - Choose item, ENTER - View details, SPACE: Download"
-        Me.lbcontrols.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'lbcodepoints
         '
         Me.lbcodepoints.Dock = System.Windows.Forms.DockStyle.Fill
@@ -82,8 +79,21 @@ Partial Class shiftorium_cmd
         Me.lbcodepoints.Text = "Codepoints: {0}"
         Me.lbcodepoints.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'lbcontrols
+        '
+        Me.lbcontrols.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lbcontrols.Location = New System.Drawing.Point(0, 0)
+        Me.lbcontrols.Name = "lbcontrols"
+        Me.lbcontrols.Size = New System.Drawing.Size(815, 22)
+        Me.lbcontrols.TabIndex = 0
+        Me.lbcontrols.Text = "Controls: UP/DOWN - Choose item, ENTER - View details, SPACE: Download"
+        Me.lbcontrols.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'pnldetails
         '
+        Me.pnldetails.Controls.Add(Me.pnlbuy)
+        Me.pnldetails.Controls.Add(Me.lbdescription)
+        Me.pnldetails.Controls.Add(Me.lbitemname)
         Me.pnldetails.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnldetails.Location = New System.Drawing.Point(0, 30)
         Me.pnldetails.Name = "pnldetails"
@@ -103,6 +113,60 @@ Partial Class shiftorium_cmd
         Me.lbitems.Size = New System.Drawing.Size(1007, 335)
         Me.lbitems.TabIndex = 3
         '
+        'lbitemname
+        '
+        Me.lbitemname.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lbitemname.Location = New System.Drawing.Point(0, 0)
+        Me.lbitemname.Name = "lbitemname"
+        Me.lbitemname.Size = New System.Drawing.Size(1007, 28)
+        Me.lbitemname.TabIndex = 0
+        Me.lbitemname.Text = "Welcome to the Shiftorium!"
+        Me.lbitemname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbdescription
+        '
+        Me.lbdescription.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbdescription.Location = New System.Drawing.Point(0, 28)
+        Me.lbdescription.Name = "lbdescription"
+        Me.lbdescription.Size = New System.Drawing.Size(1007, 177)
+        Me.lbdescription.TabIndex = 1
+        Me.lbdescription.Text = "The Shiftorium lets you upgrade different aspects of ShiftOS using Codepoints. Yo" & _
+    "u can download anything from color support, terminal commands, programs, and eve" & _
+    "n desktop environments."
+        Me.lbdescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'pnlbuy
+        '
+        Me.pnlbuy.Controls.Add(Me.btnbuy)
+        Me.pnlbuy.Controls.Add(Me.lbprice)
+        Me.pnlbuy.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlbuy.Location = New System.Drawing.Point(0, 176)
+        Me.pnlbuy.Name = "pnlbuy"
+        Me.pnlbuy.Size = New System.Drawing.Size(1007, 29)
+        Me.pnlbuy.TabIndex = 2
+        '
+        'lbprice
+        '
+        Me.lbprice.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lbprice.Location = New System.Drawing.Point(0, 0)
+        Me.lbprice.Name = "lbprice"
+        Me.lbprice.Size = New System.Drawing.Size(815, 29)
+        Me.lbprice.TabIndex = 0
+        Me.lbprice.Text = "This item costs {0} Codepoints."
+        Me.lbprice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'btnbuy
+        '
+        Me.btnbuy.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnbuy.FlatAppearance.BorderSize = 0
+        Me.btnbuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuy.Location = New System.Drawing.Point(815, 0)
+        Me.btnbuy.Name = "btnbuy"
+        Me.btnbuy.Size = New System.Drawing.Size(192, 29)
+        Me.btnbuy.TabIndex = 1
+        Me.btnbuy.Text = "Press SPACE to buy"
+        Me.btnbuy.UseVisualStyleBackColor = True
+        '
         'shiftorium_cmd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -121,6 +185,8 @@ Partial Class shiftorium_cmd
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnltop.ResumeLayout(False)
         Me.pnlbottom.ResumeLayout(False)
+        Me.pnldetails.ResumeLayout(False)
+        Me.pnlbuy.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -131,4 +197,9 @@ Partial Class shiftorium_cmd
     Friend WithEvents lbcontrols As System.Windows.Forms.Label
     Friend WithEvents pnldetails As System.Windows.Forms.Panel
     Friend WithEvents lbitems As System.Windows.Forms.ListBox
+    Friend WithEvents pnlbuy As System.Windows.Forms.Panel
+    Friend WithEvents btnbuy As System.Windows.Forms.Button
+    Friend WithEvents lbprice As System.Windows.Forms.Label
+    Friend WithEvents lbdescription As System.Windows.Forms.Label
+    Friend WithEvents lbitemname As System.Windows.Forms.Label
 End Class

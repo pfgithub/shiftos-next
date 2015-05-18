@@ -2,7 +2,21 @@
     'Core for Save Engine
 
     Public username As String = "user"
+    Public osname As String = "shiftos"
 
+    '
+    ' NEWER UPGRADES: These are partly from UltraDOS, partially from Orion, and a few others created just for this project.
+    '
+
+    Public boughtdirectorysurfing As Boolean = False
+    Public boughtbasicsettings As Boolean = False
+    Public boughtbasicgui As Boolean = False
+    Public boughtterminalsettextcolor As Boolean = False
+
+
+    '
+    ' OLD SHIFTOS UPGRADES: These upgrades may be useful, so I've added them.
+    '
 
     'Shiftorium Upgrades
     Public boughttitlebar As Boolean = False
@@ -273,6 +287,13 @@
         If boughtpink2 = True Then savelines(81) = 11 Else savelines(81) = 10
         If boughtpink3 = True Then savelines(82) = 11 Else savelines(82) = 10
         If boughtpink4 = True Then savelines(83) = 11 Else savelines(83) = 10
+        If boughtdirectorysurfing = True Then savelines(84) = 11 Else savelines(84) = 10
+        savelines(85) = osname
+        If boughtbasicsettings = True Then savelines(86) = 11 Else savelines(86) = 10
+        If boughtbasicgui = True Then savelines(87) = 11 Else savelines(87) = 10
+        If boughtterminalsettextcolor = True Then savelines(88) = 11 Else savelines(88) = 10
+
+
 
         'Large gap in file. Add new features here.
 
@@ -382,193 +403,208 @@
 
    
 
-    Private Sub loadgame()
-        Dim loadlines() As String = IO.File.ReadAllLines(save)
-        If loadlines(0) = 11 Then boughttitlebar = True Else boughttitlebar = False
-        If loadlines(1) = 11 Then boughtgray = True Else boughtgray = False
-        If loadlines(2) = 11 Then boughtsecondspastmidnight = True Else boughtsecondspastmidnight = False
-        If loadlines(3) = 11 Then boughtminutespastmidnight = True Else boughtminutespastmidnight = False
-        If loadlines(4) = 11 Then boughthourspastmidnight = True Else boughthourspastmidnight = False
-        If loadlines(5) = 11 Then boughtcustomusername = True Else boughtcustomusername = False
-        If loadlines(6) = 11 Then boughtwindowsanywhere = True Else boughtwindowsanywhere = False
-        If loadlines(7) = 11 Then boughtmultitasking = True Else boughtmultitasking = False
-        If loadlines(8) = 11 Then boughtautoscrollterminal = True Else boughtautoscrollterminal = False
-        codepoints = loadlines(9)
-        If loadlines(10) = 11 Then boughtmovablewindows = True Else boughtmovablewindows = False
-        If loadlines(11) = 11 Then boughtdraggablewindows = True Else boughtdraggablewindows = False
-        If loadlines(12) = 11 Then boughtwindowborders = True Else boughtwindowborders = False
-        If loadlines(13) = 11 Then boughtpmandam = True Else boughtpmandam = False
-        If loadlines(14) = 11 Then boughtminuteaccuracytime = True Else boughtminuteaccuracytime = False
-        If loadlines(15) = 11 Then boughtsplitsecondtime = True Else boughtsplitsecondtime = False
-        If loadlines(16) = 11 Then boughttitletext = True Else boughttitletext = False
-        If loadlines(17) = 11 Then boughtclosebutton = True Else boughtclosebutton = False
-        If loadlines(18) = 11 Then boughtdesktoppanel = True Else boughtdesktoppanel = False
-        If loadlines(19) = 11 Then boughtclock = True Else boughtclock = False
-        If loadlines(20) = 11 Then boughtwindowedterminal = True Else boughtwindowedterminal = False
-        If loadlines(21) = 11 Then boughtapplaunchermenu = True Else boughtapplaunchermenu = False
-        If loadlines(22) = 11 Then boughtalknowledgeinput = True Else boughtalknowledgeinput = False
-        If loadlines(23) = 11 Then boughtalclock = True Else boughtalclock = False
-        If loadlines(24) = 11 Then boughtalshiftorium = True Else boughtalshiftorium = False
-        If loadlines(25) = 11 Then boughtapplaunchershutdown = True Else boughtapplaunchershutdown = False
-        If loadlines(26) = 11 Then boughtdesktoppanelclock = True Else boughtdesktoppanelclock = False
-        If loadlines(27) = 11 Then boughtterminalscrollbar = True Else boughtterminalscrollbar = False
-        If loadlines(28) = 11 Then boughtkiaddons = True Else boughtkiaddons = False
-        If loadlines(29) = 11 Then boughtkicarbrands = True Else boughtkicarbrands = False
-        If loadlines(30) = 11 Then boughtkigameconsoles = True Else boughtkigameconsoles = False
-        username = loadlines(31)
-        If loadlines(33) = 11 Then boughtshifter = True Else boughtshifter = False
-        If loadlines(34) = 11 Then boughtalshifter = True Else boughtalshifter = False
-        If loadlines(35) = 11 Then boughtrollupcommand = True Else boughtrollupcommand = False
-        If loadlines(36) = 11 Then boughtrollupbutton = True Else boughtrollupbutton = False
-        If loadlines(37) = 11 Then boughtshiftdesktop = True Else boughtshiftdesktop = False
-        If loadlines(38) = 11 Then boughtshiftpanelclock = True Else boughtshiftpanelclock = False
-        If loadlines(39) = 11 Then boughtshiftapplauncher = True Else boughtshiftapplauncher = False
-        If loadlines(40) = 11 Then boughtshiftdesktoppanel = True Else boughtshiftdesktoppanel = False
-        If loadlines(41) = 11 Then boughtshifttitlebar = True Else boughtshifttitlebar = False
-        If loadlines(42) = 11 Then boughtshifttitletext = True Else boughtshifttitletext = False
-        If loadlines(43) = 11 Then boughtshifttitlebuttons = True Else boughtshifttitlebuttons = False
-        If loadlines(44) = 11 Then boughtshiftborders = True Else boughtshiftborders = False
-        If loadlines(45) = 11 Then boughtgray2 = True Else boughtgray2 = False
-        If loadlines(46) = 11 Then boughtgray3 = True Else boughtgray3 = False
-        If loadlines(47) = 11 Then boughtgray4 = True Else boughtgray4 = False
-        If loadlines(48) = 11 Then boughtanycolour = True Else boughtanycolour = False
-        If loadlines(49) = 11 Then boughtanycolour2 = True Else boughtanycolour2 = False
-        If loadlines(50) = 11 Then boughtanycolour3 = True Else boughtanycolour3 = False
-        If loadlines(51) = 11 Then boughtanycolour4 = True Else boughtanycolour4 = False
-        If loadlines(52) = 11 Then boughtpurple = True Else boughtpurple = False
-        If loadlines(53) = 11 Then boughtpurple2 = True Else boughtpurple2 = False
-        If loadlines(54) = 11 Then boughtpurple3 = True Else boughtpurple3 = False
-        If loadlines(55) = 11 Then boughtpurple4 = True Else boughtpurple4 = False
-        If loadlines(56) = 11 Then boughtblue = True Else boughtblue = False
-        If loadlines(57) = 11 Then boughtblue2 = True Else boughtblue2 = False
-        If loadlines(58) = 11 Then boughtblue3 = True Else boughtblue3 = False
-        If loadlines(59) = 11 Then boughtblue4 = True Else boughtblue4 = False
-        If loadlines(60) = 11 Then boughtgreen = True Else boughtgreen = False
-        If loadlines(61) = 11 Then boughtgreen2 = True Else boughtgreen2 = False
-        If loadlines(62) = 11 Then boughtgreen3 = True Else boughtgreen3 = False
-        If loadlines(63) = 11 Then boughtgreen4 = True Else boughtgreen4 = False
-        If loadlines(64) = 11 Then boughtyellow = True Else boughtyellow = False
-        If loadlines(65) = 11 Then boughtyellow2 = True Else boughtyellow2 = False
-        If loadlines(66) = 11 Then boughtyellow3 = True Else boughtyellow3 = False
-        If loadlines(67) = 11 Then boughtyellow4 = True Else boughtyellow4 = False
-        If loadlines(68) = 11 Then boughtorange = True Else boughtorange = False
-        If loadlines(69) = 11 Then boughtorange2 = True Else boughtorange2 = False
-        If loadlines(70) = 11 Then boughtorange3 = True Else boughtorange3 = False
-        If loadlines(71) = 11 Then boughtorange4 = True Else boughtorange4 = False
-        If loadlines(72) = 11 Then boughtbrown = True Else boughtbrown = False
-        If loadlines(73) = 11 Then boughtbrown2 = True Else boughtbrown2 = False
-        If loadlines(74) = 11 Then boughtbrown3 = True Else boughtbrown3 = False
-        If loadlines(75) = 11 Then boughtbrown4 = True Else boughtbrown4 = False
-        If loadlines(76) = 11 Then boughtred = True Else boughtred = False
-        If loadlines(77) = 11 Then boughtred2 = True Else boughtred2 = False
-        If loadlines(78) = 11 Then boughtred3 = True Else boughtred3 = False
-        If loadlines(79) = 11 Then boughtred4 = True Else boughtred4 = False
-        If loadlines(80) = 11 Then boughtpink = True Else boughtpink = False
-        If loadlines(81) = 11 Then boughtpink2 = True Else boughtpink2 = False
-        If loadlines(82) = 11 Then boughtpink3 = True Else boughtpink3 = False
-        If loadlines(83) = 11 Then boughtpink4 = True Else boughtpink4 = False
+    Public Sub loadgame()
+        Try
+            Dim loadlines() As String = IO.File.ReadAllLines(save)
+            If loadlines(0) = 11 Then boughttitlebar = True Else boughttitlebar = False
+            If loadlines(1) = 11 Then boughtgray = True Else boughtgray = False
+            If loadlines(2) = 11 Then boughtsecondspastmidnight = True Else boughtsecondspastmidnight = False
+            If loadlines(3) = 11 Then boughtminutespastmidnight = True Else boughtminutespastmidnight = False
+            If loadlines(4) = 11 Then boughthourspastmidnight = True Else boughthourspastmidnight = False
+            If loadlines(5) = 11 Then boughtcustomusername = True Else boughtcustomusername = False
+            If loadlines(6) = 11 Then boughtwindowsanywhere = True Else boughtwindowsanywhere = False
+            If loadlines(7) = 11 Then boughtmultitasking = True Else boughtmultitasking = False
+            If loadlines(8) = 11 Then boughtautoscrollterminal = True Else boughtautoscrollterminal = False
+            codepoints = loadlines(9)
+            If loadlines(10) = 11 Then boughtmovablewindows = True Else boughtmovablewindows = False
+            If loadlines(11) = 11 Then boughtdraggablewindows = True Else boughtdraggablewindows = False
+            If loadlines(12) = 11 Then boughtwindowborders = True Else boughtwindowborders = False
+            If loadlines(13) = 11 Then boughtpmandam = True Else boughtpmandam = False
+            If loadlines(14) = 11 Then boughtminuteaccuracytime = True Else boughtminuteaccuracytime = False
+            If loadlines(15) = 11 Then boughtsplitsecondtime = True Else boughtsplitsecondtime = False
+            If loadlines(16) = 11 Then boughttitletext = True Else boughttitletext = False
+            If loadlines(17) = 11 Then boughtclosebutton = True Else boughtclosebutton = False
+            If loadlines(18) = 11 Then boughtdesktoppanel = True Else boughtdesktoppanel = False
+            If loadlines(19) = 11 Then boughtclock = True Else boughtclock = False
+            If loadlines(20) = 11 Then boughtwindowedterminal = True Else boughtwindowedterminal = False
+            If loadlines(21) = 11 Then boughtapplaunchermenu = True Else boughtapplaunchermenu = False
+            If loadlines(22) = 11 Then boughtalknowledgeinput = True Else boughtalknowledgeinput = False
+            If loadlines(23) = 11 Then boughtalclock = True Else boughtalclock = False
+            If loadlines(24) = 11 Then boughtalshiftorium = True Else boughtalshiftorium = False
+            If loadlines(25) = 11 Then boughtapplaunchershutdown = True Else boughtapplaunchershutdown = False
+            If loadlines(26) = 11 Then boughtdesktoppanelclock = True Else boughtdesktoppanelclock = False
+            If loadlines(27) = 11 Then boughtterminalscrollbar = True Else boughtterminalscrollbar = False
+            If loadlines(28) = 11 Then boughtkiaddons = True Else boughtkiaddons = False
+            If loadlines(29) = 11 Then boughtkicarbrands = True Else boughtkicarbrands = False
+            If loadlines(30) = 11 Then boughtkigameconsoles = True Else boughtkigameconsoles = False
+            username = loadlines(31)
+            If loadlines(33) = 11 Then boughtshifter = True Else boughtshifter = False
+            If loadlines(34) = 11 Then boughtalshifter = True Else boughtalshifter = False
+            If loadlines(35) = 11 Then boughtrollupcommand = True Else boughtrollupcommand = False
+            If loadlines(36) = 11 Then boughtrollupbutton = True Else boughtrollupbutton = False
+            If loadlines(37) = 11 Then boughtshiftdesktop = True Else boughtshiftdesktop = False
+            If loadlines(38) = 11 Then boughtshiftpanelclock = True Else boughtshiftpanelclock = False
+            If loadlines(39) = 11 Then boughtshiftapplauncher = True Else boughtshiftapplauncher = False
+            If loadlines(40) = 11 Then boughtshiftdesktoppanel = True Else boughtshiftdesktoppanel = False
+            If loadlines(41) = 11 Then boughtshifttitlebar = True Else boughtshifttitlebar = False
+            If loadlines(42) = 11 Then boughtshifttitletext = True Else boughtshifttitletext = False
+            If loadlines(43) = 11 Then boughtshifttitlebuttons = True Else boughtshifttitlebuttons = False
+            If loadlines(44) = 11 Then boughtshiftborders = True Else boughtshiftborders = False
+            If loadlines(45) = 11 Then boughtgray2 = True Else boughtgray2 = False
+            If loadlines(46) = 11 Then boughtgray3 = True Else boughtgray3 = False
+            If loadlines(47) = 11 Then boughtgray4 = True Else boughtgray4 = False
+            If loadlines(48) = 11 Then boughtanycolour = True Else boughtanycolour = False
+            If loadlines(49) = 11 Then boughtanycolour2 = True Else boughtanycolour2 = False
+            If loadlines(50) = 11 Then boughtanycolour3 = True Else boughtanycolour3 = False
+            If loadlines(51) = 11 Then boughtanycolour4 = True Else boughtanycolour4 = False
+            If loadlines(52) = 11 Then boughtpurple = True Else boughtpurple = False
+            If loadlines(53) = 11 Then boughtpurple2 = True Else boughtpurple2 = False
+            If loadlines(54) = 11 Then boughtpurple3 = True Else boughtpurple3 = False
+            If loadlines(55) = 11 Then boughtpurple4 = True Else boughtpurple4 = False
+            If loadlines(56) = 11 Then boughtblue = True Else boughtblue = False
+            If loadlines(57) = 11 Then boughtblue2 = True Else boughtblue2 = False
+            If loadlines(58) = 11 Then boughtblue3 = True Else boughtblue3 = False
+            If loadlines(59) = 11 Then boughtblue4 = True Else boughtblue4 = False
+            If loadlines(60) = 11 Then boughtgreen = True Else boughtgreen = False
+            If loadlines(61) = 11 Then boughtgreen2 = True Else boughtgreen2 = False
+            If loadlines(62) = 11 Then boughtgreen3 = True Else boughtgreen3 = False
+            If loadlines(63) = 11 Then boughtgreen4 = True Else boughtgreen4 = False
+            If loadlines(64) = 11 Then boughtyellow = True Else boughtyellow = False
+            If loadlines(65) = 11 Then boughtyellow2 = True Else boughtyellow2 = False
+            If loadlines(66) = 11 Then boughtyellow3 = True Else boughtyellow3 = False
+            If loadlines(67) = 11 Then boughtyellow4 = True Else boughtyellow4 = False
+            If loadlines(68) = 11 Then boughtorange = True Else boughtorange = False
+            If loadlines(69) = 11 Then boughtorange2 = True Else boughtorange2 = False
+            If loadlines(70) = 11 Then boughtorange3 = True Else boughtorange3 = False
+            If loadlines(71) = 11 Then boughtorange4 = True Else boughtorange4 = False
+            If loadlines(72) = 11 Then boughtbrown = True Else boughtbrown = False
+            If loadlines(73) = 11 Then boughtbrown2 = True Else boughtbrown2 = False
+            If loadlines(74) = 11 Then boughtbrown3 = True Else boughtbrown3 = False
+            If loadlines(75) = 11 Then boughtbrown4 = True Else boughtbrown4 = False
+            If loadlines(76) = 11 Then boughtred = True Else boughtred = False
+            If loadlines(77) = 11 Then boughtred2 = True Else boughtred2 = False
+            If loadlines(78) = 11 Then boughtred3 = True Else boughtred3 = False
+            If loadlines(79) = 11 Then boughtred4 = True Else boughtred4 = False
+            If loadlines(80) = 11 Then boughtpink = True Else boughtpink = False
+            If loadlines(81) = 11 Then boughtpink2 = True Else boughtpink2 = False
+            If loadlines(82) = 11 Then boughtpink3 = True Else boughtpink3 = False
+            If loadlines(83) = 11 Then boughtpink4 = True Else boughtpink4 = False
+            If loadlines(84) = 11 Then boughtdirectorysurfing = True Else boughtdirectorysurfing = False
+            osname = loadlines(85)
+            If loadlines(86) = 11 Then boughtbasicsettings = True Else boughtbasicsettings = False
+            If loadlines(87) = 11 Then boughtbasicgui = True Else boughtbasicgui = False
+            If loadlines(88) = 11 Then boughtterminalsettextcolor = True Else boughtterminalsettextcolor = False
 
-        'Add appropriate features here.
 
-        If loadlines(285) = 11 Then boughtpong = True Else boughtpong = False
-        If loadlines(286) = 11 Then boughtknowledgeinputicon = True Else boughtknowledgeinputicon = False
-        If loadlines(287) = 11 Then boughtshiftericon = True Else boughtshiftericon = False
-        If loadlines(288) = 11 Then boughtshiftoriumicon = True Else boughtshiftoriumicon = False
-        If loadlines(289) = 11 Then boughtclockicon = True Else boughtclockicon = False
-        If loadlines(290) = 11 Then boughtshutdownicon = True Else boughtshutdownicon = False
-        If loadlines(291) = 11 Then boughtpongicon = True Else boughtpongicon = False
-        If loadlines(292) = 11 Then boughtterminalicon = True Else boughtterminalicon = False
-        If loadlines(293) = 11 Then boughtalpong = True Else boughtalpong = False
-        If loadlines(294) = 11 Then boughtfileskimmer = True Else boughtfileskimmer = False
-        If loadlines(295) = 11 Then boughtalfileskimmer = True Else boughtalfileskimmer = False
-        If loadlines(296) = 11 Then boughttextpad = True Else boughttextpad = False
-        If loadlines(297) = 11 Then boughtaltextpad = True Else boughtaltextpad = False
-        If loadlines(298) = 11 Then boughtfileskimmericon = True Else boughtfileskimmericon = False
-        If loadlines(299) = 11 Then boughttextpadicon = True Else boughttextpadicon = False
-        If loadlines(300) = 11 Then boughttextpadnew = True Else boughttextpadnew = False
-        If loadlines(301) = 11 Then boughttextpadsave = True Else boughttextpadsave = False
-        If loadlines(302) = 11 Then boughttextpadopen = True Else boughttextpadopen = False
-        If loadlines(303) = 11 Then boughtfileskimmernewfolder = True Else boughtfileskimmernewfolder = False
-        If loadlines(304) = 11 Then boughtfileskimmerdelete = True Else boughtfileskimmerdelete = False
-        If loadlines(305) = 11 Then boughtkielements = True Else boughtkielements = False
-        If loadlines(306) = 11 Then boughtcolourpickericon = True Else boughtcolourpickericon = False
-        If loadlines(307) = 11 Then boughtinfoboxicon = True Else boughtinfoboxicon = False
 
-        'Add appropriate features here
 
-        If loadlines(314) = 11 Then boughtskinloader = True Else boughtskinloader = False
-        If loadlines(315) = 11 Then boughtminimizebutton = True Else boughtminimizebutton = False
-        If loadlines(316) = 11 Then boughtpanelbuttons = True Else boughtpanelbuttons = False
-        If loadlines(317) = 11 Then boughtshiftpanelbuttons = True Else boughtshiftpanelbuttons = False
-        If loadlines(318) = 11 Then boughtartpad = True Else boughtartpad = False
-        If loadlines(319) = 11 Then boughtalartpad = True Else boughtalartpad = False
-        If loadlines(320) = 11 Then boughtartpadicon = True Else boughtartpadicon = False
-        If loadlines(321) = 11 Then boughtskinning = True Else boughtskinning = False
-        If loadlines(322) = 11 Then boughtminimizecommand = True Else boughtminimizecommand = False
-        If loadlines(323) = 11 Then boughtusefulpanelbuttons = True Else boughtusefulpanelbuttons = False
-        If loadlines(324) = 11 Then boughtunitymode = True Else boughtunitymode = False
-        If loadlines(325) = 11 Then boughtartpadpixellimit4 = True Else boughtartpadpixellimit4 = False
-        If loadlines(326) = 11 Then boughtartpadpixellimit8 = True Else boughtartpadpixellimit8 = False
-        If loadlines(327) = 11 Then boughtartpadpixellimit16 = True Else boughtartpadpixellimit16 = False
-        If loadlines(328) = 11 Then boughtartpadpixellimit64 = True Else boughtartpadpixellimit64 = False
-        If loadlines(329) = 11 Then boughtartpadpixellimit256 = True Else boughtartpadpixellimit256 = False
-        If loadlines(330) = 11 Then boughtartpadpixellimit1024 = True Else boughtartpadpixellimit1024 = False
-        If loadlines(331) = 11 Then boughtartpadpixellimit4096 = True Else boughtartpadpixellimit4096 = False
-        If loadlines(332) = 11 Then boughtartpadpixellimit16384 = True Else boughtartpadpixellimit16384 = False
-        If loadlines(333) = 11 Then boughtartpadpixellimit65536 = True Else boughtartpadpixellimit65536 = False
-        If loadlines(334) = 11 Then boughtartpadlimitlesspixels = True Else boughtartpadlimitlesspixels = False
-        If loadlines(335) = 11 Then boughtartpad4colorpallets = True Else boughtartpad4colorpallets = False
-        If loadlines(336) = 11 Then boughtartpad8colorpallets = True Else boughtartpad8colorpallets = False
-        If loadlines(337) = 11 Then boughtartpad16colorpallets = True Else boughtartpad16colorpallets = False
-        If loadlines(338) = 11 Then boughtartpad32colorpallets = True Else boughtartpad32colorpallets = False
-        If loadlines(339) = 11 Then boughtartpad64colorpallets = True Else boughtartpad64colorpallets = False
-        If loadlines(340) = 11 Then boughtartpad128colorpallets = True Else boughtartpad128colorpallets = False
-        If loadlines(341) = 11 Then boughtartpadcustompallets = True Else boughtartpadcustompallets = False
-        If loadlines(342) = 11 Then boughtartpadpixelplacer = True Else boughtartpadpixelplacer = False
-        If loadlines(343) = 11 Then boughtartpadpixelplacermovementmode = True Else boughtartpadpixelplacermovementmode = False
-        If loadlines(344) = 11 Then boughtartpadpencil = True Else boughtartpadpencil = False
-        If loadlines(345) = 11 Then boughtartpadpaintbrush = True Else boughtartpadpaintbrush = False
-        If loadlines(346) = 11 Then boughtartpadlinetool = True Else boughtartpadlinetool = False
-        If loadlines(347) = 11 Then boughtartpadovaltool = True Else boughtartpadovaltool = False
-        If loadlines(348) = 11 Then boughtartpadrectangletool = True Else boughtartpadrectangletool = False
-        If loadlines(349) = 11 Then boughtartpaderaser = True Else boughtartpaderaser = False
-        If loadlines(350) = 11 Then boughtartpadfilltool = True Else boughtartpadfilltool = False
-        If loadlines(351) = 11 Then boughtartpadtexttool = True Else boughtartpadtexttool = False
-        If loadlines(352) = 11 Then boughtartpadundo = True Else boughtartpadundo = False
-        If loadlines(353) = 11 Then boughtartpadredo = True Else boughtartpadredo = False
-        If loadlines(354) = 11 Then boughtartpadsave = True Else boughtartpadsave = False
-        If loadlines(355) = 11 Then boughtartpadload = True Else boughtartpadload = False
-        If loadlines(484) = "" Then  Else If loadlines(484) = 11 Then boughtartpadnew = True Else boughtartpadnew = False
-        'Not yet implemented! ingameversion = loadlines(485)
-        If loadlines(486) = 11 Then boughtresizablewindows = True Else boughtresizablewindows = False
-        If loadlines(487) = 11 Then boughtcalculator = True Else boughtcalculator = False
-        If loadlines(488) = 11 Then boughtaudioplayer = True Else boughtaudioplayer = False
-        If loadlines(489) = 11 Then boughtchangeosnamecommand = True Else boughtchangeosnamecommand = False
-        If loadlines(490) = 11 Then boughtwebbrowser = True Else boughtwebbrowser = False
-        If loadlines(491) = 11 Then boughtvideoplayer = True Else boughtvideoplayer = False
-        If loadlines(492) = 11 Then boughtnamechanger = True Else boughtnamechanger = False
-        If loadlines(493) = 11 Then boughticonmanager = True Else boughticonmanager = False
-        If loadlines(494) = 11 Then boughtbitnotewallet = True Else boughtbitnotewallet = False
-        If loadlines(495) = 11 Then boughtbitnotedigger = True Else boughtbitnotedigger = False
-        If loadlines(496) = 11 Then boughtskinshifter = True Else boughtskinshifter = False
-        If loadlines(497) = 11 Then boughtshiftnet = True Else boughtshiftnet = False
-        If loadlines(498) = 11 Then boughtshiftneticon = True Else boughtshiftneticon = False
-        If loadlines(499) = 11 Then boughtalshiftnet = True Else boughtalshiftnet = False
-        If loadlines(500) = 11 Then boughtdodge = True Else boughtdodge = False
-        If loadlines(501) = 11 Then boughtdownloadmanager = True Else boughtdownloadmanager = False
-        If loadlines(502) = 11 Then boughtinstaller = True Else boughtinstaller = False
-        If loadlines(503) = 11 Then boughtsysinfoicon = True Else boughtsysinfoicon = False
-        If loadlines(504) = 11 Then boughtorcwrite = True Else boughtorcwrite = False
-        If loadlines(505) = 11 Then boughtfloodgate = True Else boughtfloodgate = False
-        If loadlines(506) = 11 Then boughtmaze = True Else boughtmaze = False
-        If loadlines(507) = 11 Then boughtunitymodetoggle = True Else boughtunitymodetoggle = False
-        If loadlines(508) = 11 Then boughtunitytoggleicon = True Else boughtunitytoggleicon = False
-        bitnotediggergrade = loadlines(509)
-        If loadlines(510) = 11 Then boughtvirusscannericon = True Else boughtvirusscannericon = False
-        virusscannergrade = loadlines(511)
-        If loadlines(512) = 11 Then boughttextpadtrm = True Else boughttextpadtrm = False
-        If loadlines(513) = 11 Then boughtshiftapplauncheritems = True Else boughtshiftapplauncheritems = False
 
+
+
+
+            'Add appropriate features here.
+
+            If loadlines(285) = 11 Then boughtpong = True Else boughtpong = False
+            If loadlines(286) = 11 Then boughtknowledgeinputicon = True Else boughtknowledgeinputicon = False
+            If loadlines(287) = 11 Then boughtshiftericon = True Else boughtshiftericon = False
+            If loadlines(288) = 11 Then boughtshiftoriumicon = True Else boughtshiftoriumicon = False
+            If loadlines(289) = 11 Then boughtclockicon = True Else boughtclockicon = False
+            If loadlines(290) = 11 Then boughtshutdownicon = True Else boughtshutdownicon = False
+            If loadlines(291) = 11 Then boughtpongicon = True Else boughtpongicon = False
+            If loadlines(292) = 11 Then boughtterminalicon = True Else boughtterminalicon = False
+            If loadlines(293) = 11 Then boughtalpong = True Else boughtalpong = False
+            If loadlines(294) = 11 Then boughtfileskimmer = True Else boughtfileskimmer = False
+            If loadlines(295) = 11 Then boughtalfileskimmer = True Else boughtalfileskimmer = False
+            If loadlines(296) = 11 Then boughttextpad = True Else boughttextpad = False
+            If loadlines(297) = 11 Then boughtaltextpad = True Else boughtaltextpad = False
+            If loadlines(298) = 11 Then boughtfileskimmericon = True Else boughtfileskimmericon = False
+            If loadlines(299) = 11 Then boughttextpadicon = True Else boughttextpadicon = False
+            If loadlines(300) = 11 Then boughttextpadnew = True Else boughttextpadnew = False
+            If loadlines(301) = 11 Then boughttextpadsave = True Else boughttextpadsave = False
+            If loadlines(302) = 11 Then boughttextpadopen = True Else boughttextpadopen = False
+            If loadlines(303) = 11 Then boughtfileskimmernewfolder = True Else boughtfileskimmernewfolder = False
+            If loadlines(304) = 11 Then boughtfileskimmerdelete = True Else boughtfileskimmerdelete = False
+            If loadlines(305) = 11 Then boughtkielements = True Else boughtkielements = False
+            If loadlines(306) = 11 Then boughtcolourpickericon = True Else boughtcolourpickericon = False
+            If loadlines(307) = 11 Then boughtinfoboxicon = True Else boughtinfoboxicon = False
+
+            'Add appropriate features here
+
+            If loadlines(314) = 11 Then boughtskinloader = True Else boughtskinloader = False
+            If loadlines(315) = 11 Then boughtminimizebutton = True Else boughtminimizebutton = False
+            If loadlines(316) = 11 Then boughtpanelbuttons = True Else boughtpanelbuttons = False
+            If loadlines(317) = 11 Then boughtshiftpanelbuttons = True Else boughtshiftpanelbuttons = False
+            If loadlines(318) = 11 Then boughtartpad = True Else boughtartpad = False
+            If loadlines(319) = 11 Then boughtalartpad = True Else boughtalartpad = False
+            If loadlines(320) = 11 Then boughtartpadicon = True Else boughtartpadicon = False
+            If loadlines(321) = 11 Then boughtskinning = True Else boughtskinning = False
+            If loadlines(322) = 11 Then boughtminimizecommand = True Else boughtminimizecommand = False
+            If loadlines(323) = 11 Then boughtusefulpanelbuttons = True Else boughtusefulpanelbuttons = False
+            If loadlines(324) = 11 Then boughtunitymode = True Else boughtunitymode = False
+            If loadlines(325) = 11 Then boughtartpadpixellimit4 = True Else boughtartpadpixellimit4 = False
+            If loadlines(326) = 11 Then boughtartpadpixellimit8 = True Else boughtartpadpixellimit8 = False
+            If loadlines(327) = 11 Then boughtartpadpixellimit16 = True Else boughtartpadpixellimit16 = False
+            If loadlines(328) = 11 Then boughtartpadpixellimit64 = True Else boughtartpadpixellimit64 = False
+            If loadlines(329) = 11 Then boughtartpadpixellimit256 = True Else boughtartpadpixellimit256 = False
+            If loadlines(330) = 11 Then boughtartpadpixellimit1024 = True Else boughtartpadpixellimit1024 = False
+            If loadlines(331) = 11 Then boughtartpadpixellimit4096 = True Else boughtartpadpixellimit4096 = False
+            If loadlines(332) = 11 Then boughtartpadpixellimit16384 = True Else boughtartpadpixellimit16384 = False
+            If loadlines(333) = 11 Then boughtartpadpixellimit65536 = True Else boughtartpadpixellimit65536 = False
+            If loadlines(334) = 11 Then boughtartpadlimitlesspixels = True Else boughtartpadlimitlesspixels = False
+            If loadlines(335) = 11 Then boughtartpad4colorpallets = True Else boughtartpad4colorpallets = False
+            If loadlines(336) = 11 Then boughtartpad8colorpallets = True Else boughtartpad8colorpallets = False
+            If loadlines(337) = 11 Then boughtartpad16colorpallets = True Else boughtartpad16colorpallets = False
+            If loadlines(338) = 11 Then boughtartpad32colorpallets = True Else boughtartpad32colorpallets = False
+            If loadlines(339) = 11 Then boughtartpad64colorpallets = True Else boughtartpad64colorpallets = False
+            If loadlines(340) = 11 Then boughtartpad128colorpallets = True Else boughtartpad128colorpallets = False
+            If loadlines(341) = 11 Then boughtartpadcustompallets = True Else boughtartpadcustompallets = False
+            If loadlines(342) = 11 Then boughtartpadpixelplacer = True Else boughtartpadpixelplacer = False
+            If loadlines(343) = 11 Then boughtartpadpixelplacermovementmode = True Else boughtartpadpixelplacermovementmode = False
+            If loadlines(344) = 11 Then boughtartpadpencil = True Else boughtartpadpencil = False
+            If loadlines(345) = 11 Then boughtartpadpaintbrush = True Else boughtartpadpaintbrush = False
+            If loadlines(346) = 11 Then boughtartpadlinetool = True Else boughtartpadlinetool = False
+            If loadlines(347) = 11 Then boughtartpadovaltool = True Else boughtartpadovaltool = False
+            If loadlines(348) = 11 Then boughtartpadrectangletool = True Else boughtartpadrectangletool = False
+            If loadlines(349) = 11 Then boughtartpaderaser = True Else boughtartpaderaser = False
+            If loadlines(350) = 11 Then boughtartpadfilltool = True Else boughtartpadfilltool = False
+            If loadlines(351) = 11 Then boughtartpadtexttool = True Else boughtartpadtexttool = False
+            If loadlines(352) = 11 Then boughtartpadundo = True Else boughtartpadundo = False
+            If loadlines(353) = 11 Then boughtartpadredo = True Else boughtartpadredo = False
+            If loadlines(354) = 11 Then boughtartpadsave = True Else boughtartpadsave = False
+            If loadlines(355) = 11 Then boughtartpadload = True Else boughtartpadload = False
+            If loadlines(484) = "" Then  Else If loadlines(484) = 11 Then boughtartpadnew = True Else boughtartpadnew = False
+            'Not yet implemented! ingameversion = loadlines(485)
+            If loadlines(486) = 11 Then boughtresizablewindows = True Else boughtresizablewindows = False
+            If loadlines(487) = 11 Then boughtcalculator = True Else boughtcalculator = False
+            If loadlines(488) = 11 Then boughtaudioplayer = True Else boughtaudioplayer = False
+            If loadlines(489) = 11 Then boughtchangeosnamecommand = True Else boughtchangeosnamecommand = False
+            If loadlines(490) = 11 Then boughtwebbrowser = True Else boughtwebbrowser = False
+            If loadlines(491) = 11 Then boughtvideoplayer = True Else boughtvideoplayer = False
+            If loadlines(492) = 11 Then boughtnamechanger = True Else boughtnamechanger = False
+            If loadlines(493) = 11 Then boughticonmanager = True Else boughticonmanager = False
+            If loadlines(494) = 11 Then boughtbitnotewallet = True Else boughtbitnotewallet = False
+            If loadlines(495) = 11 Then boughtbitnotedigger = True Else boughtbitnotedigger = False
+            If loadlines(496) = 11 Then boughtskinshifter = True Else boughtskinshifter = False
+            If loadlines(497) = 11 Then boughtshiftnet = True Else boughtshiftnet = False
+            If loadlines(498) = 11 Then boughtshiftneticon = True Else boughtshiftneticon = False
+            If loadlines(499) = 11 Then boughtalshiftnet = True Else boughtalshiftnet = False
+            If loadlines(500) = 11 Then boughtdodge = True Else boughtdodge = False
+            If loadlines(501) = 11 Then boughtdownloadmanager = True Else boughtdownloadmanager = False
+            If loadlines(502) = 11 Then boughtinstaller = True Else boughtinstaller = False
+            If loadlines(503) = 11 Then boughtsysinfoicon = True Else boughtsysinfoicon = False
+            If loadlines(504) = 11 Then boughtorcwrite = True Else boughtorcwrite = False
+            If loadlines(505) = 11 Then boughtfloodgate = True Else boughtfloodgate = False
+            If loadlines(506) = 11 Then boughtmaze = True Else boughtmaze = False
+            If loadlines(507) = 11 Then boughtunitymodetoggle = True Else boughtunitymodetoggle = False
+            If loadlines(508) = 11 Then boughtunitytoggleicon = True Else boughtunitytoggleicon = False
+            bitnotediggergrade = loadlines(509)
+            If loadlines(510) = 11 Then boughtvirusscannericon = True Else boughtvirusscannericon = False
+            virusscannergrade = loadlines(511)
+            If loadlines(512) = 11 Then boughttextpadtrm = True Else boughttextpadtrm = False
+            If loadlines(513) = 11 Then boughtshiftapplauncheritems = True Else boughtshiftapplauncheritems = False
+        Catch ex As Exception
+            Terminal.prompttoupdatesave = True
+        End Try
     End Sub
 
 
