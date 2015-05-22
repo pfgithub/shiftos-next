@@ -15,9 +15,7 @@
         End If
     End Sub
 
-    Public Sub SelectBottom()
-        txtterm.Select(txtterm.Text.Length, 0)
-    End Sub
+
 
     Public Sub Interpret(command As String)
         command = command.ToLower
@@ -177,8 +175,16 @@
         ElseIf command Like "shutdown" Then
             savegame()
             Me.Close()
+        ElseIf command Like "math*" Then
+            mathquiz = True
+            changeinterpreter()
+        ElseIf command Like "guess the number" Or command Like "guess" Then
+            guessthenumber = True
+            changeinterpreter()
+        ElseIf command Like "code*" Or command = "code points" Then
+            AddLine("You have " & codepoints & " Codepoints.")
         ElseIf command = "colors" Then
-            ShowTerminalColors()
+            showterminalcolors()
         ElseIf command Like "" Then
             'This is here to make it so that the Terminal doesn't say "Wrong Command" if the user doesn't input anything.
         Else
@@ -192,85 +198,11 @@
         End If
     End Sub
 
-    Public Sub openfile(file As String)
-        Dim filinfo As New IO.FileInfo(file)
-        Select Case filinfo.Extension
-            Case ".txt"
-                If boughttextpad = True Then
-                    Dim sr As New IO.StreamReader(file)
-                    TextPad.txtfilebody.Text = sr.ReadToEnd()
-                    sr.Close()
-                    TextPad.Show()
-                Else
-                    wrongcommand()
-                End If
-            Case Else
-                wrongcommand()
-        End Select
-    End Sub
 
-    Public Sub wrongcommand()
-        AddLine("Invalid command! Type ""help"" for a list of commands.")
-    End Sub
 
-    Public Sub showterminalcolors()
-        AddLine(" ==== SUPPORTED TERMINAL COLORS ==== " & vbNewLine)
-        AddLine("Below is a list of values that you can specify in <colorname> arguments. Note that only certain colors are supported; and if the video driver can output a color but it isn't on this list, it is not supported by the Terminal display engine." & vbNewLine)
-        If boughtgray Then AddLine("gray")
-        AddLine("white")
-        AddLine("black")
-        If boughtred Then AddLine("red")
-        If boughtgreen Then AddLine("green")
-        If boughtblue Then AddLine("blue")
-        If boughtyellow Then AddLine("yellow")
-        If boughtorange Then AddLine("orange")
-        If boughtpink Then AddLine("pink")
-        If boughtpurple Then AddLine("purple")
-        If boughtbrown Then AddLine("brown")
-    End Sub
 
-    Public Sub ShowHelp()
-        AddLine("ShiftOS Help" & vbNewLine)
-        AddLine("Usage tips: " & vbNewLine)
-        AddLine(" - The terminal runs in full-screen.")
-        If boughttextpad = True Then AddLine(" - Typing the path to a text file will open it in Textpad.")
-        AddLine(" - There are no window managers or desktop environments.")
-        If boughtbasicgui = True Then
-            AddLine(" - Applications can use the GUI server to display a proper GUI.")
-        Else
-            AddLine(" - Applications are fully text-based.")
-        End If
-        AddLine(" - Terminal commands are case-insensitive." & vbNewLine)
-        AddLine("Commands: " & vbNewLine)
-        If boughtdirectorysurfing Then
-            AddLine(" - cd: Change to the specified directory.")
-            AddLine(" - mkdir: Create a directory inside the current directory (marked before the %)")
-            AddLine(" - ls, dir: View the contents of the current directory.")
-        End If
-        If boughtbasicsettings Then
-            AddLine(" - set <setting> <value>: Change some minimal settings in ShiftOS.")
-            If boughtcustomusername Then
-                AddLine("   Settings: ")
-                AddLine("   username <string>: Set the username of the OS.")
-            End If
-            If boughtterminalsettextcolor = True Then
-                AddLine("   textcolor <colorname>: Set the terminal text color.")
-            End If
-        End If
-        AddLine(" - shutdown: Shuts the system down.")
-        AddLine(" - colors: Shows the colors supported by both the Terminal display engine, and the video driver.")
-        AddLine(" - help: Shows this screen." & vbNewLine)
-        AddLine("Installed Programs:" & vbNewLine)
-        AddLine("Below is a list of all the programs on your computer, followed by what they do. You can open one by typing ""open <name>""." & vbNewLine)
-        AddLine(" - shiftorium: Upgrade the OS with Codepoints using this application.")
-        If boughtfileskimmer Then AddLine(" - file skimmer: A handy little file browser.")
-        If boughttextpad Then AddLine(" - textpad: An application that allows for creating and editing text files.")
-    End Sub
 
-    Public Sub AddLine(text As String)
-        txtterm.Text += vbNewLine + text
-        SelectBottom()
-    End Sub
+
 
     Dim firstuseconversation As Integer = 0
 
@@ -337,24 +269,56 @@
 
             If e.KeyCode = Keys.Enter Then
                 e.SuppressKeyPress = True
-                Dim command As String = txtterm.Lines(txtterm.Lines.Length - 1).Replace(username + "@" + osname + " " & currentdir.ToLower.Replace("c:\shiftos", "~") & "$> ", "").ToLower
-                Interpret(command)
-
-                If command = "clear" Then
-                    txtterm.Text = username + "@" + osname + " " & currentdir.ToLower.Replace("c:\shiftos", "~") & "$> "
-                    txtterm.Select(txtterm.Text.Length, 0)
-
+                If mathquiz = True Then
+                    Dim question As String = txtterm.Lines(txtterm.Lines.Length - 2)
+                    Dim answer As String = txtterm.Lines(txtterm.Lines.Length - 1).Replace("> ", "")
+                    If answer = "exit" Then
+                        mathquiz = False
+                        AddLine(username + "@" + osname + " " & currentdir.ToLower.Replace("c:\shiftos", "~") & "$> ")
+                    Else
+                        Try
+                            MQInterpret(question, answer)
+                        Catch ex As Exception
+                            AddLine("The answer provided isn't a proper number!")
+                        End Try
+                        AddLine("> ")
+                    End If
+                ElseIf guessthenumber = True Then
+                    Dim answer As String = txtterm.Lines(txtterm.Lines.Length - 1).Replace("> ", "")
+                    If answer = "exit" Then
+                        guessthenumber = False
+                        AddLine(username + "@" + osname + " " & currentdir.ToLower.Replace("c:\shiftos", "~") & "$> ")
+                    Else
+                        Try
+                            GTNInterpret(answer)
+                        Catch ex As Exception
+                            AddLine("The answer provided isn't a proper number.")
+                        End Try
+                        AddLine("> ")
+                    End If
                 Else
-                    AddLine(username + "@" + osname + " " & currentdir.ToLower.Replace("c:\shiftos", "~") & "$> ")
-                    txtterm.Select(txtterm.Text.Length, 0)
-                End If
+                    Dim command As String = txtterm.Lines(txtterm.Lines.Length - 1).Replace(username + "@" + osname + " " & currentdir.ToLower.Replace("c:\shiftos", "~") & "$> ", "").ToLower
+                    Interpret(command)
 
-                trackpos = 0
+                    If mathquiz Or guessthenumber Then
+                        AddLine("> ")
+                    Else
+                        If command = "clear" Then
+                            txtterm.Text = username + "@" + osname + " " & currentdir.ToLower.Replace("c:\shiftos", "~") & "$> "
+                            txtterm.Select(txtterm.Text.Length, 0)
+
+                        Else
+                            AddLine(username + "@" + osname + " " & currentdir.ToLower.Replace("c:\shiftos", "~") & "$> ")
+                            txtterm.Select(txtterm.Text.Length, 0)
+                        End If
+                    End If
+                    End If
+                    trackpos = 0
             Else
-                If e.KeyCode = Keys.Back Then
-                Else
-                    trackpos = trackpos + 1
-                End If
+                    If e.KeyCode = Keys.Back Then
+                    Else
+                        trackpos = trackpos + 1
+                    End If
             End If
 
             If e.KeyCode = Keys.Back Then
@@ -379,4 +343,6 @@
             AddLine(username + "@" + osname + " " & currentdir.ToLower.Replace("c:\shiftos", "~") & "$> ")
         End If
     End Sub
+
+
 End Class

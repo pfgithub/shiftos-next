@@ -61,6 +61,8 @@
                 FileType = "Data File"
             Case ".dri"
                 FileType = "Driver"
+            Case Else
+                FileType = "Unknown File"
         End Select
         Return FileType
     End Function

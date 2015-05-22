@@ -70,6 +70,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API.vb" />
     <Compile Include="BasicWM_ColorTable.vb" />
     <Compile Include="basicwm_infobox.Designer.vb">
       <DependentUpon>basicwm_infobox.vb</DependentUpon>
@@ -120,6 +121,7 @@
     <Compile Include="Terminal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TerminalGames.vb" />
     <Compile Include="TextPad.Designer.vb">
       <DependentUpon>TextPad.vb</DependentUpon>
     </Compile>
