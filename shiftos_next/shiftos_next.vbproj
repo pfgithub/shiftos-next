@@ -70,6 +70,20 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicWM_ColorTable.vb" />
+    <Compile Include="basicwm_infobox.Designer.vb">
+      <DependentUpon>basicwm_infobox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="basicwm_infobox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="basicwm_renderer.vb" />
+    <Compile Include="file skimmer.Designer.vb">
+      <DependentUpon>file skimmer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="file skimmer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="filesystem.vb" />
     <Compile Include="Hijack.Designer.vb">
       <DependentUpon>Hijack.vb</DependentUpon>
@@ -106,8 +120,20 @@
     <Compile Include="Terminal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TextPad.Designer.vb">
+      <DependentUpon>TextPad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TextPad.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="basicwm_infobox.resx">
+      <DependentUpon>basicwm_infobox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="file skimmer.resx">
+      <DependentUpon>file skimmer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hijack.resx">
       <DependentUpon>Hijack.vb</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +149,9 @@
     <EmbeddedResource Include="Terminal.resx">
       <DependentUpon>Terminal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TextPad.resx">
+      <DependentUpon>TextPad.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -135,6 +164,15 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

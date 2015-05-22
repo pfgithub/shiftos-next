@@ -23,7 +23,17 @@
             If boughtdirectorysurfing = False Then
                 AddItem("Directory Surfing", 10)
             Else
-
+                If boughtbasicgui = True Then
+                    If boughtfileskimmer = False Then
+                        AddItem("File Skimmer", 60)
+                    Else
+                        If boughtfileskimmernewfolder = False Then AddItem("FS New Folder", 15)
+                        If boughtfileskimmerdelete = False Then AddItem("FS Delete", 15)
+                    End If
+                    If boughttextpad = False Then
+                        AddItem("Textpad", 50)
+                    End If
+                End If
             End If
             If boughtgray = False Then
                 AddItem("Gray", 25)
@@ -31,7 +41,7 @@
                 If boughtbasicgui = False Then
                     AddItem("Basic GUI Server", 100)
                 End If
-                If boughtterminalsettextcolor = False Then
+                If boughtterminalsettextcolor = False And boughtbasicsettings = True Then
                     AddItem("Set Terminal Text Color", 10)
                 End If
             End If
@@ -59,6 +69,10 @@
                     lbitems.SelectedIndex -= 1
                 End If
             Case Keys.Enter
+                handleitemdescription("Textpad - 50 CP", "Hmmmmm... What was I gonna do on Sunday? Oh yeah! I have to get that website written for my buddy. Better write that down before I forget... " & vbNewLine & vbNewLine & "Textpad allows you to create text documents. Handy if you need to write something down!")
+                handleitemdescription("FS Delete - 15 CP", "Alright, What's this unused document doing on my PC? I don't need this. I must delete it. With this upgrade, you can delete files in the File Skimmer.")
+                handleitemdescription("FS New Folder - 15 CP", "Well, we can view the files on our computer, but we don't have the ability to create directories in the GUI... yet. Upgrade today, and you will be able to.")
+                handleitemdescription("File Skimmer - 60 CP", "ShiftOS and Exodus Inc., authors of the Exodus File Browser for UltraDOS, have teamed up to create a GUI-based file browser for ShiftOS, based off the old File Skimmer.")
                 handleitemdescription("Set Terminal Text Color - 10 CP", "Having a black and white color scheme on a Terminal is ibfact quite a cliche. This upgrade allows you to set the text color of the Terminal. It only allows for the basic colors, but it's better than just white!")
                 handleitemdescription("Basic GUI Server - 100 CP", "Well, we've got Gray, and we've got the ability to write GUIs. Now, let's allow the users to run GUIs, and open a lot of possibilities up.")
                 handleitemdescription("Gray - 25 CP", "Black, and white. Such a bland choice of colors. Black for the background, white for the text. What a hard way to develop an app. With this upgrade, the video card driver in ShiftOS will support the output of Gray (R=127, G=127, B=127) allowing for some better capabilities in application programming.")
@@ -66,6 +80,10 @@
                 handleitemdescription("Custom Username - 10 CP", "Hello, user! Isn't that wierd that that's all we know you as? Buy this upgrade to change yourr name from ""user"" to anything you want!")
                 handleitemdescription("Basic Terminal Settings - 5 CP", "Ever wanted to customize the terminal to act the way you'd like it to? This upgrade is for you. You won't be able to use it until you buy settings, but hey! The command is there.")
             Case Keys.Space
+                handlebuy("Textpad - 50 CP", boughttextpad, "Great. Now our computer is a bit more useful than before...")
+                handlebuy("FS Delete - 15 CP", boughtfileskimmerdelete, "There. I can finally destroy that evil document that's been taking up 3/4 of my hard drive. Just right-click a file and click 'Delete' to delete a file.")
+                handlebuy("FS New Folder - 15 CP", boughtfileskimmernewfolder, "Awesome. You can now create new folders in the File Skimmer!")
+                handlebuy("File Skimmer - 60 CP", boughtfileskimmer, "The upgrade's been downloaded, and we can now view the files on our computer in a much cleaner way. Just type 'open file skimmer' in the Terminal!")
                 handlebuy("Set Terminal Text Color - 10 CP", boughtterminalsettextcolor, "Awesome! Now, you can use 'set textcolor <colorname>' to set the Terminal text color. For a reference on supported colors, you can also type 'colors'.")
                 handlebuy("Basic GUI Server - 100 CP", boughtbasicgui, "Amazing. Come time, and money, we may be able to collaborate with other companies to develop applications, upgrades, and eventually a window manager.")
                 handlebuy("Gray - 25 CP", boughtgray, "Great. Right away, the Shiftorium is easier to use! Look at that amazing gray highlight.")

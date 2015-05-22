@@ -159,6 +159,18 @@
             Select Case progtoopen
                 Case "shiftorium", "packages", "pacman", "code shop"
                     shiftorium_cmd.Show()
+                Case "files", "fileskimmer", "file skimmer", "fs", "file browser"
+                    If boughtfileskimmer = True Then
+                        file_skimmer.Show()
+                    Else
+                        AddLine("open: Invalid program """ & progtoopen & """.")
+                    End If
+                Case "textpad", "text", "notepad"
+                    If boughttextpad = True Then
+                        TextPad.Show()
+                    Else
+                        AddLine("open: Invalid program """ & progtoopen & """.")
+                    End If
                 Case Else
                     AddLine("open: Invalid program """ & progtoopen & """.")
             End Select
@@ -170,8 +182,31 @@
         ElseIf command Like "" Then
             'This is here to make it so that the Terminal doesn't say "Wrong Command" if the user doesn't input anything.
         Else
-            wrongcommand()
+            If IO.File.Exists(currentdir + "\" + command) Then
+                OpenFile(currentdir + "\" + command)
+            ElseIf IO.File.Exists(command) Then
+                OpenFile(command)
+            Else
+                wrongcommand()
+            End If
         End If
+    End Sub
+
+    Public Sub openfile(file As String)
+        Dim filinfo As New IO.FileInfo(file)
+        Select Case filinfo.Extension
+            Case ".txt"
+                If boughttextpad = True Then
+                    Dim sr As New IO.StreamReader(file)
+                    TextPad.txtfilebody.Text = sr.ReadToEnd()
+                    sr.Close()
+                    TextPad.Show()
+                Else
+                    wrongcommand()
+                End If
+            Case Else
+                wrongcommand()
+        End Select
     End Sub
 
     Public Sub wrongcommand()
@@ -198,6 +233,7 @@
         AddLine("ShiftOS Help" & vbNewLine)
         AddLine("Usage tips: " & vbNewLine)
         AddLine(" - The terminal runs in full-screen.")
+        If boughttextpad = True Then AddLine(" - Typing the path to a text file will open it in Textpad.")
         AddLine(" - There are no window managers or desktop environments.")
         If boughtbasicgui = True Then
             AddLine(" - Applications can use the GUI server to display a proper GUI.")
@@ -227,6 +263,8 @@
         AddLine("Installed Programs:" & vbNewLine)
         AddLine("Below is a list of all the programs on your computer, followed by what they do. You can open one by typing ""open <name>""." & vbNewLine)
         AddLine(" - shiftorium: Upgrade the OS with Codepoints using this application.")
+        If boughtfileskimmer Then AddLine(" - file skimmer: A handy little file browser.")
+        If boughttextpad Then AddLine(" - textpad: An application that allows for creating and editing text files.")
     End Sub
 
     Public Sub AddLine(text As String)
