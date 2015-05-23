@@ -14,6 +14,8 @@ C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\bin\Debug\shift
 C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\bin\Debug\shiftos_next.pdb
 C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\bin\Debug\shiftos_next.xml
 C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\obj\Debug\shiftos_next.basicwm_infobox.resources
+C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\obj\Debug\shiftos_next.BasicWM.Desktop.resources
+C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\obj\Debug\shiftos_next.BasicWM.ColorPicker.resources
 C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\obj\Debug\shiftos_next.file_skimmer.resources
 C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\obj\Debug\shiftos_next.HijackScreen.resources
 C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\obj\Debug\shiftos_next.Resources.resources

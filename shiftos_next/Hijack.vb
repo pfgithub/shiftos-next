@@ -4,7 +4,7 @@ Imports System.Text
 Imports System.Net.Mail
 
 Public Class HijackScreen
-    Public actualshiftversion As String = "0.0.8"
+    Public actualshiftversion As String = "NEXT 0.0.1"
     Dim newgame As Boolean = True
     Dim tcount As Integer = 0
     Dim rtext As String
@@ -35,11 +35,16 @@ Public Class HijackScreen
             If IO.File.ReadAllText("C:/ShiftOS/Shiftum42/HDAccess.sft") = actualshiftversion Then
                 conversationtimer.Start()
                 needtoclose = True
-                Terminal.Show()
+                loadgame()
+                If boughtbasicwm = True Then
+                    BasicWM.Desktop.Show()
+                Else
+                    Terminal.Show()
+                End If
             Else
-                oldversion = IO.File.ReadAllText("C:/ShiftOS/Shiftum42/HDAccess.sft")
+                oldversion = IO.File.ReadAllText(systemdir + "HDAccess.sft")
                 upgraded = True
-                System.IO.Directory.Delete("C:/ShiftOS/", True)
+                System.IO.Directory.Delete(root, True)
                 BackgroundWorker1.RunWorkerAsync()
                 conversationtimer.Start()
                 hackeffecttimer.Start()

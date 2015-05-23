@@ -79,6 +79,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="basicwm_renderer.vb" />
+    <Compile Include="BWMDesktop.Designer.vb">
+      <DependentUpon>BWMDesktop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BWMDesktop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorPicker.Designer.vb">
+      <DependentUpon>ColorPicker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ColorPicker.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="file skimmer.Designer.vb">
       <DependentUpon>file skimmer.vb</DependentUpon>
     </Compile>
@@ -132,6 +144,12 @@
   <ItemGroup>
     <EmbeddedResource Include="basicwm_infobox.resx">
       <DependentUpon>basicwm_infobox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BWMDesktop.resx">
+      <DependentUpon>BWMDesktop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorPicker.resx">
+      <DependentUpon>ColorPicker.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="file skimmer.resx">
       <DependentUpon>file skimmer.vb</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿Public Class shiftorium_cmd
 
+    
     Public Sub shiftorium_load(s As Object, e As EventArgs) Handles MyBase.Load
         listboxtoaddto = lbitems
         determineitems()
@@ -7,6 +8,20 @@
         lbprice.Hide()
         btnbuy.Hide()
         lbcodepoints.Text = "Codepoints: " & codepoints
+        If boughtbasicwm = True Then
+            lbtitle.TextAlign = ContentAlignment.MiddleLeft
+            lbtitle.Text = "Shiftorium" 'To make it sentence-case, rather than UPPERCASE.
+            lbtitle.BackColor = Color.Gray
+            Me.WindowState = FormWindowState.Normal
+            Me.Left = (Screen.PrimaryScreen.Bounds.Width - Me.Width) / 2
+            Me.Top = (Screen.PrimaryScreen.Bounds.Height - Me.Height) / 2
+            Me.TopMost = True
+        Else
+            lbtitle.TextAlign = ContentAlignment.MiddleCenter
+            lbtitle.Text = "SHIFTORIUM"
+            lbtitle.BackColor = Color.Black
+            Me.WindowState = FormWindowState.Maximized
+        End If
     End Sub
 
     Public Sub determineitems()
@@ -32,6 +47,13 @@
                     End If
                     If boughttextpad = False Then
                         AddItem("Textpad", 50)
+                    End If
+                    If boughttextpad = True And boughtfileskimmer = True Then
+                        If boughtbasicwm = False Then
+                            AddItem("Basic Window Manager", 100)
+                        Else
+                            'Placeholder
+                        End If
                     End If
                 End If
             End If
@@ -69,6 +91,7 @@
                     lbitems.SelectedIndex -= 1
                 End If
             Case Keys.Enter
+                handleitemdescription("Basic Window Manager - 100 CP", "Fullscreen applications, well, suck. You can't get any work done outside of that app without closing it, and can't even view the Terminal. This upgrade changes that. We've found a way to use the Basic GUI server to create a simple window manager. It allows multiple windows on the screen, and up to 3 Terminal windows at once.")
                 handleitemdescription("Textpad - 50 CP", "Hmmmmm... What was I gonna do on Sunday? Oh yeah! I have to get that website written for my buddy. Better write that down before I forget... " & vbNewLine & vbNewLine & "Textpad allows you to create text documents. Handy if you need to write something down!")
                 handleitemdescription("FS Delete - 15 CP", "Alright, What's this unused document doing on my PC? I don't need this. I must delete it. With this upgrade, you can delete files in the File Skimmer.")
                 handleitemdescription("FS New Folder - 15 CP", "Well, we can view the files on our computer, but we don't have the ability to create directories in the GUI... yet. Upgrade today, and you will be able to.")
@@ -80,6 +103,7 @@
                 handleitemdescription("Custom Username - 10 CP", "Hello, user! Isn't that wierd that that's all we know you as? Buy this upgrade to change yourr name from ""user"" to anything you want!")
                 handleitemdescription("Basic Terminal Settings - 5 CP", "Ever wanted to customize the terminal to act the way you'd like it to? This upgrade is for you. You won't be able to use it until you buy settings, but hey! The command is there.")
             Case Keys.Space
+                handlebuy("Basic Window Manager - 100 CP", boughtbasicwm, "Awesome! Just exit the Shiftorium and type ""bwm"" into the Terminal, and away we go. Future sessions will not require typing ""bwm"".")
                 handlebuy("Textpad - 50 CP", boughttextpad, "Great. Now our computer is a bit more useful than before...")
                 handlebuy("FS Delete - 15 CP", boughtfileskimmerdelete, "There. I can finally destroy that evil document that's been taking up 3/4 of my hard drive. Just right-click a file and click 'Delete' to delete a file.")
                 handlebuy("FS New Folder - 15 CP", boughtfileskimmernewfolder, "Awesome. You can now create new folders in the File Skimmer!")
@@ -159,4 +183,5 @@
         End If
     End Sub
 
+ 
 End Class

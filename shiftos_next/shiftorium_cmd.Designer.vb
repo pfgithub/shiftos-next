@@ -23,17 +23,17 @@ Partial Class shiftorium_cmd
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnltop = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbtitle = New System.Windows.Forms.Label()
         Me.pnlbottom = New System.Windows.Forms.Panel()
         Me.lbcodepoints = New System.Windows.Forms.Label()
         Me.lbcontrols = New System.Windows.Forms.Label()
         Me.pnldetails = New System.Windows.Forms.Panel()
-        Me.lbitems = New System.Windows.Forms.ListBox()
-        Me.lbitemname = New System.Windows.Forms.Label()
-        Me.lbdescription = New System.Windows.Forms.Label()
         Me.pnlbuy = New System.Windows.Forms.Panel()
-        Me.lbprice = New System.Windows.Forms.Label()
         Me.btnbuy = New System.Windows.Forms.Button()
+        Me.lbprice = New System.Windows.Forms.Label()
+        Me.lbdescription = New System.Windows.Forms.Label()
+        Me.lbitemname = New System.Windows.Forms.Label()
+        Me.lbitems = New System.Windows.Forms.ListBox()
         Me.pnltop.SuspendLayout()
         Me.pnlbottom.SuspendLayout()
         Me.pnldetails.SuspendLayout()
@@ -42,22 +42,22 @@ Partial Class shiftorium_cmd
         '
         'pnltop
         '
-        Me.pnltop.Controls.Add(Me.Label1)
+        Me.pnltop.Controls.Add(Me.lbtitle)
         Me.pnltop.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnltop.Location = New System.Drawing.Point(0, 0)
         Me.pnltop.Name = "pnltop"
         Me.pnltop.Size = New System.Drawing.Size(1007, 30)
         Me.pnltop.TabIndex = 0
         '
-        'Label1
+        'lbtitle
         '
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1007, 30)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "SHIFTORIUM"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lbtitle.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbtitle.Location = New System.Drawing.Point(0, 0)
+        Me.lbtitle.Name = "lbtitle"
+        Me.lbtitle.Size = New System.Drawing.Size(1007, 30)
+        Me.lbtitle.TabIndex = 0
+        Me.lbtitle.Text = "SHIFTORIUM"
+        Me.lbtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlbottom
         '
@@ -100,28 +100,37 @@ Partial Class shiftorium_cmd
         Me.pnldetails.Size = New System.Drawing.Size(1007, 205)
         Me.pnldetails.TabIndex = 2
         '
-        'lbitems
+        'pnlbuy
         '
-        Me.lbitems.BackColor = System.Drawing.Color.Black
-        Me.lbitems.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lbitems.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbitems.ForeColor = System.Drawing.Color.White
-        Me.lbitems.FormattingEnabled = True
-        Me.lbitems.ItemHeight = 14
-        Me.lbitems.Location = New System.Drawing.Point(0, 235)
-        Me.lbitems.Name = "lbitems"
-        Me.lbitems.Size = New System.Drawing.Size(1007, 335)
-        Me.lbitems.TabIndex = 3
+        Me.pnlbuy.Controls.Add(Me.btnbuy)
+        Me.pnlbuy.Controls.Add(Me.lbprice)
+        Me.pnlbuy.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlbuy.Location = New System.Drawing.Point(0, 176)
+        Me.pnlbuy.Name = "pnlbuy"
+        Me.pnlbuy.Size = New System.Drawing.Size(1007, 29)
+        Me.pnlbuy.TabIndex = 2
         '
-        'lbitemname
+        'btnbuy
         '
-        Me.lbitemname.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lbitemname.Location = New System.Drawing.Point(0, 0)
-        Me.lbitemname.Name = "lbitemname"
-        Me.lbitemname.Size = New System.Drawing.Size(1007, 28)
-        Me.lbitemname.TabIndex = 0
-        Me.lbitemname.Text = "Welcome to the Shiftorium!"
-        Me.lbitemname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnbuy.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnbuy.FlatAppearance.BorderSize = 0
+        Me.btnbuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuy.Location = New System.Drawing.Point(815, 0)
+        Me.btnbuy.Name = "btnbuy"
+        Me.btnbuy.Size = New System.Drawing.Size(192, 29)
+        Me.btnbuy.TabIndex = 1
+        Me.btnbuy.Text = "Press SPACE to buy"
+        Me.btnbuy.UseVisualStyleBackColor = True
+        '
+        'lbprice
+        '
+        Me.lbprice.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lbprice.Location = New System.Drawing.Point(0, 0)
+        Me.lbprice.Name = "lbprice"
+        Me.lbprice.Size = New System.Drawing.Size(815, 29)
+        Me.lbprice.TabIndex = 0
+        Me.lbprice.Text = "This item costs {0} Codepoints."
+        Me.lbprice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lbdescription
         '
@@ -135,37 +144,28 @@ Partial Class shiftorium_cmd
     "n desktop environments."
         Me.lbdescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'pnlbuy
+        'lbitemname
         '
-        Me.pnlbuy.Controls.Add(Me.btnbuy)
-        Me.pnlbuy.Controls.Add(Me.lbprice)
-        Me.pnlbuy.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlbuy.Location = New System.Drawing.Point(0, 176)
-        Me.pnlbuy.Name = "pnlbuy"
-        Me.pnlbuy.Size = New System.Drawing.Size(1007, 29)
-        Me.pnlbuy.TabIndex = 2
+        Me.lbitemname.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lbitemname.Location = New System.Drawing.Point(0, 0)
+        Me.lbitemname.Name = "lbitemname"
+        Me.lbitemname.Size = New System.Drawing.Size(1007, 28)
+        Me.lbitemname.TabIndex = 0
+        Me.lbitemname.Text = "Welcome to the Shiftorium!"
+        Me.lbitemname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lbprice
+        'lbitems
         '
-        Me.lbprice.Dock = System.Windows.Forms.DockStyle.Left
-        Me.lbprice.Location = New System.Drawing.Point(0, 0)
-        Me.lbprice.Name = "lbprice"
-        Me.lbprice.Size = New System.Drawing.Size(815, 29)
-        Me.lbprice.TabIndex = 0
-        Me.lbprice.Text = "This item costs {0} Codepoints."
-        Me.lbprice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'btnbuy
-        '
-        Me.btnbuy.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnbuy.FlatAppearance.BorderSize = 0
-        Me.btnbuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuy.Location = New System.Drawing.Point(815, 0)
-        Me.btnbuy.Name = "btnbuy"
-        Me.btnbuy.Size = New System.Drawing.Size(192, 29)
-        Me.btnbuy.TabIndex = 1
-        Me.btnbuy.Text = "Press SPACE to buy"
-        Me.btnbuy.UseVisualStyleBackColor = True
+        Me.lbitems.BackColor = System.Drawing.Color.Black
+        Me.lbitems.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lbitems.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbitems.ForeColor = System.Drawing.Color.White
+        Me.lbitems.FormattingEnabled = True
+        Me.lbitems.ItemHeight = 14
+        Me.lbitems.Location = New System.Drawing.Point(0, 235)
+        Me.lbitems.Name = "lbitems"
+        Me.lbitems.Size = New System.Drawing.Size(1007, 335)
+        Me.lbitems.TabIndex = 3
         '
         'shiftorium_cmd
         '
@@ -191,7 +191,7 @@ Partial Class shiftorium_cmd
 
     End Sub
     Friend WithEvents pnltop As System.Windows.Forms.Panel
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lbtitle As System.Windows.Forms.Label
     Friend WithEvents pnlbottom As System.Windows.Forms.Panel
     Friend WithEvents lbcodepoints As System.Windows.Forms.Label
     Friend WithEvents lbcontrols As System.Windows.Forms.Label

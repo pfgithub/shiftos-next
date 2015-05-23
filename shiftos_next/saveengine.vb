@@ -12,7 +12,7 @@
     Public boughtbasicsettings As Boolean = False
     Public boughtbasicgui As Boolean = False
     Public boughtterminalsettextcolor As Boolean = False
-
+    Public boughtbasicwm As Boolean = False
 
     '
     ' OLD SHIFTOS UPGRADES: These upgrades may be useful, so I've added them.
@@ -292,7 +292,7 @@
         If boughtbasicsettings = True Then savelines(86) = 11 Else savelines(86) = 10
         If boughtbasicgui = True Then savelines(87) = 11 Else savelines(87) = 10
         If boughtterminalsettextcolor = True Then savelines(88) = 11 Else savelines(88) = 10
-
+        If boughtbasicwm = True Then savelines(89) = 11 Else savelines(89) = 10
 
 
         'Large gap in file. Add new features here.
@@ -494,7 +494,7 @@
             If loadlines(86) = 11 Then boughtbasicsettings = True Else boughtbasicsettings = False
             If loadlines(87) = 11 Then boughtbasicgui = True Else boughtbasicgui = False
             If loadlines(88) = 11 Then boughtterminalsettextcolor = True Else boughtterminalsettextcolor = False
-
+            If loadlines(89) = 11 Then boughtbasicwm = True Else boughtbasicwm = False
 
 
 

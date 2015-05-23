@@ -36,18 +36,21 @@ Partial Class file_skimmer
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.lbcurrentdir = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btnnewfolder = New System.Windows.Forms.ToolStripButton()
+        Me.btndelete = New System.Windows.Forms.ToolStripButton()
         Me.lvfiles = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btnnewfolder = New System.Windows.Forms.ToolStripButton()
-        Me.btndelete = New System.Windows.Forms.ToolStripButton()
         Me.pnlsave = New System.Windows.Forms.Panel()
-        Me.btnsave = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtfilename = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnsave = New System.Windows.Forms.Button()
+        Me.lbtitle = New System.Windows.Forms.Label()
+        Me.pnltop = New System.Windows.Forms.Panel()
         Me.topmenu.SuspendLayout()
         Me.tools.SuspendLayout()
         Me.pnlsave.SuspendLayout()
+        Me.pnltop.SuspendLayout()
         Me.SuspendLayout()
         '
         'topmenu
@@ -56,7 +59,7 @@ Partial Class file_skimmer
         Me.topmenu.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.topmenu.ForeColor = System.Drawing.Color.White
         Me.topmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AboutToolStripMenuItem})
-        Me.topmenu.Location = New System.Drawing.Point(0, 0)
+        Me.topmenu.Location = New System.Drawing.Point(0, 30)
         Me.topmenu.Name = "topmenu"
         Me.topmenu.Size = New System.Drawing.Size(591, 24)
         Me.topmenu.TabIndex = 0
@@ -118,7 +121,7 @@ Partial Class file_skimmer
         Me.tools.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.tools.ForeColor = System.Drawing.Color.White
         Me.tools.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.lbcurrentdir, Me.ToolStripSeparator1, Me.btnnewfolder, Me.btndelete})
-        Me.tools.Location = New System.Drawing.Point(0, 24)
+        Me.tools.Location = New System.Drawing.Point(0, 54)
         Me.tools.Name = "tools"
         Me.tools.Size = New System.Drawing.Size(591, 25)
         Me.tools.TabIndex = 1
@@ -141,20 +144,6 @@ Partial Class file_skimmer
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
         '
-        'lvfiles
-        '
-        Me.lvfiles.BackColor = System.Drawing.Color.Black
-        Me.lvfiles.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvfiles.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
-        Me.lvfiles.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lvfiles.ForeColor = System.Drawing.Color.White
-        Me.lvfiles.Location = New System.Drawing.Point(0, 49)
-        Me.lvfiles.Name = "lvfiles"
-        Me.lvfiles.Size = New System.Drawing.Size(591, 281)
-        Me.lvfiles.TabIndex = 3
-        Me.lvfiles.UseCompatibleStateImageBehavior = False
-        Me.lvfiles.View = System.Windows.Forms.View.Tile
-        '
         'btnnewfolder
         '
         Me.btnnewfolder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
@@ -173,6 +162,20 @@ Partial Class file_skimmer
         Me.btndelete.Size = New System.Drawing.Size(53, 22)
         Me.btndelete.Text = "Delete"
         '
+        'lvfiles
+        '
+        Me.lvfiles.BackColor = System.Drawing.Color.Black
+        Me.lvfiles.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvfiles.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.lvfiles.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lvfiles.ForeColor = System.Drawing.Color.White
+        Me.lvfiles.Location = New System.Drawing.Point(0, 79)
+        Me.lvfiles.Name = "lvfiles"
+        Me.lvfiles.Size = New System.Drawing.Size(591, 251)
+        Me.lvfiles.TabIndex = 3
+        Me.lvfiles.UseCompatibleStateImageBehavior = False
+        Me.lvfiles.View = System.Windows.Forms.View.Tile
+        '
         'pnlsave
         '
         Me.pnlsave.Controls.Add(Me.txtfilename)
@@ -183,6 +186,24 @@ Partial Class file_skimmer
         Me.pnlsave.Name = "pnlsave"
         Me.pnlsave.Size = New System.Drawing.Size(591, 30)
         Me.pnlsave.TabIndex = 4
+        '
+        'txtfilename
+        '
+        Me.txtfilename.BackColor = System.Drawing.Color.Black
+        Me.txtfilename.ForeColor = System.Drawing.Color.White
+        Me.txtfilename.Location = New System.Drawing.Point(86, 5)
+        Me.txtfilename.Name = "txtfilename"
+        Me.txtfilename.Size = New System.Drawing.Size(421, 20)
+        Me.txtfilename.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(3, 8)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(77, 14)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "File Name:"
         '
         'btnsave
         '
@@ -195,23 +216,24 @@ Partial Class file_skimmer
         Me.btnsave.Text = "Save"
         Me.btnsave.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lbtitle
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 8)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 14)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "File Name:"
+        Me.lbtitle.AutoSize = True
+        Me.lbtitle.Location = New System.Drawing.Point(12, 9)
+        Me.lbtitle.Name = "lbtitle"
+        Me.lbtitle.Size = New System.Drawing.Size(91, 14)
+        Me.lbtitle.TabIndex = 0
+        Me.lbtitle.Text = "File Skimmer"
         '
-        'txtfilename
+        'pnltop
         '
-        Me.txtfilename.BackColor = System.Drawing.Color.Black
-        Me.txtfilename.ForeColor = System.Drawing.Color.White
-        Me.txtfilename.Location = New System.Drawing.Point(86, 5)
-        Me.txtfilename.Name = "txtfilename"
-        Me.txtfilename.Size = New System.Drawing.Size(421, 20)
-        Me.txtfilename.TabIndex = 2
+        Me.pnltop.BackColor = System.Drawing.Color.Gray
+        Me.pnltop.Controls.Add(Me.lbtitle)
+        Me.pnltop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnltop.Location = New System.Drawing.Point(0, 0)
+        Me.pnltop.Name = "pnltop"
+        Me.pnltop.Size = New System.Drawing.Size(591, 30)
+        Me.pnltop.TabIndex = 5
         '
         'file_skimmer
         '
@@ -224,6 +246,7 @@ Partial Class file_skimmer
         Me.Controls.Add(Me.pnlsave)
         Me.Controls.Add(Me.tools)
         Me.Controls.Add(Me.topmenu)
+        Me.Controls.Add(Me.pnltop)
         Me.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -237,6 +260,8 @@ Partial Class file_skimmer
         Me.tools.PerformLayout()
         Me.pnlsave.ResumeLayout(False)
         Me.pnlsave.PerformLayout()
+        Me.pnltop.ResumeLayout(False)
+        Me.pnltop.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -263,4 +288,6 @@ Partial Class file_skimmer
     Friend WithEvents txtfilename As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnsave As System.Windows.Forms.Button
+    Friend WithEvents lbtitle As System.Windows.Forms.Label
+    Friend WithEvents pnltop As System.Windows.Forms.Panel
 End Class

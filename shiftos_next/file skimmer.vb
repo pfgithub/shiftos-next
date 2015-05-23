@@ -1,5 +1,7 @@
 ﻿Public Class file_skimmer
 
+
+
     Public mode As String
     Public application As String 'The application sending either an open or save mode.
     Public currentdir As String = home
@@ -88,7 +90,7 @@
                 End If
             Else
                 If mode = "open" Then
-                    Select Case application
+                    Select Case Application
                         Case "textpad"
                             Dim sr As New IO.StreamReader(lvfiles.SelectedItems(0).Tag.ToString)
                             TextPad.txtfilebody.Text = sr.ReadToEnd()
@@ -98,7 +100,7 @@
                 Else
                     OpenFile(lvfiles.SelectedItems(0).Tag)
                 End If
-                End If
+            End If
         Catch
         End Try
     End Sub
@@ -120,6 +122,17 @@
             pnlsave.Visible = True
         Else
             pnlsave.Visible = False
+        End If
+        If boughtbasicwm = True Then
+            pnltop.Show()
+            Me.WindowState = FormWindowState.Normal
+            Me.Left = (Screen.PrimaryScreen.Bounds.Width - Me.Width) / 2
+            Me.Top = (Screen.PrimaryScreen.Bounds.Height - Me.Height) / 2
+            Me.TopMost = True
+        Else
+            pnltop.Hide()
+            Me.WindowState = FormWindowState.Maximized
+            Me.TopMost = False
         End If
     End Sub
 
@@ -160,7 +173,7 @@
             If IO.Directory.Exists(currentdir + "\" + txtfilename.Text) Then
                 basicwm_infobox.showinfo("Invalid File Name", "You can't save a file ontop of a directory with the same name!")
             Else
-                Select Case application
+                Select Case Application
                     Case "textpad"
                         Dim sw As New IO.StreamWriter(currentdir + "\" + txtfilename.Text)
                         sw.Write(TextPad.txtfilebody.Text)

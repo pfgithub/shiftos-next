@@ -1,7 +1,117 @@
 ﻿Module API
     'Terminal
 
-    Public txtterm As TextBox = Terminal.txtterm
+    Public txtterm As TextBox = Terminal.terminaltext
+
+    Public Function SetColorbasic(colorname As String)
+        Dim element As Color
+        Select Case colorname
+            Case "black"
+                AddLine("Error! Black and black don't go too well...")
+            Case "white"
+                element = Color.White
+            Case "gray"
+                If boughtgray Then
+                    element = Color.Gray
+                Else
+                    AddLine("Error! Unsupported color.")
+                End If
+            Case "red"
+                If boughtred Then
+                    element = Color.Red
+                Else
+                    AddLine("Error! Unsupported color.")
+                End If
+            Case "green"
+                If boughtgreen Then
+                    element = Color.Green
+                Else
+                    AddLine("Error! Unsupported color.")
+                End If
+            Case "blue"
+                If boughtblue Then
+                    element = Color.Blue
+                Else
+                    AddLine("Error! Unsupported color.")
+                End If
+            Case "yellow"
+                If boughtyellow Then
+                    element = Color.Yellow
+                Else
+                    AddLine("Error! Unsupported color.")
+                End If
+            Case "orange"
+                If boughtorange Then
+                    element = Color.Orange
+                Else
+                    AddLine("Error! Unsupported color.")
+                End If
+            Case "pink"
+                If boughtpink Then
+                    element = Color.Pink
+                Else
+                    AddLine("Error! Unsupported color.")
+                End If
+            Case "purple"
+                If boughtpurple Then
+                    element = Color.Purple
+                Else
+                    AddLine("Error! Unsupported color.")
+                End If
+            Case "brown"
+                If boughtbrown Then
+                    element = Color.Brown
+                Else
+                    AddLine("Error! Unsupported color.")
+                End If
+            Case Else
+                AddLine("Error! Unsupported color, check 'colors' for a list of supported colors.")
+        End Select
+        Return element
+    End Function
+
+    Public Sub OpenProgram(progtoopen As String)
+        Select Case progtoopen
+            Case "shiftorium", "packages", "pacman", "code shop"
+                shiftorium_cmd.Show()
+            Case "files", "fileskimmer", "file skimmer", "fs", "file browser"
+                If boughtfileskimmer = True Then
+                    file_skimmer.Show()
+                Else
+                    AddLine("open: Invalid program """ & progtoopen & """.")
+                End If
+            Case "textpad", "text", "notepad"
+                If boughttextpad = True Then
+                    TextPad.Show()
+                Else
+                    AddLine("open: Invalid program """ & progtoopen & """.")
+                End If
+            Case Else
+                AddLine("open: Invalid program """ & progtoopen & """.")
+        End Select
+    End Sub
+
+    Public Sub closeprogram(progtoclose As String)
+        Select Case progtoclose
+            Case "shiftorium", "packages", "pacman", "code shop"
+                shiftorium_cmd.Hide()
+            Case "files", "fileskimmer", "file skimmer", "fs", "file browser"
+                If boughtfileskimmer = True Then
+                    file_skimmer.Hide()
+                Else
+                    AddLine("close: Invalid program """ & progtoclose & """.")
+                End If
+            Case "textpad", "text", "notepad"
+                If boughttextpad = True Then
+                    TextPad.Hide()
+                Else
+                    AddLine("close: Invalid program """ & progtoclose & """.")
+                End If
+
+            Case Else
+                AddLine("close: Invalid program """ & progtoclose & """.")
+        End Select
+    End Sub
 
     Public Sub wrongcommand()
         AddLine("Invalid command! Type ""help"" for a list of commands.")
@@ -89,6 +199,7 @@
 
     Public Sub SelectBottom()
         txtterm.Select(txtterm.Text.Length, 0)
+        txtterm.ScrollToCaret()
     End Sub
 
 End Module
