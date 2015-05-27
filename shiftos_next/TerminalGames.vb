@@ -5,41 +5,24 @@
 
     Public Sub MQInterpret(question As String, answer As Integer)
         Dim random As New Random()
+        Private correct As Boolean = False
         Dim args() As String = question.Replace("What is ", "").Split(" ")
         Select Case args(1)
             Case "+"
-                If answer = args(0) + args(2) Then
-                    Dim cptoadd As Integer = random.Next(1, 5)
-                    AddLine("Correct! You have earned " & cptoadd & " Codepoints!")
-                    AddCP(cptoadd)
-                Else
-                    AddLine("Incorrect! Better luck next time...")
-                End If
+                correct = (answer = CInt(args(0)) + CInt(args(2)))
             Case "-"
-                If answer = args(0) - args(2) Then
-                    Dim cptoadd As Integer = random.Next(1, 5)
-                    AddLine("Correct! You have earned " & cptoadd & " Codepoints!")
-                    AddCP(cptoadd)
-                Else
-                    AddLine("Incorrect! Better luck next time...")
-                End If
+                correct = (answer = args(0) - args(2))
             Case "*"
-                If answer = args(0) * args(2) Then
-                    Dim cptoadd As Integer = random.Next(1, 5)
-                    AddLine("Correct! You have earned " & cptoadd & " Codepoints!")
-                    AddCP(cptoadd)
-                Else
-                    AddLine("Incorrect! Better luck next time...")
-                End If
+                correct = (answer = args(0) * args(2))
             Case "/"
-                If answer = args(0) / args(2) Then
-                    Dim cptoadd As Integer = random.Next(1, 5)
-                    AddLine("Correct! You have earned " & cptoadd & " Codepoints!")
-                    AddCP(cptoadd)
-                Else
-                    AddLine("Incorrect! Better luck next time...")
-                End If
+                correct = (answer = args(0) / args(2))
         End Select
+        If (correct) Then
+            AddLine("Correct! You have earned " & cptoadd & " Codepoints!")
+            AddCP(cptoadd)
+        Else
+            AddLine("Incorrect! Better luck next time...")
+        End If
         MQCreateQuestion()
     End Sub
 
