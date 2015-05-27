@@ -5,8 +5,9 @@
 
     Public Sub MQInterpret(question As String, answer As Integer)
         Dim random As New Random()
-        Private correct As Boolean = False
+        Dim correct As Boolean = False
         Dim args() As String = question.Replace("What is ", "").Split(" ")
+        Dim cptoadd As Integer = random.Next(1, 5)
         Select Case args(1)
             Case "+"
                 correct = (answer = CInt(args(0)) + CInt(args(2)))

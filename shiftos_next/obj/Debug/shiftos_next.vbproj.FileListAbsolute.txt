@@ -26,3 +26,20 @@ C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\obj\Debug\shift
 C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\obj\Debug\shiftos_next.exe
 C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\obj\Debug\shiftos_next.xml
 C:\Users\The Ultimate Hacker\Documents\shiftos-next\shiftos_next\obj\Debug\shiftos_next.pdb
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\bin\Debug\shiftos_next.exe.config
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.exe
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.xml
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.pdb
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.basicwm_infobox.resources
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.BasicWM.Desktop.resources
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.BasicWM.ColorPicker.resources
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.file_skimmer.resources
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.HijackScreen.resources
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.Resources.resources
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.shiftorium_cmd.resources
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.Terminal.resources
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.TextPad.resources
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.vbproj.GenerateResource.Cache
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\bin\Debug\shiftos_next.exe
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\bin\Debug\shiftos_next.pdb
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\bin\Debug\shiftos_next.xml
