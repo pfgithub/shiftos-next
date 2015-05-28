@@ -60,18 +60,7 @@
     Private Sub TextPad_Load(sender As Object, e As EventArgs) Handles Me.Load
         MenuStrip1.Renderer = New basicwm_renderer()
         setupmenufonts()
-        Me.WindowState = FormWindowState.Maximized
-        If boughtbasicwm = True Then
-            pnltop.Show()
-            Me.WindowState = FormWindowState.Normal
-            Me.Left = (Screen.PrimaryScreen.Bounds.Width - Me.Width) / 2
-            Me.Top = (Screen.PrimaryScreen.Bounds.Height - Me.Height) / 2
-            Me.TopMost = True
-        Else
-            pnltop.Hide()
-            Me.WindowState = FormWindowState.Maximized
-            Me.TopMost = False
-        End If
+        pnltop.DetermineMyVisibility()
     End Sub
 
     Public Sub setupmenufonts()

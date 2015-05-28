@@ -41,17 +41,15 @@ Partial Class TextPad
         Me.FindToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReplaceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtfilebody = New System.Windows.Forms.RichTextBox()
-        Me.lbtitle = New System.Windows.Forms.Label()
-        Me.pnltop = New System.Windows.Forms.Panel()
+        Me.pnltop = New shiftos_next.Titlebar()
         Me.MenuStrip1.SuspendLayout()
-        Me.pnltop.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 30)
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 32)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(652, 24)
         Me.MenuStrip1.TabIndex = 0
@@ -165,29 +163,21 @@ Partial Class TextPad
         Me.txtfilebody.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtfilebody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtfilebody.ForeColor = System.Drawing.Color.White
-        Me.txtfilebody.Location = New System.Drawing.Point(0, 54)
+        Me.txtfilebody.Location = New System.Drawing.Point(0, 56)
         Me.txtfilebody.Name = "txtfilebody"
-        Me.txtfilebody.Size = New System.Drawing.Size(652, 263)
+        Me.txtfilebody.Size = New System.Drawing.Size(652, 261)
         Me.txtfilebody.TabIndex = 1
         Me.txtfilebody.Text = ""
         '
-        'lbtitle
-        '
-        Me.lbtitle.AutoSize = True
-        Me.lbtitle.Location = New System.Drawing.Point(12, 9)
-        Me.lbtitle.Name = "lbtitle"
-        Me.lbtitle.Size = New System.Drawing.Size(56, 14)
-        Me.lbtitle.TabIndex = 0
-        Me.lbtitle.Text = "TextPad"
-        '
         'pnltop
         '
-        Me.pnltop.BackColor = System.Drawing.Color.Gray
-        Me.pnltop.Controls.Add(Me.lbtitle)
+        Me.pnltop.AppName = "TextPad"
         Me.pnltop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnltop.Font = New System.Drawing.Font("Courier New", 8.25!)
+        Me.pnltop.ForeColor = System.Drawing.Color.White
         Me.pnltop.Location = New System.Drawing.Point(0, 0)
         Me.pnltop.Name = "pnltop"
-        Me.pnltop.Size = New System.Drawing.Size(652, 30)
+        Me.pnltop.Size = New System.Drawing.Size(652, 32)
         Me.pnltop.TabIndex = 2
         '
         'TextPad
@@ -207,8 +197,6 @@ Partial Class TextPad
         Me.Text = "TextPad"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.pnltop.ResumeLayout(False)
-        Me.pnltop.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -232,6 +220,5 @@ Partial Class TextPad
     Friend WithEvents FindToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReplaceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents txtfilebody As System.Windows.Forms.RichTextBox
-    Friend WithEvents lbtitle As System.Windows.Forms.Label
-    Friend WithEvents pnltop As System.Windows.Forms.Panel
+    Friend WithEvents pnltop As shiftos_next.Titlebar
 End Class

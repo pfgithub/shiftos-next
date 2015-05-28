@@ -45,12 +45,10 @@ Partial Class file_skimmer
         Me.txtfilename = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnsave = New System.Windows.Forms.Button()
-        Me.lbtitle = New System.Windows.Forms.Label()
-        Me.pnltop = New System.Windows.Forms.Panel()
+        Me.pnltop = New shiftos_next.Titlebar()
         Me.topmenu.SuspendLayout()
         Me.tools.SuspendLayout()
         Me.pnlsave.SuspendLayout()
-        Me.pnltop.SuspendLayout()
         Me.SuspendLayout()
         '
         'topmenu
@@ -59,7 +57,7 @@ Partial Class file_skimmer
         Me.topmenu.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.topmenu.ForeColor = System.Drawing.Color.White
         Me.topmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AboutToolStripMenuItem})
-        Me.topmenu.Location = New System.Drawing.Point(0, 30)
+        Me.topmenu.Location = New System.Drawing.Point(0, 32)
         Me.topmenu.Name = "topmenu"
         Me.topmenu.Size = New System.Drawing.Size(591, 24)
         Me.topmenu.TabIndex = 0
@@ -121,7 +119,7 @@ Partial Class file_skimmer
         Me.tools.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.tools.ForeColor = System.Drawing.Color.White
         Me.tools.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.lbcurrentdir, Me.ToolStripSeparator1, Me.btnnewfolder, Me.btndelete})
-        Me.tools.Location = New System.Drawing.Point(0, 54)
+        Me.tools.Location = New System.Drawing.Point(0, 56)
         Me.tools.Name = "tools"
         Me.tools.Size = New System.Drawing.Size(591, 25)
         Me.tools.TabIndex = 1
@@ -169,9 +167,9 @@ Partial Class file_skimmer
         Me.lvfiles.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
         Me.lvfiles.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lvfiles.ForeColor = System.Drawing.Color.White
-        Me.lvfiles.Location = New System.Drawing.Point(0, 79)
+        Me.lvfiles.Location = New System.Drawing.Point(0, 81)
         Me.lvfiles.Name = "lvfiles"
-        Me.lvfiles.Size = New System.Drawing.Size(591, 251)
+        Me.lvfiles.Size = New System.Drawing.Size(591, 249)
         Me.lvfiles.TabIndex = 3
         Me.lvfiles.UseCompatibleStateImageBehavior = False
         Me.lvfiles.View = System.Windows.Forms.View.Tile
@@ -216,23 +214,15 @@ Partial Class file_skimmer
         Me.btnsave.Text = "Save"
         Me.btnsave.UseVisualStyleBackColor = True
         '
-        'lbtitle
-        '
-        Me.lbtitle.AutoSize = True
-        Me.lbtitle.Location = New System.Drawing.Point(12, 9)
-        Me.lbtitle.Name = "lbtitle"
-        Me.lbtitle.Size = New System.Drawing.Size(91, 14)
-        Me.lbtitle.TabIndex = 0
-        Me.lbtitle.Text = "File Skimmer"
-        '
         'pnltop
         '
-        Me.pnltop.BackColor = System.Drawing.Color.Gray
-        Me.pnltop.Controls.Add(Me.lbtitle)
+        Me.pnltop.AppName = "File Skimmer"
         Me.pnltop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnltop.Font = New System.Drawing.Font("Courier New", 8.25!)
+        Me.pnltop.ForeColor = System.Drawing.Color.White
         Me.pnltop.Location = New System.Drawing.Point(0, 0)
         Me.pnltop.Name = "pnltop"
-        Me.pnltop.Size = New System.Drawing.Size(591, 30)
+        Me.pnltop.Size = New System.Drawing.Size(591, 32)
         Me.pnltop.TabIndex = 5
         '
         'file_skimmer
@@ -260,8 +250,6 @@ Partial Class file_skimmer
         Me.tools.PerformLayout()
         Me.pnlsave.ResumeLayout(False)
         Me.pnlsave.PerformLayout()
-        Me.pnltop.ResumeLayout(False)
-        Me.pnltop.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -288,6 +276,5 @@ Partial Class file_skimmer
     Friend WithEvents txtfilename As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnsave As System.Windows.Forms.Button
-    Friend WithEvents lbtitle As System.Windows.Forms.Label
-    Friend WithEvents pnltop As System.Windows.Forms.Panel
+    Friend WithEvents pnltop As shiftos_next.Titlebar
 End Class

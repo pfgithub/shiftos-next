@@ -23,8 +23,6 @@
         'Do not modify it using the code editor.
         <System.Diagnostics.DebuggerStepThrough()> _
         Private Sub InitializeComponent()
-            Me.pnltop = New System.Windows.Forms.Panel()
-            Me.lbtitle = New System.Windows.Forms.Label()
             Me.pnlcolors = New System.Windows.Forms.FlowLayoutPanel()
             Me.btnwhite = New System.Windows.Forms.Button()
             Me.btnblack = New System.Windows.Forms.Button()
@@ -40,28 +38,9 @@
             Me.btnok = New System.Windows.Forms.Button()
             Me.lbselectedcolor = New System.Windows.Forms.Label()
             Me.btncancel = New System.Windows.Forms.Button()
-            Me.pnltop.SuspendLayout()
+            Me.pnltop = New shiftos_next.Titlebar()
             Me.pnlcolors.SuspendLayout()
             Me.SuspendLayout()
-            '
-            'pnltop
-            '
-            Me.pnltop.BackColor = System.Drawing.Color.Gray
-            Me.pnltop.Controls.Add(Me.lbtitle)
-            Me.pnltop.Dock = System.Windows.Forms.DockStyle.Top
-            Me.pnltop.Location = New System.Drawing.Point(0, 0)
-            Me.pnltop.Name = "pnltop"
-            Me.pnltop.Size = New System.Drawing.Size(362, 30)
-            Me.pnltop.TabIndex = 0
-            '
-            'lbtitle
-            '
-            Me.lbtitle.AutoSize = True
-            Me.lbtitle.Location = New System.Drawing.Point(12, 9)
-            Me.lbtitle.Name = "lbtitle"
-            Me.lbtitle.Size = New System.Drawing.Size(91, 14)
-            Me.lbtitle.TabIndex = 0
-            Me.lbtitle.Text = "Color Picker"
             '
             'pnlcolors
             '
@@ -229,31 +208,38 @@
             Me.btncancel.Text = "Cancel"
             Me.btncancel.UseVisualStyleBackColor = True
             '
+            'pnltop
+            '
+            Me.pnltop.AppName = "Color Picker"
+            Me.pnltop.Dock = System.Windows.Forms.DockStyle.Top
+            Me.pnltop.Font = New System.Drawing.Font("Courier New", 8.25!)
+            Me.pnltop.ForeColor = System.Drawing.Color.White
+            Me.pnltop.Location = New System.Drawing.Point(0, 0)
+            Me.pnltop.Name = "pnltop"
+            Me.pnltop.Size = New System.Drawing.Size(362, 32)
+            Me.pnltop.TabIndex = 5
+            '
             'ColorPicker
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.BackColor = System.Drawing.Color.Black
             Me.ClientSize = New System.Drawing.Size(362, 280)
+            Me.Controls.Add(Me.pnltop)
             Me.Controls.Add(Me.btncancel)
             Me.Controls.Add(Me.lbselectedcolor)
             Me.Controls.Add(Me.btnok)
             Me.Controls.Add(Me.pnlcolors)
-            Me.Controls.Add(Me.pnltop)
             Me.Font = New System.Drawing.Font("Courier New", 8.25!)
             Me.ForeColor = System.Drawing.Color.White
             Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
             Me.Name = "ColorPicker"
             Me.Text = "ColorPicker"
-            Me.pnltop.ResumeLayout(False)
-            Me.pnltop.PerformLayout()
             Me.pnlcolors.ResumeLayout(False)
             Me.ResumeLayout(False)
             Me.PerformLayout()
 
         End Sub
-        Friend WithEvents pnltop As System.Windows.Forms.Panel
-        Friend WithEvents lbtitle As System.Windows.Forms.Label
         Friend WithEvents pnlcolors As System.Windows.Forms.FlowLayoutPanel
         Friend WithEvents btnwhite As System.Windows.Forms.Button
         Friend WithEvents btnblack As System.Windows.Forms.Button
@@ -269,5 +255,6 @@
         Friend WithEvents btnok As System.Windows.Forms.Button
         Friend WithEvents lbselectedcolor As System.Windows.Forms.Label
         Friend WithEvents btncancel As System.Windows.Forms.Button
+        Friend WithEvents pnltop As shiftos_next.Titlebar
     End Class
 End Namespace

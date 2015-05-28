@@ -17,15 +17,7 @@
     Public Sub terminal_Innitiate(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         API.txtterm = Me.terminaltext
-        If boughtbasicwm = True Then
-            pnltop.Show()
-            Me.WindowState = FormWindowState.Normal
-            Me.Left = (Screen.PrimaryScreen.Bounds.Width - Me.Width) / 2
-            Me.Top = (Screen.PrimaryScreen.Bounds.Height - Me.Height) / 2
-        Else
-            pnltop.Hide()
-            Me.WindowState = FormWindowState.Maximized
-        End If
+        pnltop.DetermineMyVisibility()
         AddLine(username + "@" + osname + " " & currentdir.ToLower.Replace("c:\shiftos", "~") & "$> ")
         SelectBottom()
         If prompttoupdatesave = True Then

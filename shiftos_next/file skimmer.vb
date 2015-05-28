@@ -123,17 +123,7 @@
         Else
             pnlsave.Visible = False
         End If
-        If boughtbasicwm = True Then
-            pnltop.Show()
-            Me.WindowState = FormWindowState.Normal
-            Me.Left = (Screen.PrimaryScreen.Bounds.Width - Me.Width) / 2
-            Me.Top = (Screen.PrimaryScreen.Bounds.Height - Me.Height) / 2
-            Me.TopMost = True
-        Else
-            pnltop.Hide()
-            Me.WindowState = FormWindowState.Maximized
-            Me.TopMost = False
-        End If
+        pnltop.DetermineMyVisibility()
     End Sub
 
     Private Sub ExitSessionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitSessionToolStripMenuItem.Click

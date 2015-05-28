@@ -25,9 +25,7 @@ Partial Class Terminal
         Me.components = New System.ComponentModel.Container()
         Me.terminaltext = New System.Windows.Forms.TextBox()
         Me.tmrfirstuse = New System.Windows.Forms.Timer(Me.components)
-        Me.pnltop = New System.Windows.Forms.Panel()
-        Me.lbtitle = New System.Windows.Forms.Label()
-        Me.pnltop.SuspendLayout()
+        Me.pnltop = New shiftos_next.Titlebar()
         Me.SuspendLayout()
         '
         'terminaltext
@@ -38,10 +36,10 @@ Partial Class Terminal
         Me.terminaltext.Dock = System.Windows.Forms.DockStyle.Fill
         Me.terminaltext.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.terminaltext.ForeColor = System.Drawing.Color.White
-        Me.terminaltext.Location = New System.Drawing.Point(0, 30)
+        Me.terminaltext.Location = New System.Drawing.Point(0, 32)
         Me.terminaltext.Multiline = True
         Me.terminaltext.Name = "terminaltext"
-        Me.terminaltext.Size = New System.Drawing.Size(635, 388)
+        Me.terminaltext.Size = New System.Drawing.Size(635, 386)
         Me.terminaltext.TabIndex = 0
         Me.terminaltext.Text = "ShiftOS Beta 1.0"
         '
@@ -51,24 +49,14 @@ Partial Class Terminal
         '
         'pnltop
         '
-        Me.pnltop.BackColor = System.Drawing.Color.Gray
-        Me.pnltop.Controls.Add(Me.lbtitle)
+        Me.pnltop.AppName = "Terminal"
         Me.pnltop.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnltop.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.pnltop.ForeColor = System.Drawing.Color.White
         Me.pnltop.Location = New System.Drawing.Point(0, 0)
         Me.pnltop.Name = "pnltop"
-        Me.pnltop.Size = New System.Drawing.Size(635, 30)
+        Me.pnltop.Size = New System.Drawing.Size(635, 32)
         Me.pnltop.TabIndex = 1
-        '
-        'lbtitle
-        '
-        Me.lbtitle.AutoSize = True
-        Me.lbtitle.Location = New System.Drawing.Point(12, 9)
-        Me.lbtitle.Name = "lbtitle"
-        Me.lbtitle.Size = New System.Drawing.Size(63, 14)
-        Me.lbtitle.TabIndex = 0
-        Me.lbtitle.Text = "Terminal"
         '
         'Terminal
         '
@@ -81,14 +69,11 @@ Partial Class Terminal
         Me.Name = "Terminal"
         Me.Text = "Terminal"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.pnltop.ResumeLayout(False)
-        Me.pnltop.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents terminaltext As System.Windows.Forms.TextBox
     Friend WithEvents tmrfirstuse As System.Windows.Forms.Timer
-    Friend WithEvents pnltop As System.Windows.Forms.Panel
-    Friend WithEvents lbtitle As System.Windows.Forms.Label
+    Friend WithEvents pnltop As shiftos_next.Titlebar
 End Class
