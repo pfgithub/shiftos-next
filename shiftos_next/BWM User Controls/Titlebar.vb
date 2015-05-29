@@ -11,6 +11,11 @@
 
     Friend WithEvents prnt As Form = ParentForm
 
+    Private Sub Titlebar_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.Dock = DockStyle.Top
+        Me.BringToFront()
+    End Sub
+
     Private Sub titlebar_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown, lbtitle.MouseDown
         ' Handle Draggable Windows
         If boughtdraggablewindows = True Then
@@ -31,8 +36,8 @@
         If boughtbasicwm = True Then
             Me.Show()
             ParentForm.WindowState = FormWindowState.Normal
-            ParentForm.Left = (Screen.PrimaryScreen.Bounds.Width - Me.Width) / 2
-            ParentForm.Top = (Screen.PrimaryScreen.Bounds.Height - Me.Height) / 2
+            ParentForm.Left = (Screen.PrimaryScreen.Bounds.Width - ParentForm.Width) / 2
+            ParentForm.Top = (Screen.PrimaryScreen.Bounds.Height - ParentForm.Height) / 2
             ParentForm.TopMost = True
         Else
             Me.Hide()

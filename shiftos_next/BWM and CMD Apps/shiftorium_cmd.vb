@@ -52,7 +52,9 @@
                         If boughtbasicwm = False Then
                             AddItem("Basic Window Manager", 100)
                         Else
-                            'Placeholder
+                            If boughtdraggablewindows = False Then
+                                AddItem("BWM Draggable Windows", 25)
+                            End If
                         End If
                     End If
                 End If
@@ -67,9 +69,13 @@
                     AddItem("Set Terminal Text Color", 10)
                 End If
             End If
-            lbitems.SelectedIndex = 1
+            lbitems.SelectedIndex = 0
         Catch ex As Exception
-            lbitems.Items.Add("No items available.")
+            If debugmode = False Then
+                lbitems.Items.Add("No items available.")
+            Else
+                lbitems.Items.Add(ex.Message)
+            End If
         End Try
         lbitems.DrawMode = DrawMode.OwnerDrawFixed
     End Sub
@@ -91,6 +97,7 @@
                     lbitems.SelectedIndex -= 1
                 End If
             Case Keys.Enter
+                handleitemdescription("BWM Draggable Windows - 25 CP", "We are able to have multiple windows on the screen, but they all stick to the center of the screen and can't be moved! This upgrade fixes that.")
                 handleitemdescription("Basic Window Manager - 100 CP", "Fullscreen applications, well, suck. You can't get any work done outside of that app without closing it, and can't even view the Terminal. This upgrade changes that. We've found a way to use the Basic GUI server to create a simple window manager. It allows multiple windows on the screen, and up to 3 Terminal windows at once.")
                 handleitemdescription("Textpad - 50 CP", "Hmmmmm... What was I gonna do on Sunday? Oh yeah! I have to get that website written for my buddy. Better write that down before I forget... " & vbNewLine & vbNewLine & "Textpad allows you to create text documents. Handy if you need to write something down!")
                 handleitemdescription("FS Delete - 15 CP", "Alright, What's this unused document doing on my PC? I don't need this. I must delete it. With this upgrade, you can delete files in the File Skimmer.")
@@ -103,6 +110,7 @@
                 handleitemdescription("Custom Username - 10 CP", "Hello, user! Isn't that wierd that that's all we know you as? Buy this upgrade to change yourr name from ""user"" to anything you want!")
                 handleitemdescription("Basic Terminal Settings - 5 CP", "Ever wanted to customize the terminal to act the way you'd like it to? This upgrade is for you. You won't be able to use it until you buy settings, but hey! The command is there.")
             Case Keys.Space
+                handlebuy("BWM Draggable Windows - 25 CP", boughtdraggablewindows, "The upgrade has been applied, and now we can drag windows around using our mouse!")
                 handlebuy("Basic Window Manager - 100 CP", boughtbasicwm, "Awesome! Just exit the Shiftorium and type ""bwm"" into the Terminal, and away we go. Future sessions will not require typing ""bwm"".")
                 handlebuy("Textpad - 50 CP", boughttextpad, "Great. Now our computer is a bit more useful than before...")
                 handlebuy("FS Delete - 15 CP", boughtfileskimmerdelete, "There. I can finally destroy that evil document that's been taking up 3/4 of my hard drive. Just right-click a file and click 'Delete' to delete a file.")

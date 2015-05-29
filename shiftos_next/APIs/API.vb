@@ -1,6 +1,7 @@
 ﻿Module API
     'Terminal
 
+    Public debugmode As Boolean = False 'If this boolean value is set to True, any exceptions will be shown, rather than supressed.
     Public txtterm As TextBox = Terminal.terminaltext
 
     Public Function SetColorbasic(colorname As String)

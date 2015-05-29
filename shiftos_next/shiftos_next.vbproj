@@ -70,44 +70,44 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API.vb" />
-    <Compile Include="BasicWM_ColorTable.vb" />
-    <Compile Include="basicwm_infobox.Designer.vb">
+    <Compile Include="APIs\API.vb" />
+    <Compile Include="Menu Renderers\BasicWM_ColorTable.vb" />
+    <Compile Include="BWM and CMD Apps\basicwm_infobox.Designer.vb">
       <DependentUpon>basicwm_infobox.vb</DependentUpon>
     </Compile>
-    <Compile Include="basicwm_infobox.vb">
+    <Compile Include="BWM and CMD Apps\basicwm_infobox.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="basicwm_renderer.vb" />
+    <Compile Include="Menu Renderers\basicwm_renderer.vb" />
     <Compile Include="BWM User Controls\Titlebar.Designer.vb">
       <DependentUpon>Titlebar.vb</DependentUpon>
     </Compile>
     <Compile Include="BWM User Controls\Titlebar.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BWMDesktop.Designer.vb">
+    <Compile Include="Desktop Environments\BWMDesktop.Designer.vb">
       <DependentUpon>BWMDesktop.vb</DependentUpon>
     </Compile>
-    <Compile Include="BWMDesktop.vb">
+    <Compile Include="Desktop Environments\BWMDesktop.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ColorPicker.Designer.vb">
+    <Compile Include="BWM and CMD Apps\ColorPicker.Designer.vb">
       <DependentUpon>ColorPicker.vb</DependentUpon>
     </Compile>
-    <Compile Include="ColorPicker.vb">
+    <Compile Include="BWM and CMD Apps\ColorPicker.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="file skimmer.Designer.vb">
+    <Compile Include="BWM and CMD Apps\file skimmer.Designer.vb">
       <DependentUpon>file skimmer.vb</DependentUpon>
     </Compile>
-    <Compile Include="file skimmer.vb">
+    <Compile Include="BWM and CMD Apps\file skimmer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="filesystem.vb" />
-    <Compile Include="Hijack.Designer.vb">
+    <Compile Include="APIs\filesystem.vb" />
+    <Compile Include="Other\Hijack.Designer.vb">
       <DependentUpon>Hijack.vb</DependentUpon>
     </Compile>
-    <Compile Include="Hijack.vb">
+    <Compile Include="Other\Hijack.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -125,45 +125,45 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="saveengine.vb" />
-    <Compile Include="shiftorium_api.vb" />
-    <Compile Include="shiftorium_cmd.Designer.vb">
+    <Compile Include="APIs\saveengine.vb" />
+    <Compile Include="APIs\shiftorium_api.vb" />
+    <Compile Include="BWM and CMD Apps\shiftorium_cmd.Designer.vb">
       <DependentUpon>shiftorium_cmd.vb</DependentUpon>
     </Compile>
-    <Compile Include="shiftorium_cmd.vb">
+    <Compile Include="BWM and CMD Apps\shiftorium_cmd.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Terminal.Designer.vb">
+    <Compile Include="Other\Terminal.Designer.vb">
       <DependentUpon>Terminal.vb</DependentUpon>
     </Compile>
-    <Compile Include="Terminal.vb">
+    <Compile Include="Other\Terminal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TerminalGames.vb" />
-    <Compile Include="TextPad.Designer.vb">
+    <Compile Include="APIs\TerminalGames.vb" />
+    <Compile Include="BWM and CMD Apps\TextPad.Designer.vb">
       <DependentUpon>TextPad.vb</DependentUpon>
     </Compile>
-    <Compile Include="TextPad.vb">
+    <Compile Include="BWM and CMD Apps\TextPad.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="basicwm_infobox.resx">
+    <EmbeddedResource Include="BWM and CMD Apps\basicwm_infobox.resx">
       <DependentUpon>basicwm_infobox.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BWM User Controls\Titlebar.resx">
       <DependentUpon>Titlebar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BWMDesktop.resx">
+    <EmbeddedResource Include="Desktop Environments\BWMDesktop.resx">
       <DependentUpon>BWMDesktop.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ColorPicker.resx">
+    <EmbeddedResource Include="BWM and CMD Apps\ColorPicker.resx">
       <DependentUpon>ColorPicker.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="file skimmer.resx">
+    <EmbeddedResource Include="BWM and CMD Apps\file skimmer.resx">
       <DependentUpon>file skimmer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hijack.resx">
+    <EmbeddedResource Include="Other\Hijack.resx">
       <DependentUpon>Hijack.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -172,13 +172,13 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="shiftorium_cmd.resx">
+    <EmbeddedResource Include="BWM and CMD Apps\shiftorium_cmd.resx">
       <DependentUpon>shiftorium_cmd.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Terminal.resx">
+    <EmbeddedResource Include="Other\Terminal.resx">
       <DependentUpon>Terminal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TextPad.resx">
+    <EmbeddedResource Include="BWM and CMD Apps\TextPad.resx">
       <DependentUpon>TextPad.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -203,6 +203,7 @@
   <ItemGroup>
     <None Include="Resources\Folder1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
