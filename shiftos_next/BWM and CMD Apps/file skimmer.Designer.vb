@@ -46,6 +46,7 @@ Partial Class file_skimmer
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnsave = New System.Windows.Forms.Button()
         Me.pnltop = New shiftos_next.Titlebar()
+        Me.lbextension = New System.Windows.Forms.Label()
         Me.topmenu.SuspendLayout()
         Me.tools.SuspendLayout()
         Me.pnlsave.SuspendLayout()
@@ -176,6 +177,7 @@ Partial Class file_skimmer
         '
         'pnlsave
         '
+        Me.pnlsave.Controls.Add(Me.lbextension)
         Me.pnlsave.Controls.Add(Me.txtfilename)
         Me.pnlsave.Controls.Add(Me.Label1)
         Me.pnlsave.Controls.Add(Me.btnsave)
@@ -191,7 +193,7 @@ Partial Class file_skimmer
         Me.txtfilename.ForeColor = System.Drawing.Color.White
         Me.txtfilename.Location = New System.Drawing.Point(86, 5)
         Me.txtfilename.Name = "txtfilename"
-        Me.txtfilename.Size = New System.Drawing.Size(421, 20)
+        Me.txtfilename.Size = New System.Drawing.Size(376, 20)
         Me.txtfilename.TabIndex = 2
         '
         'Label1
@@ -224,6 +226,15 @@ Partial Class file_skimmer
         Me.pnltop.Name = "pnltop"
         Me.pnltop.Size = New System.Drawing.Size(591, 32)
         Me.pnltop.TabIndex = 5
+        '
+        'lbextension
+        '
+        Me.lbextension.AutoSize = True
+        Me.lbextension.Location = New System.Drawing.Point(468, 8)
+        Me.lbextension.Name = "lbextension"
+        Me.lbextension.Size = New System.Drawing.Size(35, 14)
+        Me.lbextension.TabIndex = 3
+        Me.lbextension.Text = ".xxx"
         '
         'file_skimmer
         '
@@ -277,4 +288,5 @@ Partial Class file_skimmer
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnsave As System.Windows.Forms.Button
     Friend WithEvents pnltop As shiftos_next.Titlebar
+    Friend WithEvents lbextension As System.Windows.Forms.Label
 End Class

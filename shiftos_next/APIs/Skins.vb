@@ -47,6 +47,23 @@
         BasicWM.Desktop.Redraw()
     End Sub
 
+    'Copy skin file to save data
+
+    Public Sub loadskin(file As String)
+        If IO.Directory.Exists(bwmskin) Then
+            IO.Directory.Delete(bwmskin, True)
+            IO.Directory.CreateDirectory(bwmskin)
+            IO.File.Copy(file, bwmskin + "data.bsk")
+            loadskindata()
+        End If
+    End Sub
+
+    'Copy skin from save data to file
+
+    Public Sub saveskin(file As String)
+        Dim savelines() As String = IO.File.ReadAllLines(bwmskin + "data.bsk")
+        IO.File.WriteAllLines(file, savelines)
+    End Sub
 #End Region
 
 

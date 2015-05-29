@@ -63,6 +63,8 @@
                 FileType = "Data File"
             Case ".dri"
                 FileType = "Driver"
+            Case ".bsk"
+                FileType = "Basic WM Skin"
             Case Else
                 FileType = "Unknown File"
         End Select
@@ -76,8 +78,21 @@
         Else
             Dim filinf As New IO.FileInfo(file)
             Select Case filinf.Extension
+                Case ".txt"
+                    If boughttextpad = True Then
+                        Dim sr As New IO.StreamReader(file)
+                        TextPad.txtfilebody.Text = sr.ReadToEnd()
+                        sr.Close()
+                        TextPad.Show()
+                    Else
+                        basicwm_infobox.showinfo("File can't be opened.", "The file """ & filinf.Name & """ can't be opened because a program able to open it has not been found.")
+                    End If
+                Case ".bsk"
+                    SkinLoader.readfile(file)
+                    SkinLoader.skintoload = file
+                    SkinLoader.Show()
                 Case Else
-                    basicwm_infobox.showinfo("Exodus - File Format not valid", "The format of the file """ & filinf.Name & """ is not a format in which Exodus File Browser can read.")
+                    basicwm_infobox.showinfo("File can't be opened.", "The file """ & filinf.Name & """ can't be opened because a program able to open it has not been found.")
             End Select
         End If
     End Sub
@@ -90,11 +105,18 @@
                 End If
             Else
                 If mode = "open" Then
-                    Select Case Application
+                    Dim filinf As New IO.FileInfo(lvfiles.SelectedItems(0).Tag)
+                    Select Case application
                         Case "textpad"
-                            Dim sr As New IO.StreamReader(lvfiles.SelectedItems(0).Tag.ToString)
-                            TextPad.txtfilebody.Text = sr.ReadToEnd()
-                            sr.Close()
+                            If filinf.Extension = ".txt" Then
+                                Dim sr As New IO.StreamReader(lvfiles.SelectedItems(0).Tag.ToString)
+                                TextPad.txtfilebody.Text = sr.ReadToEnd()
+                                sr.Close()
+                                Me.Close()
+                            End If
+                        Case "skin_loader"
+                            SkinLoader.readfile(lvfiles.SelectedItems(0).Tag.ToString)
+                            SkinLoader.skintoload = lvfiles.SelectedItems(0).Tag.ToString
                             Me.Close()
                     End Select
                 Else
@@ -120,6 +142,12 @@
         btndelete.Visible = boughtfileskimmerdelete
         If mode = "save" Then
             pnlsave.Visible = True
+            Select Case application
+                Case "textpad"
+                    lbextension.Text = ".txt"
+                Case "skin_loader"
+                    lbextension.Text = ".bsk"
+            End Select
         Else
             pnlsave.Visible = False
         End If
@@ -165,10 +193,12 @@
             Else
                 Select Case Application
                     Case "textpad"
-                        Dim sw As New IO.StreamWriter(currentdir + "\" + txtfilename.Text)
+                        Dim sw As New IO.StreamWriter(currentdir + "\" + txtfilename.Text + ".txt")
                         sw.Write(TextPad.txtfilebody.Text)
                         sw.Close()
                         Me.Close()
+                    Case "skin_loader"
+                        saveskin(currentdir + "\" + txtfilename.Text + ".bsk")
                 End Select
             End If
         Else
