@@ -48,7 +48,7 @@ Partial Class infobox_mde
         'Titlebar
         '
         Me.Titlebar.BackColor = System.Drawing.Color.Red
-        Me.Titlebar.BackgroundImage = Global.UltraDOS.My.Resources.Resources.title
+        Me.Titlebar.BackgroundImage = Global.shiftos_next.My.Resources.Resources.title
         Me.Titlebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Titlebar.Controls.Add(Me.titletext)
         Me.Titlebar.Controls.Add(Me.captionbuttonholder)
@@ -87,7 +87,7 @@ Partial Class infobox_mde
         'minbtn
         '
         Me.minbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.minbtn.Image = Global.UltraDOS.My.Resources.Resources.minimize2
+        Me.minbtn.Image = Global.shiftos_next.My.Resources.Resources.minimize2
         Me.minbtn.Location = New System.Drawing.Point(14, 5)
         Me.minbtn.Name = "minbtn"
         Me.minbtn.Size = New System.Drawing.Size(22, 22)
@@ -97,7 +97,7 @@ Partial Class infobox_mde
         'maxbtn
         '
         Me.maxbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.maxbtn.Image = Global.UltraDOS.My.Resources.Resources.minimize
+        Me.maxbtn.Image = Global.shiftos_next.My.Resources.Resources.minimize
         Me.maxbtn.Location = New System.Drawing.Point(42, 5)
         Me.maxbtn.Name = "maxbtn"
         Me.maxbtn.Size = New System.Drawing.Size(22, 22)
@@ -107,7 +107,7 @@ Partial Class infobox_mde
         'closebtn
         '
         Me.closebtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.closebtn.Image = Global.UltraDOS.My.Resources.Resources.close
+        Me.closebtn.Image = Global.shiftos_next.My.Resources.Resources.close
         Me.closebtn.Location = New System.Drawing.Point(70, 5)
         Me.closebtn.Name = "closebtn"
         Me.closebtn.Size = New System.Drawing.Size(22, 22)
@@ -154,7 +154,7 @@ Partial Class infobox_mde
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.UltraDOS.My.Resources.Resources.infobox_mde_notify
+        Me.PictureBox1.Image = Global.shiftos_next.My.Resources.Resources.infobox_mde_notify
         Me.PictureBox1.Location = New System.Drawing.Point(7, 37)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(69, 66)

@@ -603,7 +603,7 @@
             If loadlines(512) = 11 Then boughttextpadtrm = True Else boughttextpadtrm = False
             If loadlines(513) = 11 Then boughtshiftapplauncheritems = True Else boughtshiftapplauncheritems = False
         Catch ex As Exception
-            Terminal.prompttoupdatesave = True
+            prompttoupdatesave = True
         End Try
     End Sub
 

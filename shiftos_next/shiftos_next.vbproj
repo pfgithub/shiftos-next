@@ -45,10 +45,14 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>orb.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -84,6 +88,36 @@
     <Compile Include="BWM and CMD Apps\SkinLoader.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Desktop Environments\memphis.Designer.vb">
+      <DependentUpon>memphis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Desktop Environments\memphis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDE Apps\ExodusFB_mde.Designer.vb">
+      <DependentUpon>ExodusFB_mde.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDE Apps\ExodusFB_mde.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDE Apps\infobox_mde.Designer.vb">
+      <DependentUpon>infobox_mde.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDE Apps\infobox_mde.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDE Apps\MDE_Terminal.Designer.vb">
+      <DependentUpon>MDE_Terminal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDE Apps\MDE_Terminal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDE User Controls\mde_template.Designer.vb">
+      <DependentUpon>mde_template.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDE User Controls\mde_template.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Menu Renderers\BasicWM_ColorTable.vb" />
     <Compile Include="BWM and CMD Apps\basicwm_infobox.Designer.vb">
       <DependentUpon>basicwm_infobox.vb</DependentUpon>
@@ -117,6 +151,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="APIs\filesystem.vb" />
+    <Compile Include="Menu Renderers\mde_colortable.vb" />
     <Compile Include="Other\Hijack.Designer.vb">
       <DependentUpon>Hijack.vb</DependentUpon>
     </Compile>
@@ -182,6 +217,21 @@
     <EmbeddedResource Include="BWM and CMD Apps\file skimmer.resx">
       <DependentUpon>file skimmer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Desktop Environments\memphis.resx">
+      <DependentUpon>memphis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDE Apps\ExodusFB_mde.resx">
+      <DependentUpon>ExodusFB_mde.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDE Apps\infobox_mde.resx">
+      <DependentUpon>infobox_mde.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDE Apps\MDE_Terminal.resx">
+      <DependentUpon>MDE_Terminal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDE User Controls\mde_template.resx">
+      <DependentUpon>mde_template.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Other\Hijack.resx">
       <DependentUpon>Hijack.vb</DependentUpon>
     </EmbeddedResource>
@@ -222,7 +272,24 @@
   <ItemGroup>
     <None Include="Resources\Folder1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="orb.ico" />
+    <Content Include="Resources\3beepvirus.wav" />
+    <Content Include="Resources\close.png" />
+    <Content Include="Resources\dial-up-modem-02.wav" />
+    <Content Include="Resources\infobox.wav" />
+    <Content Include="Resources\infobox_mde_notify.png" />
+    <None Include="Resources\mdeorb.png" />
+    <Content Include="Resources\MDEReadme.txt" />
+    <Content Include="Resources\mde_bg.png" />
+    <Content Include="Resources\minimize.png" />
+    <Content Include="Resources\minimize2.png" />
+    <Content Include="Resources\rolldown.wav" />
+    <Content Include="Resources\rollup.wav" />
+    <Content Include="Resources\title.png" />
+    <Content Include="Resources\typesound.wav" />
+    <Content Include="Resources\writesound.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

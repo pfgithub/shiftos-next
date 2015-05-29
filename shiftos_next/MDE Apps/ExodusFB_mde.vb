@@ -87,20 +87,6 @@
         Return filetype
     End Function
 
-    Public Sub OpenFile(path As String)
-        If IO.Directory.Exists(path) Then
-            setuplistview(path)
-        ElseIf IO.File.Exists(path) Then
-            Dim Filinf As New IO.FileInfo(path)
-            Select Case Filinf.Extension
-                Case ".mp3", ".wav"
-                    mde_audioplayer.loadSongFile(path)
-                Case Else
-                    infobox_mde.showinfo("Exodus - Unsupported File", "Exodus could not find a valid program to open the file!")
-            End Select
-        End If
-    End Sub
-
     Public Sub setuplistview(folder As String)
         Dim lv As ListView = lvitems
         lv.Items.Clear()
@@ -133,9 +119,9 @@
                 For Each SubItem In item.DropDownItems
                     SubItem.ForeColor = Color.White
                     If Not SubItem.Text = "--" Then
-                            For Each Destination In SubItem.DropDownItems
-                                Destination.ForeColor = Color.White
-                            Next
+                        For Each Destination In SubItem.DropDownItems
+                            Destination.ForeColor = Color.White
+                        Next
                     End If
                 Next
             End If

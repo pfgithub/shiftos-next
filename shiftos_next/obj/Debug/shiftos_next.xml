@@ -19,13 +19,45 @@ shiftos_next
 	<summary>
   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
 </summary>
+</member><member name="P:shiftos_next.My.Resources.Resources.close">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:shiftos_next.My.Resources.Resources.dial_up_modem_02">
 	<summary>
   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
 </summary>
+</member><member name="P:shiftos_next.My.Resources.Resources.Folder">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:shiftos_next.My.Resources.Resources.Folder1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:shiftos_next.My.Resources.Resources.infobox">
 	<summary>
   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member><member name="P:shiftos_next.My.Resources.Resources.infobox_mde_notify">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:shiftos_next.My.Resources.Resources.mde_bg">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:shiftos_next.My.Resources.Resources.mdeorb">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:shiftos_next.My.Resources.Resources.minimize">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:shiftos_next.My.Resources.Resources.minimize2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:shiftos_next.My.Resources.Resources.rolldown">
 	<summary>
@@ -36,6 +68,10 @@ shiftos_next
   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
 </summary>
 </member><member name="P:shiftos_next.My.Resources.Resources.TextFile">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:shiftos_next.My.Resources.Resources.title">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class mde_template
-    Inherits System.Windows.Forms.Form
+    Inherits System.Windows.Forms.UserControl
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -42,7 +42,7 @@ Partial Class mde_template
         'Titlebar
         '
         Me.Titlebar.BackColor = System.Drawing.Color.Red
-        Me.Titlebar.BackgroundImage = Global.UltraDOS.My.Resources.Resources.title
+        Me.Titlebar.BackgroundImage = Global.shiftos_next.My.Resources.Resources.title
         Me.Titlebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Titlebar.Controls.Add(Me.titletext)
         Me.Titlebar.Controls.Add(Me.captionbuttonholder)
@@ -81,7 +81,7 @@ Partial Class mde_template
         'minbtn
         '
         Me.minbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.minbtn.Image = Global.UltraDOS.My.Resources.Resources.minimize2
+        Me.minbtn.Image = Global.shiftos_next.My.Resources.Resources.minimize2
         Me.minbtn.Location = New System.Drawing.Point(14, 5)
         Me.minbtn.Name = "minbtn"
         Me.minbtn.Size = New System.Drawing.Size(22, 22)
@@ -91,7 +91,7 @@ Partial Class mde_template
         'maxbtn
         '
         Me.maxbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.maxbtn.Image = Global.UltraDOS.My.Resources.Resources.minimize
+        Me.maxbtn.Image = Global.shiftos_next.My.Resources.Resources.minimize
         Me.maxbtn.Location = New System.Drawing.Point(42, 5)
         Me.maxbtn.Name = "maxbtn"
         Me.maxbtn.Size = New System.Drawing.Size(22, 22)
@@ -101,7 +101,7 @@ Partial Class mde_template
         'closebtn
         '
         Me.closebtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.closebtn.Image = Global.UltraDOS.My.Resources.Resources.close
+        Me.closebtn.Image = Global.shiftos_next.My.Resources.Resources.close
         Me.closebtn.Location = New System.Drawing.Point(70, 5)
         Me.closebtn.Name = "closebtn"
         Me.closebtn.Size = New System.Drawing.Size(22, 22)
@@ -154,10 +154,8 @@ Partial Class mde_template
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Titlebar)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "mde_template"
         Me.Text = "mde_template"
-        Me.TopMost = True
         Me.Titlebar.ResumeLayout(False)
         Me.captionbuttonholder.ResumeLayout(False)
         CType(Me.minbtn, System.ComponentModel.ISupportInitialize).EndInit()

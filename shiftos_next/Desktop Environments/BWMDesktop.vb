@@ -6,7 +6,7 @@
         Private Sub btnnewterminal_Click(sender As Object, e As EventArgs) Handles btnnewterminal.Click
             If openterminals = 3 Then
                 AddLine("The maximum ammount of Terminal windows are open.")
-                AddLine(username + "@" + osname + " " & Terminal.currentdir.ToLower.Replace("c:\shiftos", "~") & "$> ")
+                AddLine(username + "@" + osname + " " & Terminal.currentdironthisterminal.ToLower.Replace("c:\shiftos", "~") & "$> ")
             Else
                 Dim term As New Terminal
                 term.StartPosition = FormStartPosition.CenterParent

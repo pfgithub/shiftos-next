@@ -1,5 +1,7 @@
 ﻿Public Class memphis
 
+
+
     Public Sub Me_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ToolStrip1.Renderer = New mde_renderer()
         ToolStrip2.Renderer = New mde_renderer()
@@ -22,22 +24,18 @@
     End Sub
 
     Private Sub TerminalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TerminalToolStripMenuItem.Click
-        Terminal.Close()
-        Terminal.shouldBeHandledByMDE = True
-        Terminal.Show()
-        Terminal.TopMost = True
+        Dim term As New MDE_Terminal
+        term.TopMost = True
+        term.Show()
     End Sub
 
     Private Sub ShutdownToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShutdownToolStripMenuItem.Click
-        Terminal.savegame()
+        savegame()
         Me.Close()
     End Sub
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
-        mde_template.Show()
-    End Sub
 
-    Private Sub SendBugReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SendBugReportToolStripMenuItem.Click
+    Private Sub SendBugReportToolStripMenuItem_Click(sender As Object, e As EventArgs)
         infobox_mde.showinfo("Not Yet Implemented!", "This feature has not yet been implemented, Sorry!")
     End Sub
 
