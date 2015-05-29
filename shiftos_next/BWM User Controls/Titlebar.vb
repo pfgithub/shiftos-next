@@ -1,5 +1,7 @@
 ﻿Public Class Titlebar
 
+    Friend WithEvents tmrcheckskin As New Timer
+
     Public Property AppName As String
         Set(value As String)
             lbtitle.Text = value
@@ -13,7 +15,9 @@
 
     Private Sub Titlebar_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.Dock = DockStyle.Top
-        Me.BringToFront()
+        Me.SendToBack()
+        tmrcheckskin.Interval = 200
+        tmrcheckskin.Start()
     End Sub
 
     Private Sub titlebar_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown, lbtitle.MouseDown
@@ -46,4 +50,21 @@
         End If
     End Sub
 
+    Public Sub shiftorium_special()
+        If boughtbasicwm = True Then
+            lbtitle.TextAlign = ContentAlignment.MiddleLeft
+            lbtitle.BackColor = Color.Gray
+            ParentForm.TopMost = True
+            ParentForm.WindowState = FormWindowState.Normal
+        Else
+            lbtitle.TextAlign = ContentAlignment.MiddleCenter
+            lbtitle.BackColor = Color.Black
+            ParentForm.WindowState = FormWindowState.Maximized
+        End If
+    End Sub
+
+    Private Sub tmrcheckskin_Tick(sender As Object, e As EventArgs) Handles tmrcheckskin.Tick
+        lbtitle.BackColor = titlebarcolor
+        lbtitle.ForeColor = titlebartextcolor
+    End Sub
 End Class

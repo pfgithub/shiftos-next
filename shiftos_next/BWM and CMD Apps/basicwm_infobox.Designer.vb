@@ -22,33 +22,11 @@ Partial Class basicwm_infobox
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lbtitle = New System.Windows.Forms.Label()
         Me.btnok = New System.Windows.Forms.Button()
         Me.lbmessage = New System.Windows.Forms.Label()
         Me.txtuserinput = New System.Windows.Forms.TextBox()
-        Me.Panel1.SuspendLayout()
+        Me.Titlebar = New shiftos_next.Titlebar()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Gray
-        Me.Panel1.Controls.Add(Me.lbtitle)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(433, 30)
-        Me.Panel1.TabIndex = 0
-        '
-        'lbtitle
-        '
-        Me.lbtitle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbtitle.Location = New System.Drawing.Point(0, 0)
-        Me.lbtitle.Name = "lbtitle"
-        Me.lbtitle.Size = New System.Drawing.Size(433, 30)
-        Me.lbtitle.TabIndex = 0
-        Me.lbtitle.Text = "I am a hacker."
-        Me.lbtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnok
         '
@@ -65,9 +43,9 @@ Partial Class basicwm_infobox
         'lbmessage
         '
         Me.lbmessage.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbmessage.Location = New System.Drawing.Point(0, 30)
+        Me.lbmessage.Location = New System.Drawing.Point(0, 0)
         Me.lbmessage.Name = "lbmessage"
-        Me.lbmessage.Size = New System.Drawing.Size(433, 183)
+        Me.lbmessage.Size = New System.Drawing.Size(433, 213)
         Me.lbmessage.TabIndex = 1
         Me.lbmessage.Text = "I am already viewing my computer logs of that interview. Soon, I'll know everythi" & _
     "ng there is to know about that banana making factory."
@@ -86,6 +64,17 @@ Partial Class basicwm_infobox
         Me.txtuserinput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtuserinput.WordWrap = False
         '
+        'Titlebar
+        '
+        Me.Titlebar.AppName = "Infobox"
+        Me.Titlebar.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Titlebar.Font = New System.Drawing.Font("Courier New", 8.25!)
+        Me.Titlebar.ForeColor = System.Drawing.Color.White
+        Me.Titlebar.Location = New System.Drawing.Point(0, 0)
+        Me.Titlebar.Name = "Titlebar"
+        Me.Titlebar.Size = New System.Drawing.Size(433, 32)
+        Me.Titlebar.TabIndex = 3
+        '
         'basicwm_infobox
         '
         Me.AcceptButton = Me.btnok
@@ -93,23 +82,21 @@ Partial Class basicwm_infobox
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(433, 257)
+        Me.Controls.Add(Me.Titlebar)
         Me.Controls.Add(Me.txtuserinput)
         Me.Controls.Add(Me.lbmessage)
         Me.Controls.Add(Me.btnok)
-        Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "basicwm_infobox"
         Me.Text = "basicwm_infobox"
-        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents lbtitle As System.Windows.Forms.Label
     Friend WithEvents btnok As System.Windows.Forms.Button
     Friend WithEvents lbmessage As System.Windows.Forms.Label
     Friend WithEvents txtuserinput As System.Windows.Forms.TextBox
+    Friend WithEvents Titlebar As shiftos_next.Titlebar
 End Class

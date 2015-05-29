@@ -22,8 +22,8 @@ Partial Class shiftorium_cmd
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.pnltop = New System.Windows.Forms.Panel()
-        Me.lbtitle = New System.Windows.Forms.Label()
         Me.pnlbottom = New System.Windows.Forms.Panel()
         Me.lbcodepoints = New System.Windows.Forms.Label()
         Me.lbcontrols = New System.Windows.Forms.Label()
@@ -34,6 +34,8 @@ Partial Class shiftorium_cmd
         Me.lbdescription = New System.Windows.Forms.Label()
         Me.lbitemname = New System.Windows.Forms.Label()
         Me.lbitems = New System.Windows.Forms.ListBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Titlebar1 = New shiftos_next.Titlebar()
         Me.pnltop.SuspendLayout()
         Me.pnlbottom.SuspendLayout()
         Me.pnldetails.SuspendLayout()
@@ -42,22 +44,12 @@ Partial Class shiftorium_cmd
         '
         'pnltop
         '
-        Me.pnltop.Controls.Add(Me.lbtitle)
+        Me.pnltop.Controls.Add(Me.Titlebar1)
         Me.pnltop.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnltop.Location = New System.Drawing.Point(0, 0)
         Me.pnltop.Name = "pnltop"
         Me.pnltop.Size = New System.Drawing.Size(1007, 30)
         Me.pnltop.TabIndex = 0
-        '
-        'lbtitle
-        '
-        Me.lbtitle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbtitle.Location = New System.Drawing.Point(0, 0)
-        Me.lbtitle.Name = "lbtitle"
-        Me.lbtitle.Size = New System.Drawing.Size(1007, 30)
-        Me.lbtitle.TabIndex = 0
-        Me.lbtitle.Text = "SHIFTORIUM"
-        Me.lbtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlbottom
         '
@@ -167,6 +159,17 @@ Partial Class shiftorium_cmd
         Me.lbitems.Size = New System.Drawing.Size(1007, 335)
         Me.lbitems.TabIndex = 3
         '
+        'Titlebar1
+        '
+        Me.Titlebar1.AppName = "Shiftorium"
+        Me.Titlebar1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Titlebar1.Font = New System.Drawing.Font("Courier New", 8.25!)
+        Me.Titlebar1.ForeColor = System.Drawing.Color.White
+        Me.Titlebar1.Location = New System.Drawing.Point(0, 0)
+        Me.Titlebar1.Name = "Titlebar1"
+        Me.Titlebar1.Size = New System.Drawing.Size(1007, 32)
+        Me.Titlebar1.TabIndex = 0
+        '
         'shiftorium_cmd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -191,7 +194,6 @@ Partial Class shiftorium_cmd
 
     End Sub
     Friend WithEvents pnltop As System.Windows.Forms.Panel
-    Friend WithEvents lbtitle As System.Windows.Forms.Label
     Friend WithEvents pnlbottom As System.Windows.Forms.Panel
     Friend WithEvents lbcodepoints As System.Windows.Forms.Label
     Friend WithEvents lbcontrols As System.Windows.Forms.Label
@@ -202,4 +204,6 @@ Partial Class shiftorium_cmd
     Friend WithEvents lbprice As System.Windows.Forms.Label
     Friend WithEvents lbdescription As System.Windows.Forms.Label
     Friend WithEvents lbitemname As System.Windows.Forms.Label
+    Friend WithEvents Titlebar1 As shiftos_next.Titlebar
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 End Class

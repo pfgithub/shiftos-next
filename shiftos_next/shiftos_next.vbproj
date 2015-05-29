@@ -71,6 +71,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIs\API.vb" />
+    <Compile Include="APIs\Skins.vb" />
+    <Compile Include="BWM and CMD Apps\Shifter.Designer.vb">
+      <DependentUpon>Shifter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BWM and CMD Apps\Shifter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Menu Renderers\BasicWM_ColorTable.vb" />
     <Compile Include="BWM and CMD Apps\basicwm_infobox.Designer.vb">
       <DependentUpon>basicwm_infobox.vb</DependentUpon>
@@ -150,6 +157,9 @@
   <ItemGroup>
     <EmbeddedResource Include="BWM and CMD Apps\basicwm_infobox.resx">
       <DependentUpon>basicwm_infobox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BWM and CMD Apps\Shifter.resx">
+      <DependentUpon>Shifter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BWM User Controls\Titlebar.resx">
       <DependentUpon>Titlebar.vb</DependentUpon>

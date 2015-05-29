@@ -44,3 +44,4 @@ C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\bin\Debug\shiftos_ne
 C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\bin\Debug\shiftos_next.pdb
 C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\bin\Debug\shiftos_next.xml
 C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.Titlebar.resources
+C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.Shifter.resources

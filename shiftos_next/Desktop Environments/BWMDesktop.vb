@@ -16,6 +16,12 @@
             End If
         End Sub
 
+        Public Sub Redraw()
+            btnnewterminal.ForeColor = newterminalbuttontextcolor
+            btnnewterminal.BackColor = newterminalbuttonbackcolor
+            Me.BackColor = desktopbackcolor
+        End Sub
+
         Private Sub Desktop_Load(sender As Object, e As EventArgs) Handles MyBase.Load
             Terminal.Close()
             Me.WindowState = FormWindowState.Maximized
@@ -24,6 +30,7 @@
             term.TopMost = True
             term.Show()
             openterminals += 1
+            loadskindata()
         End Sub
     End Class
 End Namespace

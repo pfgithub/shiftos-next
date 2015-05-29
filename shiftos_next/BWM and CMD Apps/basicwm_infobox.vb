@@ -3,7 +3,8 @@
     Public userinput As String
 
     Public Sub showinfo(title As String, message As String, Optional showtextbox As Boolean = False)
-        lbtitle.Text = title
+        Titlebar.AppName = title
+        Titlebar.shiftorium_special()
         lbmessage.Text = message
         btnok.Text = "> OK <"
         txtuserinput.Visible = showtextbox

@@ -12,6 +12,9 @@
     Public systemdir As String = root + "\Shiftum42\"
 
     Public drivers As String = systemdir + "Drivers\"
+    Public skindir As String = systemdir + "Skins\"
+
+    Public bwmskin As String = skindir + "BWM\"
 
     Public save As String = drivers + "HDD.dri"
 

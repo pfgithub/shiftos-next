@@ -73,6 +73,8 @@
 
     Public Sub OpenProgram(progtoopen As String)
         Select Case progtoopen
+            Case "shifter", "skin", "shift"
+                Shifter.Show()
             Case "shiftorium", "packages", "pacman", "code shop"
                 shiftorium_cmd.Show()
             Case "files", "fileskimmer", "file skimmer", "fs", "file browser"
@@ -108,7 +110,8 @@
                 Else
                     AddLine("close: Invalid program """ & progtoclose & """.")
                 End If
-
+            Case "shifter", "skin", "shift"
+                Shifter.Hide()
             Case Else
                 AddLine("close: Invalid program """ & progtoclose & """.")
         End Select

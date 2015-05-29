@@ -8,20 +8,7 @@
         lbprice.Hide()
         btnbuy.Hide()
         lbcodepoints.Text = "Codepoints: " & codepoints
-        If boughtbasicwm = True Then
-            lbtitle.TextAlign = ContentAlignment.MiddleLeft
-            lbtitle.Text = "Shiftorium" 'To make it sentence-case, rather than UPPERCASE.
-            lbtitle.BackColor = Color.Gray
-            Me.WindowState = FormWindowState.Normal
-            Me.Left = (Screen.PrimaryScreen.Bounds.Width - Me.Width) / 2
-            Me.Top = (Screen.PrimaryScreen.Bounds.Height - Me.Height) / 2
-            Me.TopMost = True
-        Else
-            lbtitle.TextAlign = ContentAlignment.MiddleCenter
-            lbtitle.Text = "SHIFTORIUM"
-            lbtitle.BackColor = Color.Black
-            Me.WindowState = FormWindowState.Maximized
-        End If
+        Titlebar1.shiftorium_special()
     End Sub
 
     Public Sub determineitems()
