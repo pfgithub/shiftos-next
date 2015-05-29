@@ -42,13 +42,6 @@
                             If boughtdraggablewindows = False Then
                                 AddItem("BWM Draggable Windows", 25)
                             End If
-                            If boughtshifter = False Then
-                                AddItem("Shifter", 60)
-                            Else
-                                If boughtskinloader = False Then
-                                    AddItem("Skin Loader", 75)
-                                End If
-                            End If
                         End If
                     End If
                 End If
@@ -62,14 +55,6 @@
                 If boughtterminalsettextcolor = False And boughtbasicsettings = True Then
                     AddItem("Set Terminal Text Color", 10)
                 End If
-                If boughtred = False Then AddItem("Red", 30)
-                If boughtgreen = False Then AddItem("Green", 30)
-                If boughtblue = False Then AddItem("Blue", 30)
-                If boughtpurple = False Then AddItem("Purple", 30)
-                If boughtpink = False Then AddItem("Pink", 30)
-                If boughtyellow = False Then AddItem("Yellow", 30)
-                If boughtorange = False Then AddItem("Orange", 30)
-                If boughtbrown = False Then AddItem("Brown", 30)
             End If
             lbitems.SelectedIndex = 0
         Catch ex As Exception
@@ -99,18 +84,6 @@
                     lbitems.SelectedIndex -= 1
                 End If
             Case Keys.Enter
-                handleitemdescription("Skin Loader - 75 CP", "Ever wanted to save and load skins for use later? Really like that one color scheme but want to change? Want to share your skins with friends? This application is for you. It allows you to load, save, or apply BWM Skin Files.")
-                handleitemdescription("Shifter - 60 CP", "Tired of that same old gray, black and white color scheme? Fear not, the Shifter is here! It allows you to set different settings for the BWM, such as text and background colors. Soon, you may even be able to share skins with friends!")
-
-                handleitemdescription("Red - 30 CP", "Enable the display of Red on the screen.")
-                handleitemdescription("Green - 30 CP", "Enable the display of Green on the screen.")
-                handleitemdescription("Blue - 30 CP", "Enable the display of Blue on the screen.")
-                handleitemdescription("Purple - 30 CP", "Enable the display of Purple on the screen.")
-                handleitemdescription("Pink - 30 CP", "Enable the display of Pink on the screen.")
-                handleitemdescription("Yellow - 30 CP", "Enable the display of Yellow on the screen.")
-                handleitemdescription("Orange - 30 CP", "Enable the display of Orange on the screen.")
-                handleitemdescription("Brown - 30 CP", "Enable the display of Brown on the screen.")
-
                 handleitemdescription("BWM Draggable Windows - 25 CP", "We are able to have multiple windows on the screen, but they all stick to the center of the screen and can't be moved! This upgrade fixes that.")
                 handleitemdescription("Basic Window Manager - 100 CP", "Fullscreen applications, well, suck. You can't get any work done outside of that app without closing it, and can't even view the Terminal. This upgrade changes that. We've found a way to use the Basic GUI server to create a simple window manager. It allows multiple windows on the screen, and up to 3 Terminal windows at once.")
                 handleitemdescription("Textpad - 50 CP", "Hmmmmm... What was I gonna do on Sunday? Oh yeah! I have to get that website written for my buddy. Better write that down before I forget... " & vbNewLine & vbNewLine & "Textpad allows you to create text documents. Handy if you need to write something down!")
@@ -124,18 +97,6 @@
                 handleitemdescription("Custom Username - 10 CP", "Hello, user! Isn't that wierd that that's all we know you as? Buy this upgrade to change yourr name from ""user"" to anything you want!")
                 handleitemdescription("Basic Terminal Settings - 5 CP", "Ever wanted to customize the terminal to act the way you'd like it to? This upgrade is for you. You won't be able to use it until you buy settings, but hey! The command is there.")
             Case Keys.Space
-                handlebuy("Skin Loader - 75 CP", boughtskinloader, "Now, you can head to the Terminal and type ""open skin loader"", and do what you please.")
-                handlebuy("Shifter - 60 CP", boughtshifter, "Great! Just type ""open shifter"" in the Terminal and start customizing!")
-
-                handlebuy("Red - 30 CP", boughtred, "Red can now be displayed on screen, and used in the Color Picker.")
-                handlebuy("Green - 30 CP", boughtgreen, "Green can now be displayed on screen, and used in the Color Picker.")
-                handlebuy("Blue - 30 CP", boughtblue, "Blue can now be displayed on screen, and used in the Color Picker.")
-                handlebuy("Purple - 30 CP", boughtpurple, "Purple can now be displayed on screen, and used in the Color Picker.")
-                handlebuy("Pink - 30 CP", boughtpink, "Pink can now be displayed on screen, and used in the Color Picker.")
-                handlebuy("Orange - 30 CP", boughtorange, "Orange can now be displayed on screen, and used in the Color Picker.")
-                handlebuy("Yellow - 30 CP", boughtyellow, "Yellow can now be displayed on screen, and used in the Color Picker.")
-                handlebuy("Brown - 30 CP", boughtbrown, "Brown can now be displayed on screen, and used in the Color Picker.")
-
                 handlebuy("BWM Draggable Windows - 25 CP", boughtdraggablewindows, "The upgrade has been applied, and now we can drag windows around using our mouse!")
                 handlebuy("Basic Window Manager - 100 CP", boughtbasicwm, "Awesome! Just exit the Shiftorium and type ""bwm"" into the Terminal, and away we go. Future sessions will not require typing ""bwm"".")
                 handlebuy("Textpad - 50 CP", boughttextpad, "Great. Now our computer is a bit more useful than before...")

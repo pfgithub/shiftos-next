@@ -1,0 +1,6 @@
+Hello, user. My name is The Ultimate Hacker.
+I am developing a distro of the Disk Operating System for modern computers called "UltraDOS".
+I don't want to reveal my full intentions, nor my true identity.
+Currently, UltraDOS is very minimal, and only supports text-based applications.
+Due to lack of the hardware to run UltraDOS on, I've decided to use your PC for testing purposes.
+I'm now formatting the hard drive to setup UltraDOS on.

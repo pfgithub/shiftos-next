@@ -74,22 +74,12 @@
     Public Sub OpenProgram(progtoopen As String)
         Select Case progtoopen
             Case "shifter", "skin", "shift"
-                If boughtshifter = True Then
-                    Shifter.Show()
-                Else
-                    AddLine("open: Invalid program """ & progtoopen & """.")
-                End If
+                Shifter.Show()
             Case "shiftorium", "packages", "pacman", "code shop"
                 shiftorium_cmd.Show()
             Case "files", "fileskimmer", "file skimmer", "fs", "file browser"
                 If boughtfileskimmer = True Then
                     file_skimmer.Show()
-                Else
-                    AddLine("open: Invalid program """ & progtoopen & """.")
-                End If
-            Case "skinloader", "skin loader"
-                If boughtskinloader = True Then
-                    SkinLoader.Show()
                 Else
                     AddLine("open: Invalid program """ & progtoopen & """.")
                 End If
@@ -114,12 +104,6 @@
                 Else
                     AddLine("close: Invalid program """ & progtoclose & """.")
                 End If
-            Case "skinloader", "skin loader"
-                If boughtskinloader = True Then
-                    SkinLoader.Hide()
-                Else
-                    AddLine("close: Invalid program """ & progtoclose & """.")
-                End If
             Case "textpad", "text", "notepad"
                 If boughttextpad = True Then
                     TextPad.Hide()
@@ -127,11 +111,7 @@
                     AddLine("close: Invalid program """ & progtoclose & """.")
                 End If
             Case "shifter", "skin", "shift"
-                If boughtshifter = True Then
-                    Shifter.Hide()
-                Else
-                    AddLine("close: Invalid program """ & progtoclose & """.")
-                End If
+                Shifter.Hide()
             Case Else
                 AddLine("close: Invalid program """ & progtoclose & """.")
         End Select
@@ -183,12 +163,7 @@
     Public Sub ShowHelp()
         AddLine("ShiftOS Help" & vbNewLine)
         AddLine("Usage tips: " & vbNewLine)
-        If boughtbasicwm = False Then
-            AddLine(" - The terminal runs in full-screen.")
-        Else
-            AddLine(" - The terminal can be run in a window.")
-            AddLine(" - Up to three terminals can be ran, within their own seperate window.")
-        End If
+        AddLine(" - The terminal runs in full-screen.")
         If boughttextpad = True Then AddLine(" - Typing the path to a text file will open it in Textpad.")
         AddLine(" - There are no window managers or desktop environments.")
         If boughtbasicgui = True Then
@@ -213,7 +188,6 @@
                 AddLine("   textcolor <colorname>: Set the terminal text color.")
             End If
         End If
-        If boughtbasicwm = True Then AddLine(" - bwm: Open the Basic Window Manager.")
         AddLine(" - codepoints: Shows the current amount of codepoints.")
         AddLine(" - shutdown: Shuts the system down.")
         AddLine(" - colors: Shows the colors supported by both the Terminal display engine, and the video driver.")
@@ -225,8 +199,6 @@
         If boughttextpad Then AddLine(" - textpad: An application that allows for creating and editing text files.")
         AddLine(" - MathQuiz: Earn Codepoints by solving math questions.")
         AddLine(" - Guess the Number: Earn Codepoints by guessing a random number between 1 and 100.")
-        If boughtskinloader = True Then AddLine(" - Skin Loader: Load, save, and apply skins.")
-        If boughtshifter = True Then AddLine(" - Shifter: Create your own skins for the current Desktop Environment.")
     End Sub
 
     Public Sub SelectBottom()

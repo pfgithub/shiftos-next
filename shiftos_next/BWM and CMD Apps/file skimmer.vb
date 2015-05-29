@@ -105,35 +105,26 @@
                 End If
             Else
                 If mode = "open" Then
-                    If IO.Directory.Exists(lvfiles.SelectedItems(0).Tag) Then
-                        OpenFile(lvfiles.SelectedItems(0).Tag)
-                    Else
-                        Dim filinf As New IO.FileInfo(lvfiles.SelectedItems(0).Tag)
-                        Select Case application
-                            Case "textpad"
-                                If filinf.Extension = ".txt" Then
-                                    Dim sr As New IO.StreamReader(lvfiles.SelectedItems(0).Tag.ToString)
-                                    TextPad.txtfilebody.Text = sr.ReadToEnd()
-                                    sr.Close()
-                                    Me.Close()
-                                End If
-                            Case "skin_loader"
-                                SkinLoader.readfile(lvfiles.SelectedItems(0).Tag.ToString)
-                                SkinLoader.skintoload = lvfiles.SelectedItems(0).Tag.ToString
+                    Dim filinf As New IO.FileInfo(lvfiles.SelectedItems(0).Tag)
+                    Select Case application
+                        Case "textpad"
+                            If filinf.Extension = ".txt" Then
+                                Dim sr As New IO.StreamReader(lvfiles.SelectedItems(0).Tag.ToString)
+                                TextPad.txtfilebody.Text = sr.ReadToEnd()
+                                sr.Close()
                                 Me.Close()
-                        End Select
-                    End If
+                            End If
+                        Case "skin_loader"
+                            SkinLoader.readfile(lvfiles.SelectedItems(0).Tag.ToString)
+                            SkinLoader.skintoload = lvfiles.SelectedItems(0).Tag.ToString
+                            Me.Close()
+                    End Select
                 Else
                     OpenFile(lvfiles.SelectedItems(0).Tag)
                 End If
-                End If
+            End If
         Catch
         End Try
-    End Sub
-
-    Private Sub file_skimmer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        mode = ""
-        application = ""
     End Sub
 
     Private Sub file_skimmer_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -208,7 +199,6 @@
                         Me.Close()
                     Case "skin_loader"
                         saveskin(currentdir + "\" + txtfilename.Text + ".bsk")
-                        Me.Close()
                 End Select
             End If
         Else
