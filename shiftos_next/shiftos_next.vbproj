@@ -97,6 +97,12 @@
     <Compile Include="MDE Apps\fileskimmer_mde.Designer.vb">
       <DependentUpon>fileskimmer_mde.vb</DependentUpon>
     </Compile>
+    <Compile Include="Desktop Environments\ShiftOSDesktop.Designer.vb">
+      <DependentUpon>ShiftOSDesktop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Desktop Environments\ShiftOSDesktop.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MDE Apps\fileskimmer_mde.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,54 @@
     <Compile Include="BWM and CMD Apps\TextPad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ShiftOS Apps\Shiftorium.designer.vb">
+      <DependentUpon>Shiftorium.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS Apps\Shiftorium.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftOS Apps\ShiftOS_File Skimmer.designer.vb">
+      <DependentUpon>ShiftOS_File Skimmer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS Apps\ShiftOS_File Skimmer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftOS Apps\ShiftOS_infobox.Designer.vb">
+      <DependentUpon>ShiftOS_infobox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS Apps\ShiftOS_infobox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftOS Apps\ShiftOS_Shifter.designer.vb">
+      <DependentUpon>ShiftOS_Shifter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS Apps\ShiftOS_Shifter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftOS Apps\ShiftOS_Terminal.designer.vb">
+      <DependentUpon>ShiftOS_Terminal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS Apps\ShiftOS_Terminal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftOS Apps\Skin Loader.Designer.vb">
+      <DependentUpon>Skin Loader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS Apps\Skin Loader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftOS Apps\Web Browser.designer.vb">
+      <DependentUpon>Web Browser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS Apps\Web Browser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftOS User Controls\template.designer.vb">
+      <DependentUpon>template.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS User Controls\template.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BWM and CMD Apps\basicwm_infobox.resx">
@@ -223,6 +277,9 @@
     <EmbeddedResource Include="MDE Apps\fileskimmer_mde.resx">
       <DependentUpon>fileskimmer_mde.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Desktop Environments\ShiftOSDesktop.resx">
+      <DependentUpon>ShiftOSDesktop.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDE Apps\infobox_mde.resx">
       <DependentUpon>infobox_mde.vb</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +306,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BWM and CMD Apps\TextPad.resx">
       <DependentUpon>TextPad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS Apps\Shiftorium.resx">
+      <DependentUpon>Shiftorium.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS Apps\ShiftOS_File Skimmer.resx">
+      <DependentUpon>ShiftOS_File Skimmer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS Apps\ShiftOS_infobox.resx">
+      <DependentUpon>ShiftOS_infobox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS Apps\ShiftOS_Shifter.resx">
+      <DependentUpon>ShiftOS_Shifter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS Apps\ShiftOS_Terminal.resx">
+      <DependentUpon>ShiftOS_Terminal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS Apps\Skin Loader.resx">
+      <DependentUpon>Skin Loader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS Apps\Web Browser.resx">
+      <DependentUpon>Web Browser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS User Controls\template.resx">
+      <DependentUpon>template.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -290,6 +371,7 @@
     <Content Include="Resources\typesound.wav" />
     <Content Include="Resources\writesound.wav" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
