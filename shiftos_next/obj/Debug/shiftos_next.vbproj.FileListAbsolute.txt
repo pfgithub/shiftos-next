@@ -55,3 +55,7 @@ C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_ne
 C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.infobox_mde.resources
 C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.mde_template.resources
 C:\Users\Michael\Documents\GitHub\shiftos-next\shiftos_next\obj\Debug\shiftos_next.MDE_Terminal.resources
+C:\Users\Whistler\Documents\shiftos-next2\shiftos_next\bin\Debug\shiftos_next.exe.config
+C:\Users\Whistler\Documents\shiftos-next2\shiftos_next\obj\Debug\shiftos_next.exe
+C:\Users\Whistler\Documents\shiftos-next2\shiftos_next\obj\Debug\shiftos_next.xml
+C:\Users\Whistler\Documents\shiftos-next2\shiftos_next\obj\Debug\shiftos_next.pdb
