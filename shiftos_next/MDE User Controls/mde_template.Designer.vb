@@ -24,7 +24,6 @@ Partial Class mde_template
     Private Sub InitializeComponent()
         Me.Titlebar = New System.Windows.Forms.Panel()
         Me.titletext = New System.Windows.Forms.Label()
-        Me.captionbuttonholder = New System.Windows.Forms.Panel()
         Me.minbtn = New System.Windows.Forms.PictureBox()
         Me.maxbtn = New System.Windows.Forms.PictureBox()
         Me.closebtn = New System.Windows.Forms.PictureBox()
@@ -33,7 +32,6 @@ Partial Class mde_template
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Contents = New System.Windows.Forms.Panel()
         Me.Titlebar.SuspendLayout()
-        Me.captionbuttonholder.SuspendLayout()
         CType(Me.minbtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.maxbtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closebtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,8 +42,10 @@ Partial Class mde_template
         Me.Titlebar.BackColor = System.Drawing.Color.Red
         Me.Titlebar.BackgroundImage = Global.shiftos_next.My.Resources.Resources.title
         Me.Titlebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Titlebar.Controls.Add(Me.closebtn)
+        Me.Titlebar.Controls.Add(Me.maxbtn)
+        Me.Titlebar.Controls.Add(Me.minbtn)
         Me.Titlebar.Controls.Add(Me.titletext)
-        Me.Titlebar.Controls.Add(Me.captionbuttonholder)
         Me.Titlebar.Dock = System.Windows.Forms.DockStyle.Top
         Me.Titlebar.Location = New System.Drawing.Point(0, 0)
         Me.Titlebar.Name = "Titlebar"
@@ -60,29 +60,16 @@ Partial Class mde_template
         Me.titletext.ForeColor = System.Drawing.Color.White
         Me.titletext.Location = New System.Drawing.Point(0, 0)
         Me.titletext.Name = "titletext"
-        Me.titletext.Size = New System.Drawing.Size(614, 30)
+        Me.titletext.Size = New System.Drawing.Size(709, 30)
         Me.titletext.TabIndex = 0
         Me.titletext.Text = "Application Title"
         Me.titletext.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'captionbuttonholder
-        '
-        Me.captionbuttonholder.BackColor = System.Drawing.Color.Transparent
-        Me.captionbuttonholder.Controls.Add(Me.minbtn)
-        Me.captionbuttonholder.Controls.Add(Me.maxbtn)
-        Me.captionbuttonholder.Controls.Add(Me.closebtn)
-        Me.captionbuttonholder.Dock = System.Windows.Forms.DockStyle.Right
-        Me.captionbuttonholder.ForeColor = System.Drawing.Color.White
-        Me.captionbuttonholder.Location = New System.Drawing.Point(614, 0)
-        Me.captionbuttonholder.Name = "captionbuttonholder"
-        Me.captionbuttonholder.Size = New System.Drawing.Size(95, 30)
-        Me.captionbuttonholder.TabIndex = 1
         '
         'minbtn
         '
         Me.minbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.minbtn.Image = Global.shiftos_next.My.Resources.Resources.minimize2
-        Me.minbtn.Location = New System.Drawing.Point(14, 5)
+        Me.minbtn.Location = New System.Drawing.Point(628, 5)
         Me.minbtn.Name = "minbtn"
         Me.minbtn.Size = New System.Drawing.Size(22, 22)
         Me.minbtn.TabIndex = 2
@@ -92,7 +79,7 @@ Partial Class mde_template
         '
         Me.maxbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.maxbtn.Image = Global.shiftos_next.My.Resources.Resources.minimize
-        Me.maxbtn.Location = New System.Drawing.Point(42, 5)
+        Me.maxbtn.Location = New System.Drawing.Point(656, 5)
         Me.maxbtn.Name = "maxbtn"
         Me.maxbtn.Size = New System.Drawing.Size(22, 22)
         Me.maxbtn.TabIndex = 1
@@ -102,7 +89,7 @@ Partial Class mde_template
         '
         Me.closebtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.closebtn.Image = Global.shiftos_next.My.Resources.Resources.close
-        Me.closebtn.Location = New System.Drawing.Point(70, 5)
+        Me.closebtn.Location = New System.Drawing.Point(684, 5)
         Me.closebtn.Name = "closebtn"
         Me.closebtn.Size = New System.Drawing.Size(22, 22)
         Me.closebtn.TabIndex = 0
@@ -148,16 +135,14 @@ Partial Class mde_template
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(709, 385)
         Me.Controls.Add(Me.Contents)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Titlebar)
         Me.Name = "mde_template"
-        Me.Text = "mde_template"
+        Me.Size = New System.Drawing.Size(709, 385)
         Me.Titlebar.ResumeLayout(False)
-        Me.captionbuttonholder.ResumeLayout(False)
         CType(Me.minbtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.maxbtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closebtn, System.ComponentModel.ISupportInitialize).EndInit()
@@ -169,7 +154,6 @@ Partial Class mde_template
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents Contents As System.Windows.Forms.Panel
-    Friend WithEvents captionbuttonholder As System.Windows.Forms.Panel
     Friend WithEvents titletext As System.Windows.Forms.Label
     Friend WithEvents minbtn As System.Windows.Forms.PictureBox
     Friend WithEvents maxbtn As System.Windows.Forms.PictureBox

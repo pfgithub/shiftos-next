@@ -94,10 +94,10 @@
     <Compile Include="Desktop Environments\memphis.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MDE Apps\ExodusFB_mde.Designer.vb">
-      <DependentUpon>ExodusFB_mde.vb</DependentUpon>
+    <Compile Include="MDE Apps\fileskimmer_mde.Designer.vb">
+      <DependentUpon>fileskimmer_mde.vb</DependentUpon>
     </Compile>
-    <Compile Include="MDE Apps\ExodusFB_mde.vb">
+    <Compile Include="MDE Apps\fileskimmer_mde.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MDE Apps\infobox_mde.Designer.vb">
@@ -220,8 +220,8 @@
     <EmbeddedResource Include="Desktop Environments\memphis.resx">
       <DependentUpon>memphis.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MDE Apps\ExodusFB_mde.resx">
-      <DependentUpon>ExodusFB_mde.vb</DependentUpon>
+    <EmbeddedResource Include="MDE Apps\fileskimmer_mde.resx">
+      <DependentUpon>fileskimmer_mde.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDE Apps\infobox_mde.resx">
       <DependentUpon>infobox_mde.vb</DependentUpon>

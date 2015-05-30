@@ -18,5 +18,27 @@
 
     Public save As String = drivers + "HDD.dri"
 
+    'Useful File Skimmer stuff
+
+    Public Function GetFileType(ext As String)
+        Dim FileType As String
+        Select Case ext
+            Case ".txt"
+                FileType = "Text File"
+            Case ".pkg"
+                FileType = "Application"
+            Case ".deb"
+                FileType = "Application Installer"
+            Case ".sft"
+                FileType = "Data File"
+            Case ".dri"
+                FileType = "Driver"
+            Case ".bsk"
+                FileType = "Basic WM Skin"
+            Case Else
+                FileType = "Unknown File"
+        End Select
+        Return FileType
+    End Function
 
 End Module

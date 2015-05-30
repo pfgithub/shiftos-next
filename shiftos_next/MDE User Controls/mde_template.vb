@@ -9,6 +9,24 @@ Public Class mde_template
         End Get
     End Property
 
+    Public Property ShowMaximizeButton As Boolean
+        Get
+            Return maxbtn.Visible
+        End Get
+        Set(value As Boolean)
+            maxbtn.Visible = value
+        End Set
+    End Property
+
+    Public Property ShowMinimizeButton As Boolean
+        Get
+            Return minbtn.Visible
+        End Get
+        Set(value As Boolean)
+            minbtn.Visible = value
+        End Set
+    End Property
+
     Public Property AppName As String
         Get
             Return titletext.Text
@@ -27,13 +45,13 @@ Public Class mde_template
 
 
 
-    Private Sub captionbuttonholder_Paint(sender As Object, e As PaintEventArgs) Handles captionbuttonholder.Paint
+    Private Sub captionbuttonholder_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 
     Private Sub closebtn_Click(sender As Object, e As EventArgs) Handles closebtn.Click
         ParentForm.Close()
-        memphis.setuppanelbuttons()
+        memphis.desktop.setuppanelbuttons()
     End Sub
 
     Private Sub maxbtn_Click(sender As Object, e As EventArgs) Handles maxbtn.Click
@@ -46,16 +64,16 @@ Public Class mde_template
             ParentForm.Location = mylocation
             isMaximized = False
         Else
-            Dim desktopappbarheight As Integer = memphis.ToolStrip1.Height + memphis.ToolStrip2.Height
+            Dim desktopappbarheight As Integer = memphis.desktop.ToolStrip1.Height + memphis.desktop.ToolStrip2.Height
             Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
             Dim screenheight As Integer = Screen.PrimaryScreen.Bounds.Height - desktopappbarheight
             ParentForm.Size = New Size(screenWidth, screenheight)
-            ParentForm.Location = New Point(0, memphis.ToolStrip1.Height)
+            ParentForm.Location = New Point(0, memphis.desktop.ToolStrip1.Height)
             isMaximized = True
         End If
     End Sub
 
-    Private Sub titletext_Click(sender As Object, e As MouseEventArgs) Handles titletext.MouseDown, captionbuttonholder.MouseDown
+    Private Sub titletext_Click(sender As Object, e As MouseEventArgs) Handles titletext.MouseDown
         If isMaximized = False Then
             If e.Button = MouseButtons.Left Then
                 Titlebar.Capture = False
@@ -80,7 +98,7 @@ Public Class mde_template
         mylocation = ParentForm.Location
         SetupTitle()
         ParentForm.TopMost = True
-        memphis.setuppanelbuttons()
+        memphis.desktop.setuppanelbuttons()
     End Sub
 
     Public Sub SetupTitle()

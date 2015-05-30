@@ -146,7 +146,7 @@
                 wrongcommand()
             End If
         ElseIf command = "test mde" Then
-            memphis.Show()
+            memphis.desktop.Show()
             txtterm.FindForm.TopMost = False
         ElseIf command = "dir" Or command = "ls" Then
             If boughtdirectorysurfing Then
