@@ -5,6 +5,7 @@
 
     Public home As String = root + "\Home\" 'Inconsistent to fix terminal glitch.
 
+    Public desktop As String = home + "Desktop\"
     Public documents As String = home + "Documents\"
     Public pictures As String = home + "Pictures\"
     Public music As String = home + "Music\"
@@ -15,6 +16,7 @@
     Public skindir As String = systemdir + "Skins\"
 
     Public bwmskin As String = skindir + "BWM\"
+    Public sde_skindir As String = skindir + "Shifter's_Desktop"
 
     Public save As String = drivers + "HDD.dri"
 

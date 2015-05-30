@@ -2,15 +2,15 @@
 
     
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
-        file_skimmer.mode = "open"
-        file_skimmer.application = "textpad"
-        file_skimmer.Show()
+        BasicWM.File_Skimmer.mode = "open"
+        BasicWM.File_Skimmer.application = "textpad"
+        BasicWM.File_Skimmer.Show()
     End Sub
 
     Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
-        file_skimmer.mode = "save"
-        file_skimmer.application = "textpad"
-        file_skimmer.Show()
+        BasicWM.File_Skimmer.mode = "save"
+        BasicWM.File_Skimmer.application = "textpad"
+        BasicWM.File_Skimmer.Show()
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click

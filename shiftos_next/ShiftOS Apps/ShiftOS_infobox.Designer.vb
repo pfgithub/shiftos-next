@@ -112,7 +112,6 @@ Partial Class infobox
         '
         'pboximage
         '
-        Me.pboximage.Image = Global.ShiftOS.My.Resources.Resources.Symbolinfo
         Me.pboximage.Location = New System.Drawing.Point(12, 7)
         Me.pboximage.Name = "pboximage"
         Me.pboximage.Size = New System.Drawing.Size(80, 70)
@@ -232,72 +231,6 @@ Partial Class infobox
         Me.minimizebutton.Name = "minimizebutton"
         Me.minimizebutton.Size = New System.Drawing.Size(22, 22)
         Me.minimizebutton.TabIndex = 24
-        '
-        'pnlicon
-        '
-        Me.pnlicon.BackColor = System.Drawing.Color.Transparent
-        Me.pnlicon.Image = Global.ShiftOS.My.Resources.Resources.iconInfoBox
-        Me.pnlicon.Location = New System.Drawing.Point(8, 8)
-        Me.pnlicon.Name = "pnlicon"
-        Me.pnlicon.Size = New System.Drawing.Size(16, 16)
-        Me.pnlicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pnlicon.TabIndex = 24
-        Me.pnlicon.TabStop = False
-        Me.pnlicon.Visible = False
-        '
-        'rollupbutton
-        '
-        Me.rollupbutton.BackColor = System.Drawing.Color.Black
-        Me.rollupbutton.Location = New System.Drawing.Point(274, 3)
-        Me.rollupbutton.Name = "rollupbutton"
-        Me.rollupbutton.Size = New System.Drawing.Size(22, 22)
-        Me.rollupbutton.TabIndex = 22
-        '
-        'closebutton
-        '
-        Me.closebutton.BackColor = System.Drawing.Color.Black
-        Me.closebutton.Location = New System.Drawing.Point(302, 3)
-        Me.closebutton.Name = "closebutton"
-        Me.closebutton.Size = New System.Drawing.Size(22, 22)
-        Me.closebutton.TabIndex = 20
-        '
-        'lbtitletext
-        '
-        Me.lbtitletext.AutoSize = True
-        Me.lbtitletext.BackColor = System.Drawing.Color.Transparent
-        Me.lbtitletext.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbtitletext.Location = New System.Drawing.Point(26, 7)
-        Me.lbtitletext.Name = "lbtitletext"
-        Me.lbtitletext.Size = New System.Drawing.Size(36, 18)
-        Me.lbtitletext.TabIndex = 19
-        Me.lbtitletext.Text = "Info"
-        '
-        'pgtoplcorner
-        '
-        Me.pgtoplcorner.BackColor = System.Drawing.Color.Red
-        Me.pgtoplcorner.Dock = System.Windows.Forms.DockStyle.Left
-        Me.pgtoplcorner.Location = New System.Drawing.Point(0, 0)
-        Me.pgtoplcorner.Name = "pgtoplcorner"
-        Me.pgtoplcorner.Size = New System.Drawing.Size(2, 30)
-        Me.pgtoplcorner.TabIndex = 17
-        '
-        'pgtoprcorner
-        '
-        Me.pgtoprcorner.BackColor = System.Drawing.Color.Red
-        Me.pgtoprcorner.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pgtoprcorner.Location = New System.Drawing.Point(369, 0)
-        Me.pgtoprcorner.Name = "pgtoprcorner"
-        Me.pgtoprcorner.Size = New System.Drawing.Size(2, 30)
-        Me.pgtoprcorner.TabIndex = 16
-        '
-        'pgbottom
-        '
-        Me.pgbottom.BackColor = System.Drawing.Color.Gray
-        Me.pgbottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pgbottom.Location = New System.Drawing.Point(2, 152)
-        Me.pgbottom.Name = "pgbottom"
-        Me.pgbottom.Size = New System.Drawing.Size(367, 2)
-        Me.pgbottom.TabIndex = 23
         '
         'infobox
         '

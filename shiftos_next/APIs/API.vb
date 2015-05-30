@@ -123,6 +123,9 @@
         command = command.ToLower
         If command Like "help" Then
             ShowHelp()
+        ElseIf command = "test sde" Then
+            ShiftOSDesktop.Show()
+            txtterm.FindForm.Close()
         ElseIf command Like "cd *" Then
             If boughtdirectorysurfing = True Then
                 Dim folder As String = command.Replace("cd ", "")
@@ -240,7 +243,7 @@
             ElseIf IO.File.Exists(command) Then
                 openfile(command)
             Else
-                wrongcommand()
+                OpenProgram(command)
             End If
         End If
     End Sub
@@ -315,15 +318,25 @@
     Public Sub OpenProgram(progtoopen As String)
         Select Case progtoopen
             Case "shifter", "skin", "shift"
-                Shifter.Show()
+                If boughtshifter Then BasicWM.Shifter.Show() Else AddLine("open: Invalid program """ & progtoopen & """.")
+
             Case "shiftorium", "packages", "pacman", "code shop"
                 shiftorium_cmd.Show()
+            Case "math", "mathquiz", "math quiz"
+                mathquiz = True
+                changeinterpreter()
+            Case "guess the number", "guess"
+                guessthenumber = True
+                changeinterpreter()
             Case "files", "fileskimmer", "file skimmer", "fs", "file browser"
                 If boughtfileskimmer = True Then
-                    file_skimmer.Show()
+                    BasicWM.File_Skimmer.Show()
                 Else
                     AddLine("open: Invalid program """ & progtoopen & """.")
                 End If
+            Case "skinloader", "skin loader"
+                If boughtskinloader = True Then BasicWM.SkinLoader.Show() Else AddLine("open: Invalid program """ & progtoopen & """.")
+
             Case "textpad", "text", "notepad"
                 If boughttextpad = True Then
                     TextPad.Show()
@@ -341,7 +354,7 @@
                 shiftorium_cmd.Hide()
             Case "files", "fileskimmer", "file skimmer", "fs", "file browser"
                 If boughtfileskimmer = True Then
-                    file_skimmer.Hide()
+                    BasicWM.File_Skimmer.Hide()
                 Else
                     AddLine("close: Invalid program """ & progtoclose & """.")
                 End If
@@ -352,7 +365,9 @@
                     AddLine("close: Invalid program """ & progtoclose & """.")
                 End If
             Case "shifter", "skin", "shift"
-                Shifter.Hide()
+                If boughtshifter Then BasicWM.Shifter.Hide() Else AddLine("close: Invalid program """ & progtoclose & """.")
+            Case "skinloader", "skin loader"
+                If boughtskinloader = True Then BasicWM.SkinLoader.Hide() Else AddLine("close: Invalid program """ & progtoclose & """.")
             Case Else
                 AddLine("close: Invalid program """ & progtoclose & """.")
         End Select

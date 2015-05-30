@@ -463,89 +463,6 @@ Partial Class Shifter
         '
         Me.timerearned.Interval = 3000
         '
-        'titlebar
-        '
-        Me.titlebar.BackColor = System.Drawing.Color.Gray
-        Me.titlebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.titlebar.Controls.Add(Me.minimizebutton)
-        Me.titlebar.Controls.Add(Me.pnlicon)
-        Me.titlebar.Controls.Add(Me.rollupbutton)
-        Me.titlebar.Controls.Add(Me.closebutton)
-        Me.titlebar.Controls.Add(Me.lbtitletext)
-        Me.titlebar.Controls.Add(Me.pgtoplcorner)
-        Me.titlebar.Controls.Add(Me.pgtoprcorner)
-        Me.titlebar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.titlebar.ForeColor = System.Drawing.Color.White
-        Me.titlebar.Location = New System.Drawing.Point(0, 0)
-        Me.titlebar.Name = "titlebar"
-        Me.titlebar.Size = New System.Drawing.Size(600, 30)
-        Me.titlebar.TabIndex = 25
-        '
-        'minimizebutton
-        '
-        Me.minimizebutton.BackColor = System.Drawing.Color.Black
-        Me.minimizebutton.Location = New System.Drawing.Point(246, 3)
-        Me.minimizebutton.Name = "minimizebutton"
-        Me.minimizebutton.Size = New System.Drawing.Size(22, 22)
-        Me.minimizebutton.TabIndex = 30
-        '
-        'pnlicon
-        '
-        Me.pnlicon.BackColor = System.Drawing.Color.Transparent
-        Me.pnlicon.Image = Global.ShiftOS.My.Resources.Resources.iconShifter
-        Me.pnlicon.Location = New System.Drawing.Point(8, 8)
-        Me.pnlicon.Name = "pnlicon"
-        Me.pnlicon.Size = New System.Drawing.Size(16, 16)
-        Me.pnlicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pnlicon.TabIndex = 31
-        Me.pnlicon.TabStop = False
-        Me.pnlicon.Visible = False
-        '
-        'rollupbutton
-        '
-        Me.rollupbutton.BackColor = System.Drawing.Color.Black
-        Me.rollupbutton.Location = New System.Drawing.Point(274, 5)
-        Me.rollupbutton.Name = "rollupbutton"
-        Me.rollupbutton.Size = New System.Drawing.Size(22, 22)
-        Me.rollupbutton.TabIndex = 30
-        '
-        'closebutton
-        '
-        Me.closebutton.BackColor = System.Drawing.Color.Black
-        Me.closebutton.Location = New System.Drawing.Point(302, 3)
-        Me.closebutton.Name = "closebutton"
-        Me.closebutton.Size = New System.Drawing.Size(22, 22)
-        Me.closebutton.TabIndex = 20
-        '
-        'lbtitletext
-        '
-        Me.lbtitletext.AutoSize = True
-        Me.lbtitletext.BackColor = System.Drawing.Color.Transparent
-        Me.lbtitletext.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbtitletext.Location = New System.Drawing.Point(26, 7)
-        Me.lbtitletext.Name = "lbtitletext"
-        Me.lbtitletext.Size = New System.Drawing.Size(57, 18)
-        Me.lbtitletext.TabIndex = 19
-        Me.lbtitletext.Text = "Shifter"
-        '
-        'pgtoplcorner
-        '
-        Me.pgtoplcorner.BackColor = System.Drawing.Color.Red
-        Me.pgtoplcorner.Dock = System.Windows.Forms.DockStyle.Left
-        Me.pgtoplcorner.Location = New System.Drawing.Point(0, 0)
-        Me.pgtoplcorner.Name = "pgtoplcorner"
-        Me.pgtoplcorner.Size = New System.Drawing.Size(2, 30)
-        Me.pgtoplcorner.TabIndex = 17
-        '
-        'pgtoprcorner
-        '
-        Me.pgtoprcorner.BackColor = System.Drawing.Color.Red
-        Me.pgtoprcorner.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pgtoprcorner.Location = New System.Drawing.Point(598, 0)
-        Me.pgtoprcorner.Name = "pgtoprcorner"
-        Me.pgtoprcorner.Size = New System.Drawing.Size(2, 30)
-        Me.pgtoprcorner.TabIndex = 16
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -1179,7 +1096,6 @@ Partial Class Shifter
         '
         Me.pretbicon.BackColor = System.Drawing.Color.Transparent
         Me.pretbicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pretbicon.Image = Global.ShiftOS.My.Resources.Resources.iconShifter
         Me.pretbicon.Location = New System.Drawing.Point(4, 2)
         Me.pretbicon.Name = "pretbicon"
         Me.pretbicon.Size = New System.Drawing.Size(16, 16)
@@ -3397,7 +3313,6 @@ Partial Class Shifter
         'prepnlicon
         '
         Me.prepnlicon.BackColor = System.Drawing.Color.Transparent
-        Me.prepnlicon.Image = Global.ShiftOS.My.Resources.Resources.iconShifter
         Me.prepnlicon.Location = New System.Drawing.Point(8, 8)
         Me.prepnlicon.Name = "prepnlicon"
         Me.prepnlicon.Size = New System.Drawing.Size(16, 16)

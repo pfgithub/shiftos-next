@@ -30,7 +30,7 @@
             term.TopMost = True
             term.Show()
             openterminals += 1
-            loadskindata()
+            loadskindata_bwm()
         End Sub
     End Class
 End Namespace

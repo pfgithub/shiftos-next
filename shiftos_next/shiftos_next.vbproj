@@ -54,6 +54,8 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -158,6 +160,7 @@
     </Compile>
     <Compile Include="APIs\filesystem.vb" />
     <Compile Include="Menu Renderers\mde_colortable.vb" />
+    <Compile Include="Menu Renderers\shiftde_renderer.vb" />
     <Compile Include="Other\Hijack.Designer.vb">
       <DependentUpon>Hijack.vb</DependentUpon>
     </Compile>
@@ -242,11 +245,23 @@
     <Compile Include="ShiftOS Apps\Web Browser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ShiftOS User Controls\PanelButton.Designer.vb">
+      <DependentUpon>PanelButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS User Controls\PanelButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShiftOS User Controls\ProgressBarEX.Designer.vb">
+      <DependentUpon>ProgressBarEX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftOS User Controls\ProgressBarEX.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ShiftOS User Controls\template.designer.vb">
       <DependentUpon>template.vb</DependentUpon>
     </Compile>
     <Compile Include="ShiftOS User Controls\template.vb">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -328,6 +343,9 @@
     <EmbeddedResource Include="ShiftOS Apps\Web Browser.resx">
       <DependentUpon>Web Browser.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ShiftOS User Controls\PanelButton.resx">
+      <DependentUpon>PanelButton.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShiftOS User Controls\template.resx">
       <DependentUpon>template.vb</DependentUpon>
     </EmbeddedResource>
@@ -357,7 +375,10 @@
     <Content Include="orb.ico" />
     <Content Include="Resources\3beepvirus.wav" />
     <Content Include="Resources\close.png" />
+    <None Include="Resources\deletefile.png" />
+    <None Include="Resources\deletefolder.png" />
     <Content Include="Resources\dial-up-modem-02.wav" />
+    <None Include="Resources\downarrow.png" />
     <Content Include="Resources\infobox.wav" />
     <Content Include="Resources\infobox_mde_notify.png" />
     <None Include="Resources\mdeorb.png" />
@@ -369,6 +390,10 @@
     <Content Include="Resources\rollup.wav" />
     <Content Include="Resources\title.png" />
     <Content Include="Resources\typesound.wav" />
+    <None Include="Resources\uparrow.png" />
+    <None Include="Resources\webhome.png" />
+    <None Include="Resources\webforward.png" />
+    <None Include="Resources\webback.png" />
     <Content Include="Resources\writesound.wav" />
   </ItemGroup>
   <ItemGroup />

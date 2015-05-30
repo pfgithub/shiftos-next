@@ -27,6 +27,8 @@
             Me.btnwhite = New System.Windows.Forms.Button()
             Me.btnblack = New System.Windows.Forms.Button()
             Me.btngray = New System.Windows.Forms.Button()
+            Me.btnlightgray = New System.Windows.Forms.Button()
+            Me.btndarkgray = New System.Windows.Forms.Button()
             Me.btnred = New System.Windows.Forms.Button()
             Me.btngreen = New System.Windows.Forms.Button()
             Me.btnblue = New System.Windows.Forms.Button()
@@ -47,6 +49,8 @@
             Me.pnlcolors.Controls.Add(Me.btnwhite)
             Me.pnlcolors.Controls.Add(Me.btnblack)
             Me.pnlcolors.Controls.Add(Me.btngray)
+            Me.pnlcolors.Controls.Add(Me.btnlightgray)
+            Me.pnlcolors.Controls.Add(Me.btndarkgray)
             Me.pnlcolors.Controls.Add(Me.btnred)
             Me.pnlcolors.Controls.Add(Me.btngreen)
             Me.pnlcolors.Controls.Add(Me.btnblue)
@@ -57,8 +61,9 @@
             Me.pnlcolors.Controls.Add(Me.btnbrown)
             Me.pnlcolors.Location = New System.Drawing.Point(15, 65)
             Me.pnlcolors.Name = "pnlcolors"
-            Me.pnlcolors.Size = New System.Drawing.Size(335, 177)
+            Me.pnlcolors.Size = New System.Drawing.Size(335, 131)
             Me.pnlcolors.TabIndex = 1
+            Me.pnlcolors.Tag = "colorholder"
             '
             'btnwhite
             '
@@ -91,11 +96,33 @@
             Me.btngray.UseVisualStyleBackColor = False
             Me.btngray.Visible = False
             '
+            'btnlightgray
+            '
+            Me.btnlightgray.BackColor = System.Drawing.Color.LightGray
+            Me.btnlightgray.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+            Me.btnlightgray.Location = New System.Drawing.Point(99, 3)
+            Me.btnlightgray.Name = "btnlightgray"
+            Me.btnlightgray.Size = New System.Drawing.Size(26, 23)
+            Me.btnlightgray.TabIndex = 11
+            Me.btnlightgray.UseVisualStyleBackColor = False
+            Me.btnlightgray.Visible = False
+            '
+            'btndarkgray
+            '
+            Me.btndarkgray.BackColor = System.Drawing.Color.DarkGray
+            Me.btndarkgray.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+            Me.btndarkgray.Location = New System.Drawing.Point(131, 3)
+            Me.btndarkgray.Name = "btndarkgray"
+            Me.btndarkgray.Size = New System.Drawing.Size(26, 23)
+            Me.btndarkgray.TabIndex = 12
+            Me.btndarkgray.UseVisualStyleBackColor = False
+            Me.btndarkgray.Visible = False
+            '
             'btnred
             '
             Me.btnred.BackColor = System.Drawing.Color.Red
             Me.btnred.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            Me.btnred.Location = New System.Drawing.Point(99, 3)
+            Me.btnred.Location = New System.Drawing.Point(163, 3)
             Me.btnred.Name = "btnred"
             Me.btnred.Size = New System.Drawing.Size(26, 23)
             Me.btnred.TabIndex = 3
@@ -106,7 +133,7 @@
             '
             Me.btngreen.BackColor = System.Drawing.Color.Green
             Me.btngreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            Me.btngreen.Location = New System.Drawing.Point(131, 3)
+            Me.btngreen.Location = New System.Drawing.Point(195, 3)
             Me.btngreen.Name = "btngreen"
             Me.btngreen.Size = New System.Drawing.Size(26, 23)
             Me.btngreen.TabIndex = 4
@@ -117,7 +144,7 @@
             '
             Me.btnblue.BackColor = System.Drawing.Color.Blue
             Me.btnblue.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            Me.btnblue.Location = New System.Drawing.Point(163, 3)
+            Me.btnblue.Location = New System.Drawing.Point(227, 3)
             Me.btnblue.Name = "btnblue"
             Me.btnblue.Size = New System.Drawing.Size(26, 23)
             Me.btnblue.TabIndex = 5
@@ -128,7 +155,7 @@
             '
             Me.btnyellow.BackColor = System.Drawing.Color.Yellow
             Me.btnyellow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            Me.btnyellow.Location = New System.Drawing.Point(195, 3)
+            Me.btnyellow.Location = New System.Drawing.Point(259, 3)
             Me.btnyellow.Name = "btnyellow"
             Me.btnyellow.Size = New System.Drawing.Size(26, 23)
             Me.btnyellow.TabIndex = 6
@@ -139,7 +166,7 @@
             '
             Me.btnorange.BackColor = System.Drawing.Color.Orange
             Me.btnorange.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            Me.btnorange.Location = New System.Drawing.Point(227, 3)
+            Me.btnorange.Location = New System.Drawing.Point(291, 3)
             Me.btnorange.Name = "btnorange"
             Me.btnorange.Size = New System.Drawing.Size(26, 23)
             Me.btnorange.TabIndex = 7
@@ -150,7 +177,7 @@
             '
             Me.btnpink.BackColor = System.Drawing.Color.Pink
             Me.btnpink.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            Me.btnpink.Location = New System.Drawing.Point(259, 3)
+            Me.btnpink.Location = New System.Drawing.Point(3, 32)
             Me.btnpink.Name = "btnpink"
             Me.btnpink.Size = New System.Drawing.Size(26, 23)
             Me.btnpink.TabIndex = 8
@@ -161,7 +188,7 @@
             '
             Me.btnpurple.BackColor = System.Drawing.Color.Purple
             Me.btnpurple.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            Me.btnpurple.Location = New System.Drawing.Point(291, 3)
+            Me.btnpurple.Location = New System.Drawing.Point(35, 32)
             Me.btnpurple.Name = "btnpurple"
             Me.btnpurple.Size = New System.Drawing.Size(26, 23)
             Me.btnpurple.TabIndex = 9
@@ -172,7 +199,7 @@
             '
             Me.btnbrown.BackColor = System.Drawing.Color.Brown
             Me.btnbrown.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            Me.btnbrown.Location = New System.Drawing.Point(3, 32)
+            Me.btnbrown.Location = New System.Drawing.Point(67, 32)
             Me.btnbrown.Name = "btnbrown"
             Me.btnbrown.Size = New System.Drawing.Size(26, 23)
             Me.btnbrown.TabIndex = 10
@@ -256,5 +283,7 @@
         Friend WithEvents lbselectedcolor As System.Windows.Forms.Label
         Friend WithEvents btncancel As System.Windows.Forms.Button
         Friend WithEvents pnltop As shiftos_next.Titlebar
+        Friend WithEvents btnlightgray As System.Windows.Forms.Button
+        Friend WithEvents btndarkgray As System.Windows.Forms.Button
     End Class
 End Namespace

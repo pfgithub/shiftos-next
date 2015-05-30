@@ -48,14 +48,14 @@ Partial Class Web_Browser
         Me.pnloptions = New System.Windows.Forms.Panel()
         Me.btnRemTab = New System.Windows.Forms.Button()
         Me.btnAddTab = New System.Windows.Forms.Button()
-        Me.siteloadprogress = New ShiftOS.ProgressBarEX()
+        Me.siteloadprogress = New ShiftDE.ProgressBarEX()
         Me.pgleft = New System.Windows.Forms.Panel()
         Me.titlebar = New System.Windows.Forms.Panel()
         Me.pnlicon = New System.Windows.Forms.PictureBox()
         Me.TabText = New System.Windows.Forms.Timer(Me.components)
         Me.UrlText = New System.Windows.Forms.Timer(Me.components)
         Me.Progress = New System.Windows.Forms.Timer(Me.components)
-        Me.BrowserProgress = New ShiftOS.ProgressBarEX()
+        Me.BrowserProgress = New ShiftDE.ProgressBarEX()
         Me.pgright.SuspendLayout()
         Me.pgcontents.SuspendLayout()
         Me.pnlwebtabholder.SuspendLayout()
@@ -217,7 +217,7 @@ Partial Class Web_Browser
         '
         Me.btnhome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnhome.BackColor = System.Drawing.Color.White
-        Me.btnhome.BackgroundImage = Global.ShiftOS.My.Resources.Resources.webhome
+        Me.btnhome.BackgroundImage = Global.shiftos_next.My.Resources.Resources.webhome
         Me.btnhome.FlatAppearance.BorderSize = 0
         Me.btnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnhome.Location = New System.Drawing.Point(1019, 5)
@@ -243,7 +243,7 @@ Partial Class Web_Browser
         'btnforward
         '
         Me.btnforward.BackColor = System.Drawing.Color.White
-        Me.btnforward.BackgroundImage = Global.ShiftOS.My.Resources.Resources.webforward
+        Me.btnforward.BackgroundImage = Global.shiftos_next.My.Resources.Resources.webforward
         Me.btnforward.FlatAppearance.BorderSize = 0
         Me.btnforward.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnforward.Location = New System.Drawing.Point(39, 5)
@@ -255,7 +255,7 @@ Partial Class Web_Browser
         'btnback
         '
         Me.btnback.BackColor = System.Drawing.Color.White
-        Me.btnback.BackgroundImage = Global.ShiftOS.My.Resources.Resources.webback
+        Me.btnback.BackgroundImage = Global.shiftos_next.My.Resources.Resources.webback
         Me.btnback.FlatAppearance.BorderSize = 0
         Me.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnback.Location = New System.Drawing.Point(5, 5)
@@ -317,11 +317,11 @@ Partial Class Web_Browser
         Me.siteloadprogress.MaxValue = 100
         Me.siteloadprogress.MinValue = 0
         Me.siteloadprogress.Name = "siteloadprogress"
-        Me.siteloadprogress.Orientation = ShiftOS.ProgressBarEX.ProgressBarOrientation.Horizontal
+        Me.siteloadprogress.Orientation = ShiftDE.ProgressBarEX.ProgressBarOrientation.Horizontal
         Me.siteloadprogress.ShowValue = False
         Me.siteloadprogress.Size = New System.Drawing.Size(1054, 10)
         Me.siteloadprogress.Step = 10
-        Me.siteloadprogress.Style = ShiftOS.ProgressBarEX.ProgressBarExStyle.Continuous
+        Me.siteloadprogress.Style = ShiftDE.ProgressBarEX.ProgressBarExStyle.Continuous
         Me.siteloadprogress.TabIndex = 20
         Me.siteloadprogress.Value = 0
         '
@@ -352,18 +352,6 @@ Partial Class Web_Browser
         Me.titlebar.Size = New System.Drawing.Size(1058, 30)
         Me.titlebar.TabIndex = 19
         '
-        'pnlicon
-        '
-        Me.pnlicon.BackColor = System.Drawing.Color.Transparent
-        Me.pnlicon.Image = Global.ShiftOS.My.Resources.Resources.iconWebBrowser
-        Me.pnlicon.Location = New System.Drawing.Point(8, 8)
-        Me.pnlicon.Name = "pnlicon"
-        Me.pnlicon.Size = New System.Drawing.Size(16, 16)
-        Me.pnlicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pnlicon.TabIndex = 24
-        Me.pnlicon.TabStop = False
-        Me.pnlicon.Visible = False
-        '
         'TabText
         '
         Me.TabText.Enabled = True
@@ -386,11 +374,11 @@ Partial Class Web_Browser
         Me.BrowserProgress.MaxValue = 100
         Me.BrowserProgress.MinValue = 0
         Me.BrowserProgress.Name = "BrowserProgress"
-        Me.BrowserProgress.Orientation = ShiftOS.ProgressBarEX.ProgressBarOrientation.Horizontal
+        Me.BrowserProgress.Orientation = ShiftDE.ProgressBarEX.ProgressBarOrientation.Horizontal
         Me.BrowserProgress.ShowValue = True
         Me.BrowserProgress.Size = New System.Drawing.Size(150, 23)
         Me.BrowserProgress.Step = 10
-        Me.BrowserProgress.Style = ShiftOS.ProgressBarEX.ProgressBarExStyle.Blocks
+        Me.BrowserProgress.Style = ShiftDE.ProgressBarEX.ProgressBarExStyle.Blocks
         Me.BrowserProgress.TabIndex = 23
         Me.BrowserProgress.Value = 0
         Me.BrowserProgress.Visible = False
@@ -448,12 +436,12 @@ Partial Class Web_Browser
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents pnloptions As System.Windows.Forms.Panel
     Friend WithEvents pnlwebtabholder As System.Windows.Forms.Panel
-    Friend WithEvents siteloadprogress As ShiftOS.ProgressBarEX
+    Friend WithEvents siteloadprogress As ShiftDE.ProgressBarEX
     Friend WithEvents tabs As TabControl 'ShiftOS.ShiftOSTabs
     Friend WithEvents btnAddTab As System.Windows.Forms.Button
     Friend WithEvents btnRemTab As System.Windows.Forms.Button
     Friend WithEvents TabText As System.Windows.Forms.Timer
     Friend WithEvents UrlText As System.Windows.Forms.Timer
-    Friend WithEvents BrowserProgress As ShiftOS.ProgressBarEX
+    Friend WithEvents BrowserProgress As ShiftDE.ProgressBarEX
     Friend WithEvents Progress As System.Windows.Forms.Timer
 End Class

@@ -195,7 +195,6 @@ Partial Class Shiftorium
         '
         'picpreview
         '
-        Me.picpreview.Image = Global.ShiftOS.My.Resources.Resources.upgradegray
         Me.picpreview.Location = New System.Drawing.Point(25, 218)
         Me.picpreview.Name = "picpreview"
         Me.picpreview.Size = New System.Drawing.Size(320, 130)
@@ -241,122 +240,11 @@ Partial Class Shiftorium
         Me.titlebar.Size = New System.Drawing.Size(701, 30)
         Me.titlebar.TabIndex = 11
         '
-        'minimizebutton
-        '
-        Me.minimizebutton.BackColor = System.Drawing.Color.Black
-        Me.minimizebutton.Location = New System.Drawing.Point(283, 2)
-        Me.minimizebutton.Name = "minimizebutton"
-        Me.minimizebutton.Size = New System.Drawing.Size(22, 22)
-        Me.minimizebutton.TabIndex = 24
-        '
-        'pnlicon
-        '
-        Me.pnlicon.BackColor = System.Drawing.Color.Transparent
-        Me.pnlicon.Image = Global.ShiftOS.My.Resources.Resources.iconShiftorium
-        Me.pnlicon.Location = New System.Drawing.Point(8, 8)
-        Me.pnlicon.Name = "pnlicon"
-        Me.pnlicon.Size = New System.Drawing.Size(16, 16)
-        Me.pnlicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pnlicon.TabIndex = 24
-        Me.pnlicon.TabStop = False
-        Me.pnlicon.Visible = False
-        '
-        'rollupbutton
-        '
-        Me.rollupbutton.BackColor = System.Drawing.Color.Black
-        Me.rollupbutton.Location = New System.Drawing.Point(311, 4)
-        Me.rollupbutton.Name = "rollupbutton"
-        Me.rollupbutton.Size = New System.Drawing.Size(22, 22)
-        Me.rollupbutton.TabIndex = 22
-        '
-        'closebutton
-        '
-        Me.closebutton.BackColor = System.Drawing.Color.Black
-        Me.closebutton.Location = New System.Drawing.Point(339, 4)
-        Me.closebutton.Name = "closebutton"
-        Me.closebutton.Size = New System.Drawing.Size(22, 22)
-        Me.closebutton.TabIndex = 21
-        '
-        'lbtitletext
-        '
-        Me.lbtitletext.AutoSize = True
-        Me.lbtitletext.BackColor = System.Drawing.Color.Transparent
-        Me.lbtitletext.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbtitletext.Location = New System.Drawing.Point(26, 7)
-        Me.lbtitletext.Name = "lbtitletext"
-        Me.lbtitletext.Size = New System.Drawing.Size(85, 18)
-        Me.lbtitletext.TabIndex = 20
-        Me.lbtitletext.Text = "Shiftorium"
-        '
-        'pgtoplcorner
-        '
-        Me.pgtoplcorner.BackColor = System.Drawing.Color.Red
-        Me.pgtoplcorner.Dock = System.Windows.Forms.DockStyle.Left
-        Me.pgtoplcorner.Location = New System.Drawing.Point(0, 0)
-        Me.pgtoplcorner.Name = "pgtoplcorner"
-        Me.pgtoplcorner.Size = New System.Drawing.Size(2, 30)
-        Me.pgtoplcorner.TabIndex = 19
-        '
-        'pgtoprcorner
-        '
-        Me.pgtoprcorner.BackColor = System.Drawing.Color.Red
-        Me.pgtoprcorner.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pgtoprcorner.Location = New System.Drawing.Point(699, 0)
-        Me.pgtoprcorner.Name = "pgtoprcorner"
-        Me.pgtoprcorner.Size = New System.Drawing.Size(2, 30)
-        Me.pgtoprcorner.TabIndex = 18
         '
         'tmrcodepointsupdate
         '
         Me.tmrcodepointsupdate.Enabled = True
         Me.tmrcodepointsupdate.Interval = 1000
-        '
-        'pgleft
-        '
-        Me.pgleft.BackColor = System.Drawing.Color.Gray
-        Me.pgleft.Controls.Add(Me.pgbottomlcorner)
-        Me.pgleft.Dock = System.Windows.Forms.DockStyle.Left
-        Me.pgleft.Location = New System.Drawing.Point(0, 30)
-        Me.pgleft.Name = "pgleft"
-        Me.pgleft.Size = New System.Drawing.Size(2, 432)
-        Me.pgleft.TabIndex = 12
-        '
-        'pgbottomlcorner
-        '
-        Me.pgbottomlcorner.BackColor = System.Drawing.Color.Red
-        Me.pgbottomlcorner.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pgbottomlcorner.Location = New System.Drawing.Point(0, 430)
-        Me.pgbottomlcorner.Name = "pgbottomlcorner"
-        Me.pgbottomlcorner.Size = New System.Drawing.Size(2, 2)
-        Me.pgbottomlcorner.TabIndex = 14
-        '
-        'pgright
-        '
-        Me.pgright.BackColor = System.Drawing.Color.Gray
-        Me.pgright.Controls.Add(Me.pgbottomrcorner)
-        Me.pgright.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pgright.Location = New System.Drawing.Point(699, 30)
-        Me.pgright.Name = "pgright"
-        Me.pgright.Size = New System.Drawing.Size(2, 432)
-        Me.pgright.TabIndex = 13
-        '
-        'pgbottomrcorner
-        '
-        Me.pgbottomrcorner.BackColor = System.Drawing.Color.Red
-        Me.pgbottomrcorner.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pgbottomrcorner.Location = New System.Drawing.Point(0, 430)
-        Me.pgbottomrcorner.Name = "pgbottomrcorner"
-        Me.pgbottomrcorner.Size = New System.Drawing.Size(2, 2)
-        Me.pgbottomrcorner.TabIndex = 15
-        '
-        'pgbottom
-        '
-        Me.pgbottom.BackColor = System.Drawing.Color.Gray
-        Me.pgbottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pgbottom.Location = New System.Drawing.Point(2, 460)
-        Me.pgbottom.Name = "pgbottom"
-        Me.pgbottom.Size = New System.Drawing.Size(697, 2)
-        Me.pgbottom.TabIndex = 14
         '
         'Shiftorium
         '

@@ -4,7 +4,7 @@
         Public Color As Color
         Public oldcolor As Color
 
-        Private Sub btnwhite_Click(sender As Object, e As EventArgs) Handles btnwhite.Click, btnblack.Click, btngray.Click, btnred.Click, btngreen.Click, btnblue.Click, btnyellow.Click, btnorange.Click, btnpink.Click, btnpurple.Click, btnbrown.Click
+        Private Sub btnwhite_Click(sender As Object, e As EventArgs) Handles btnwhite.Click, btnblack.Click, btngray.Click, btnlightgray.Click, btndarkgray.Click, btnred.Click, btngreen.Click, btnblue.Click, btnyellow.Click, btnorange.Click, btnpink.Click, btnpurple.Click, btnbrown.Click
             Color = sender.backcolor
             lbselectedcolor.Text = "Selected color: " & Color.ToKnownColor.ToString
         End Sub
@@ -33,6 +33,11 @@
             If boughtpink Then btnpink.Show()
             If boughtpurple Then btnpurple.Show()
             If boughtbrown Then btnbrown.Show()
+            If boughtgray2 Then
+                btnlightgray.Show()
+                btndarkgray.Show()
+            End If
         End Sub
+
     End Class
 End Namespace
