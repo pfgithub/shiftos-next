@@ -3,7 +3,7 @@
 
 ![Logo](http://198.8.95.3/shiftos/forum/styles/digi_darkblue2/theme/images/logo.png)
 
-[Forum](http://198.8.95.3/shiftos/forum/)
+[Forum](http://www.shiftosnext.ml/forum)
 
 ### Summary: 
 
