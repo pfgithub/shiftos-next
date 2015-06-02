@@ -1,7 +1,7 @@
 # ShiftOS Next
 ## What Project Orion could've been
 
-![Logo](http://198.8.95.3/shiftos/forum/styles/digi_darkblue2/theme/images/logo.png)
+![Logo](http://shiftosnext.ml/forum/styles/digi_darkblue2/theme/images/logo.png)
 
 [Forum](http://www.shiftosnext.ml/forum)
 
